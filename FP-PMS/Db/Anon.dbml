@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="AnonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="" Member="AnonWaitingRooms">
+    <Type Name="AnonWaitingRoom">
+      <Column Name="ID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="Physio" Type="System.String" CanBeNull="false" />
+      <Column Name="Rate" Type="System.String" CanBeNull="false" />
+      <Column Name="Start" Type="System.String" CanBeNull="false" />
+      <Column Name="End" Type="System.String" CanBeNull="false" />
+      <Column Name="AppointmentID" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AnonPatients">
+    <Type Name="AnonPatient">
+      <Column Name="PatientID" Type="System.Int32" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DVANumber" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PatientInActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Title" Type="System.String" DbType="NChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Address" Type="System.String" CanBeNull="false" />
+      <Column Name="Suburb" Type="System.String" CanBeNull="false" />
+      <Column Name="State" Type="System.String" CanBeNull="false" />
+      <Column Name="PostCode" Type="System.String" CanBeNull="false" />
+      <Column Name="HomePhone" Type="System.String" CanBeNull="false" />
+      <Column Name="BusPhone" Type="System.String" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" CanBeNull="false" />
+      <Column Name="Family" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Friend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FrontSign" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YellowPages" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Internet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HealthFund" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HealthProfessional" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Other" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RefDoctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardiacPacemaker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LossOfWeight" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HeartCondition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dizziness" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ArtificialJoint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Epilepsy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SurgeryInThePast3Months" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Smoker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReferredByDoc" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AnonClaimantInvoices">
+    <Type Name="AnonClaimantInvoice">
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TranDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Narrative" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TranAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoicePaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AnonUnPaidInvoices">
+    <Type Name="AnonUnPaidInvoice">
+      <Column Name="InvoiceNo" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="ReceiptTotal" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="InvoiceTotal" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="InvoiceDate" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="ReceiptAmount" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AnonUnCancelledInvoices">
+    <Type Name="AnonUnCancelledInvoices">
+      <Column Name="InvoiceNo" Type="System.Int32" CanBeNull="false" />
+      <Column Member="InvoiceAmount" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="InvoiceDate" Type="System.DateTime" CanBeNull="false" />
+      <Column Member="InvoiceCancelled" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

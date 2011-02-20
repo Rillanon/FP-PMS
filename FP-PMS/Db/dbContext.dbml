@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FP_OLD_MIGRATION_DEV_DB" Class="dbContextDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.168.87.130;Initial Catalog=FP_OLD_MIGRATION_DEV_DB;Persist Security Info=True;User ID=physio" SettingsObjectName="FP_PMS.Properties.Settings" SettingsPropertyName="FP_OLD_MIGRATION_DEV_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblInvoice" Member="tblInvoices">
+    <Type Name="tblInvoice">
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InvoicePrinted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InvoicePaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InvoiceComments" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="InvoiceCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceiptInvoices" Member="tblReceiptInvoices">
+    <Type Name="tblReceiptInvoice">
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClaimantName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="TotalReceipt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PatientName" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="SessionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Received" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Paid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Receipted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatientStats" Member="tblPatientStats">
+    <Type Name="tblPatientStat">
+      <Column Name="StatID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SessionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="RefModeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefDoctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OnGoing" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RefExpiry" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InjuryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OccupationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TreatmStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GSTApplied" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItemType" Member="tblItemTypes">
+    <Type Name="tblItemType">
+      <Column Name="ItemType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemTypeDesc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblClaimant" Member="tblClaimants">
+    <Type Name="tblClaimant">
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="FirstNames" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Postcode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BusPhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="AcctStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MonthlyAcct" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Terms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ClaimantInActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblClaimant_tblPatientClaimant" Member="tblPatientClaimants" ThisKey="ClaimantID" OtherKey="ClaimantID" Type="tblPatientClaimant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRate" Member="tblRates">
+    <Type Name="tblRate">
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="RateDesc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Terms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatientClaimant" Member="tblPatientClaimants">
+    <Type Name="tblPatientClaimant">
+      <Column Name="PatientClaimantID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblClaimant_tblPatientClaimant" Member="tblClaimant" ThisKey="ClaimantID" OtherKey="ClaimantID" Type="tblClaimant" IsForeignKey="true" />
+      <Association Name="tblPatient_tblPatientClaimant" Member="tblPatient" ThisKey="PatientID" OtherKey="PatientID" Type="tblPatient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneralSetting" Member="GeneralSettings">
+    <Type Name="GeneralSetting">
+      <Column Name="GSTPercentage" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="InvoiceCancelAllow" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
+      <Column Name="ReceiptCancelAllow" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvoiceReceipt" Member="tblInvoiceReceipts">
+    <Type Name="tblInvoiceReceipt">
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvRecAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceReceiptID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceipt" Member="tblReceipts">
+    <Type Name="tblReceipt">
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiptAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ReceiptComments" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.qryReceiptClaimants" Member="qryReceiptClaimants">
+    <Type Name="qryReceiptClaimant">
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="FirstNames" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvRecAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItem" Member="tblItems">
+    <Type Name="tblItem">
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="ItemDesc" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="ItemType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPostcode" Member="tblPostcodes">
+    <Type Name="tblPostcode">
+      <Column Name="PostcodeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Postcode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPhysioRate" Member="tblPhysioRates">
+    <Type Name="tblPhysioRate">
+      <Column Name="PhysioRateID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="RateAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GSTApplied" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRefDoctor" Member="tblRefDoctors">
+    <Type Name="tblRefDoctor">
+      <Column Name="RefDoctor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RefDName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RefDFNames" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="RefDTitle" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RefDAddr1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RefDAddr2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RefDState" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="RefDPcode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RefDType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RefBusPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RefHomePhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RefFaxNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RefMobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RefEmail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RefProviderNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FirstNames" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInjury" Member="tblInjuries">
+    <Type Name="tblInjury">
+      <Column Name="InjuryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InjuryDesc" Type="System.String" DbType="NVarChar(34)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatientAppointments" Member="PatientAppointments">
+    <Type Name="PatientAppointment">
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AllDay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Label" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReminderInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RecurrenceInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CheckIn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CheckOut" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Invoiced" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatientAddr" Member="tblPatientAddrs">
+    <Type Name="tblPatientAddr">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Postcode" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BusPhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatientAccident" Member="tblPatientAccidents">
+    <Type Name="tblPatientAccident">
+      <Column Name="AccidentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClaimNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ClaimNoCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatient" Member="tblPatients">
+    <Type Name="tblPatient">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FirstNames" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OccupationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimantAddr" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="DVANumber" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="PatientInActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Family" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Friend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FrontSign" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YellowPages" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Internet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HealthFund" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HealthProfessional" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Other" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RefDoctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardiacPacemaker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LossOfWeight" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HeartCondition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dizziness" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ArtificialJoint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Epilepsy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SurgeryInThePast3Months" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Smoker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReferredByDoc" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblPatient_tblPatientClaimant" Member="tblPatientClaimants" ThisKey="PatientID" OtherKey="PatientID" Type="tblPatientClaimant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTransaction" Member="tblTransactions">
+    <Type Name="tblTransaction">
+      <Column Name="TranNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TranType" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="TranDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Narrative" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TranAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Daybook" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPayin" Member="tblPayins">
+    <Type Name="tblPayin">
+      <Column Name="PayinNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PayinType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PayinAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Drawer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ChequeNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPayinType" Member="tblPayinTypes">
+    <Type Name="tblPayinType">
+      <Column Name="PayinType" Type="System.String" DbType="NVARCHAR(MAX)" CanBeNull="true" />
+      <Column Name="PayinDesc" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CreditType" Member="CreditTypes">
+    <Type Name="CreditType">
+      <Column Name="CreditTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreditTypeDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceiptCreditPatient" Member="tblReceiptCreditPatients">
+    <Type Name="tblReceiptCreditPatient">
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreditAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PatientName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreditID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RceiptCreditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Credit" Member="Credits">
+    <Type Name="Credit">
+      <Column Name="CreditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreditAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreditDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreditType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreditComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreditCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPhysio" Member="tblPhysios">
+    <Type Name="tblPhysio">
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PhysioName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Postcode" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BusPhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PagerNo" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PagerPhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ProviderNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PhysioRate" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="PhysioColourNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhysioInActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Color" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NewPatientAppDefaultDuration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ExistingPatientAppDefaultDuration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LunchStartTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="LunchEndTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.RatesAndItemsSummaryReportFunction" Method="RatesAndItemsSummaryReportFunction" IsComposable="true">
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="RatesAndItemsSummaryReportFunctionResult">
+      <Column Name="StatID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FeeTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GsTTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FinalTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Item" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="ItemTypeDesc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="Physio" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PaymentAuditTrail" Method="PaymentAuditTrail" IsComposable="true">
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="PaymentAuditTrailResult">
+      <Column Name="PayinNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Drawer" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="PayinDesc" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PayinAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvRecAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getClaimantInvoices" Method="getClaimantInvoices">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="getClaimantInvoicesResult">
+      <Column Name="TranDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Narrative" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TranAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoicePaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getClaimantReceiptTotal" Method="getClaimantReceiptTotal">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ReceiptTotal" Parameter="receiptTotal" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getClaimantInvoiceTotal" Method="getClaimantInvoiceTotal">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InvoiceTotal" Parameter="invoiceTotal" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getUnPaidInvoices" Method="getUnPaidInvoices">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="getUnPaidInvoicesResult">
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getLastPatientVisitDate" Method="getLastPatientVisitDate">
+    <Parameter Name="PatientID" Parameter="patientID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastDate" Parameter="lastDate" Type="System.DateTime" DbType="Date" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getClaimantUnusedCreditTotal" Method="getClaimantUnusedCreditTotal">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UsedCreditTotal" Parameter="usedCreditTotal" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getInvoiceTotal" Method="getInvoiceTotal">
+    <Parameter Name="InvoiceID" Parameter="invoiceID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InvoiceTotal" Parameter="invoiceTotal" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getClaimantUncancelledCredit" Method="getClaimantUncancelledCredit">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="getClaimantUncancelledCreditResult">
+      <Column Name="CreditID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreditAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreditDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreditType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreditComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreditCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getUnCancelledInvoices" Method="getUnCancelledInvoices">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="getUnCancelledInvoicesResult">
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InvoiceCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getPhysioAppointments" Method="getPhysioAppointments">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="From" Parameter="from" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="To" Parameter="to" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="getPhysioAppointmentsResult">
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AllDay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Label" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhysioID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReminderInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RecurrenceInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CheckIn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CheckOut" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Invoiced" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="FP_PMS.Properties.Settings.ServerDB_16114_fpConnectionString"
+            connectionString="Data Source=s01.winhost.com;Initial Catalog=DB_16114_fp;User ID=DB_16114_fp_user"
+            providerName="System.Data.SqlClient" />
+        <add name="FP_PMS.Properties.Settings.ClientDB_16114_fpConnectionString"
+            connectionString="Data Source=|DataDirectory|\DB_16114_fp.sdf;Max Database Size=2047"
+            providerName="Microsoft.SqlServerCe.Client.3.5" />
+        <add name="FP_PMS.Properties.Settings.DB_16114_fpConnectionString"
+            connectionString="Data Source=s01.winhost.com;Initial Catalog=DB_16114_fp;User ID=DB_16114_fp_user;Password=jianren123"
+            providerName="System.Data.SqlClient" />
+        <add name="FP_PMS.Properties.Settings.FP_OLD_MIGRATION_DEV_DBConnectionString"
+            connectionString="Data Source=YINANMA-PC;Initial Catalog=FP_OLD_MIGRATION_DEV_DB;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+</configuration>

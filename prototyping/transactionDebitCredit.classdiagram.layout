@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="transactionDebitCredit">
+  <logicalClassDesignerModelMoniker Id="a4495719-953a-488f-b8d4-0f9c91b46863" />
+  <nestedChildShapes>
+    <classShape Id="e5af9ae6-feab-49d5-9ef4-0d432d69911c" absoluteBounds="2, 2, 2.5, 1.7031249602635699" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="7117d962-9c0e-4940-bd14-a9da1582b704" LastKnownName="debitCreditTransaction" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="708915f3-5b0b-4a1d-b2c4-bfc399c0b693" absoluteBounds="2.015, 2.39, 2.4699999999999998, 1.0019530927141507" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="951acca9-4c4a-4027-8819-ef183f4a8737" absoluteBounds="2.015, 3.4019530927141508, 2.4699999999999998, 0.20117186754941963" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

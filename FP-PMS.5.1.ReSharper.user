@@ -1,0 +1,365 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/f:Program.cs" caret="314" fromTop="14" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Auth/f:IAuth.cs" caret="220" fromTop="12" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Auth/f:authPresenter.cs" caret="266" fromTop="13" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Auth/f:authForm.Designer.cs" caret="0" fromTop="0" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:staticProperties.cs" caret="458" fromTop="13" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:exceptionMessages.cs" caret="637" fromTop="24" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/f:Main.cs" caret="196" fromTop="8" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Auth/f:authController.cs" caret="1416" fromTop="39" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Auth/f:authForm.cs" caret="1008" fromTop="36" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:staticClasses.cs" caret="474" fromTop="19" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/f:app.config" caret="828" fromTop="12" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.Designer.cs" caret="22263" fromTop="0" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2214" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="21" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="17" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="21" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="29" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="11" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="27" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="19" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="20" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="350" fromTop="12" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="11" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2348" fromTop="18" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1916" fromTop="15" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1916" fromTop="23" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1916" fromTop="23" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1916" fromTop="17" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1797" fromTop="26" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1797" fromTop="33" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1784" fromTop="15" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1797" fromTop="30" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:staticClasses.cs" caret="143" fromTop="36" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:staticClasses.cs" caret="143" fromTop="7" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:staticClasses.cs" caret="169" fromTop="8" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Ex/f:staticClasses.cs" caret="474" fromTop="19" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1722" fromTop="12" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1916" fromTop="11" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1082" fromTop="17" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="847" fromTop="10" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="536" fromTop="13" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="1342" fromTop="17" />
+      <File id="0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1/d:Invoice/f:blankInvoice.cs" caret="2351" fromTop="16" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="private" priority="21" />
+      <Item value="public" priority="18" />
+      <Item value="void" priority="3" />
+      <Item value="return" priority="8" />
+      <Item value="true" priority="1" />
+      <Item value="string" priority="12" />
+      <Item value="ParallelEnumerable`0" priority="7" />
+      <Item value="event" priority="5" />
+      <Item value="IAuth`0" priority="1" />
+      <Item value="EventHandler`0" priority="4" />
+      <Item value="lock" priority="0" />
+      <Item value="exitBtn" priority="0" />
+      <Item value="this" priority="35" />
+      <Item value="Application`0" priority="3" />
+      <Item value="readonly" priority="0" />
+      <Item value="authForm`0" priority="4" />
+      <Item value="authPresenter`0" priority="0" />
+      <Item value="Auth" priority="1" />
+      <Item value="Db" priority="9" />
+      <Item value="tblUser`0" priority="1" />
+      <Item value="DB_16114_fpEntities`0" priority="0" />
+      <Item value="new" priority="13" />
+      <Item value="authForm" priority="0" />
+      <Item value="DialogResult" priority="0" />
+      <Item value="OK" priority="0" />
+      <Item value="Cancel" priority="0" />
+      <Item value="static" priority="7" />
+      <Item value="authController`0" priority="1" />
+      <Item value="_controller" priority="3" />
+      <Item value="authController" priority="0" />
+      <Item value="if" priority="10" />
+      <Item value="_myForm" priority="2" />
+      <Item value="myForm" priority="0" />
+      <Item value="using" priority="5" />
+      <Item value="System" priority="6" />
+      <Item value="Windows" priority="2" />
+      <Item value="Forms" priority="2" />
+      <Item value="decimal" priority="1" />
+      <Item value="dbContextDataContext`0" priority="8" />
+      <Item value="var" priority="7" />
+      <Item value="DialogResult`0" priority="4" />
+      <Item value="newConnection" priority="10" />
+      <Item value="from" priority="8" />
+      <Item value="where" priority="0" />
+      <Item value="p" priority="7" />
+      <Item value="UserId" priority="0" />
+      <Item value="Password" priority="0" />
+      <Item value="select" priority="2" />
+      <Item value="else" priority="1" />
+      <Item value="Message`0" priority="0" />
+      <Item value="MessageBox`0" priority="5" />
+      <Item value="Ex" priority="9" />
+      <Item value="exceptionMessages`0" priority="4" />
+      <Item value="e" priority="6" />
+      <Item value="userTextBox" priority="2" />
+      <Item value="StringTrimming`0" priority="0" />
+      <Item value="passwordTextBox" priority="0" />
+      <Item value="class" priority="1" />
+      <Item value="int" priority="0" />
+      <Item value="try" priority="0" />
+      <Item value="catch" priority="0" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="staticProperties`0" priority="2" />
+      <Item value="EnvironmentVariableTarget`0" priority="0" />
+      <Item value="userObj" priority="4" />
+      <Item value="null" priority="0" />
+      <Item value="List" priority="7" />
+      <Item value="Form`0" priority="1" />
+      <Item value="Invoice" priority="0" />
+      <Item value="blankInvoice`0" priority="0" />
+      <Item value="foo" priority="4" />
+      <Item value="DateTime`0" priority="0" />
+      <Item value="PrintDialog`0" priority="0" />
+      <Item value="printForm1" priority="0" />
+      <Item value="Drawing" priority="0" />
+      <Item value="Printing" priority="0" />
+      <Item value="PrintAction`0" priority="0" />
+      <Item value="patientComboBox" priority="0" />
+      <Item value="tblPatient`0" priority="5" />
+      <Item value="timerClass`0" priority="2" />
+      <Item value="Timer`0" priority="2" />
+      <Item value="Timer" priority="1" />
+      <Item value="ProgressBar`0" priority="0" />
+      <Item value="myTimer" priority="0" />
+      <Item value="myProgressBar" priority="1" />
+      <Item value="ComponentModel" priority="0" />
+      <Item value="BackgroundWorker`0" priority="0" />
+      <Item value="myBackgroundWorker" priority="1" />
+      <Item value="RunWorkerCompletedEventHandler" priority="0" />
+      <Item value="Linq" priority="0" />
+      <Item value="FP_PMS" priority="0" />
+      <Item value="tblItem`0" priority="0" />
+      <Item value="tblPhysio`0" priority="0" />
+      <Item value="myPatients" priority="2" />
+      <Item value="patientTimer" priority="2" />
+      <Item value="patientBackgroundWorker" priority="0" />
+      <Item value="String`0" priority="1" />
+      <Item value="tblClaimant`0" priority="0" />
+      <Item value="myPatientSearchText" priority="3" />
+      <Item value="GetType`0" priority="0" />
+      <Item value="Type`0" priority="0" />
+      <Item value="typeof" priority="0" />
+      <Item value="patientSearchLookUpView" priority="1" />
+      <Item value="patientSearchLookUp" priority="6" />
+      <Item value="RepositoryItemLookUpEdit`0" priority="0" />
+      <Item value="row" priority="3" />
+      <Item value="sender" priority="2" />
+      <Item value="SearchLookUpEdit`0" priority="0" />
+      <Item value="m" priority="0" />
+      <Item value="o" priority="1" />
+      <Item value="Patient" priority="0" />
+      <Item value="Base64FormattingOptions`0" priority="2" />
+      <Item value="float" priority="0" />
+      <Item value="foreach" priority="0" />
+      <Item value="in" priority="0" />
+      <Item value="Console`0" priority="0" />
+      <Item value="x" priority="0" />
+      <Item value="c" priority="1" />
+      <Item value="levenshteinDistance`0" priority="1" />
+      <Item value="d" priority="2" />
+      <Item value="DataGridParentRowsLabelStyle`0" priority="0" />
+      <Item value="dateEdit1" priority="1" />
+      <Item value="IComparer" priority="0" />
+      <Item value="sourceName" priority="0" />
+      <Item value="compareNames`0" priority="0" />
+      <Item value="components" priority="0" />
+      <Item value="tblPatientStat`0" priority="0" />
+      <Item value="itemComboBox" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="ApplicationExit" priority="0" />
+      <Item value="Exit`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FP_PMS.Auth.authForm">
+      <Item value="DialogResult" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.DialogResult">
+      <Item value="OK" priority="1" />
+      <Item value="Retry" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FP_PMS.Auth.authController">
+      <Item value="newSignIn`0" priority="0" />
+      <Item value="UserId" priority="0" />
+      <Item value="Password" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FP_PMS.Db.dbContextDataContext">
+      <Item value="tblUsers" priority="1" />
+      <Item value="tblPatients" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FP_PMS.Db.tblUser">
+      <Item value="UserID" priority="0" />
+      <Item value="Password" priority="0" />
+      <Item value="UserLevel" priority="0" />
+      <Item value="FirstNames" priority="0" />
+      <Item value="LastName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IQueryable`1">
+      <Item value="Any`1" priority="0" />
+      <Item value="FirstOrDefault`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FP_PMS.Ex.exceptionMessages">
+      <Item value="authFailedException`0" priority="0" />
+      <Item value="dbConnectionFailedException`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DialogResult">
+      <Item value="Cancel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.FormClosingEventArgs">
+      <Item value="Cancel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Focus`0" priority="1" />
+      <Item value="Text" priority="1" />
+      <Item value="SelectAll`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Trim`0" priority="1" />
+      <Item value="Contains`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.MaskedTextBox">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FP_PMS.Ex.staticProperties">
+      <Item value="userLevel" priority="1" />
+      <Item value="userName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FP_PMS.Invoice.blankInvoice">
+      <Item value="invoiceLinesGridControl" priority="0" />
+      <Item value="invoiceLinesView" priority="1" />
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="dateEdit1" priority="0" />
+      <Item value="printForm1" priority="1" />
+      <Item value="patientComboBox" priority="3" />
+      <Item value="patientTimer" priority="1" />
+      <Item value="patientLookUp" priority="5" />
+      <Item value="myProgressBar" priority="0" />
+      <Item value="gridLookUpEdit1View" priority="0" />
+      <Item value="patientSearchLookUp" priority="5" />
+      <Item value="patientIFB" priority="5" />
+      <Item value="patientIFBGetQueryable`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraGrid.Views.Grid.GridView">
+      <Item value="AddNewRow`0" priority="0" />
+      <Item value="DataSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.DateEdit">
+      <Item value="DateTime" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Today" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm">
+      <Item value="PrintAction" priority="0" />
+      <Item value="Print`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Printing.PrintAction">
+      <Item value="PrintToPreview" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.ComboBoxEdit">
+      <Item value="DataBindings" priority="2" />
+      <Item value="Properties" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="DataSource" priority="0" />
+      <Item value="ValueMember" priority="0" />
+      <Item value="DisplayMember" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Timer">
+      <Item value="Tick" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.BackgroundWorker">
+      <Item value="DoWork" priority="0" />
+      <Item value="RunWorkerCompleted" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.GridLookUpEdit">
+      <Item value="Properties" priority="4" />
+      <Item value="EditValue" priority="1" />
+      <Item value="Text" priority="1" />
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit">
+      <Item value="DataSource" priority="1" />
+      <Item value="TextEditStyle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FP_PMS.Db.tblPatient">
+      <Item value="FirstNames" priority="9" />
+      <Item value="LastName" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.SearchLookUpEdit">
+      <Item value="Properties" priority="2" />
+      <Item value="GetSelectedDataRow`0" priority="1" />
+      <Item value="Text" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit">
+      <Item value="DataSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.Data.Linq.LinqInstantFeedbackSource">
+      <Item value="GetQueryable" priority="1" />
+      <Item value="DismissQueryable" priority="0" />
+      <Item value="DesignTimeElementType" priority="0" />
+      <Item value="KeyExpression" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.Data.Linq.GetQueryableEventArgs">
+      <Item value="QueryableSource" priority="2" />
+      <Item value="Tag" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs">
+      <Item value="DisplayText" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.Table`1">
+      <Item value="Take`1" priority="0" />
+      <Item value="Context" priority="0" />
+      <Item value="Contains`1" priority="0" />
+      <Item value="Where`1" priority="0" />
+      <Item value="OrderBy`2" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="Write`0" priority="0" />
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FP_PMS.Ex.levenshteinDistance">
+      <Item value="ctx" priority="0" />
+      <Item value="compute`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

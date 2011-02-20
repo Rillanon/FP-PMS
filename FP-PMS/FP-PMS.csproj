@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C2F1E36-F4E7-4CF2-AA2E-33EAC3F47DD1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FP_PMS</RootNamespace>
+    <AssemblyName>FP-PMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Yinan Ma\Desktop\FP-PMS11\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1E68FFE617FD832CB8FA36389851093F20CCC430</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>FP-PMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.2.Linq, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\Credit\addCreditViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Credit\addCreditViewForm.Designer.cs">
+      <DependentUpon>addCreditViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Credit\cancelCreditViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Credit\cancelCreditViewForm.Designer.cs">
+      <DependentUpon>cancelCreditViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Invoice\addItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\addItemForm.Designer.cs">
+      <DependentUpon>addItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Invoice\cancellInvoiceViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\cancellInvoiceViewForm.Designer.cs">
+      <DependentUpon>cancellInvoiceViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Invoice\claimantSelectViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\claimantSelectViewForm.Designer.cs">
+      <DependentUpon>claimantSelectViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Invoice\invoiceController.cs" />
+    <Compile Include="Accounting\Invoice\invoiceViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\invoiceViewForm.Designer.cs">
+      <DependentUpon>invoiceViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Receipt\addPaymentAmountViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Receipt\addPaymentAmountViewForm.Designer.cs">
+      <DependentUpon>addPaymentAmountViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Receipt\multiReceiptViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Receipt\multiReceiptViewForm.Designer.cs">
+      <DependentUpon>multiReceiptViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Receipt\receiptViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Receipt\receiptViewForm.Designer.cs">
+      <DependentUpon>receiptViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\itemViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\itemViewForm.Designer.cs">
+      <DependentUpon>itemViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\physioRateViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\physioRateViewForm.Designer.cs">
+      <DependentUpon>physioRateViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\physioViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\physioViewForm.Designer.cs">
+      <DependentUpon>physioViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\postCodeViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\postCodeViewForm.Designer.cs">
+      <DependentUpon>postCodeViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\userViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\userViewForm.Designer.cs">
+      <DependentUpon>userViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\authController.cs" />
+    <Compile Include="Auth\authForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth\authForm.Designer.cs">
+      <DependentUpon>authForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claimant\claimantController.cs" />
+    <Compile Include="Claimant\claimantInvoiceViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claimant\claimantInvoiceViewForm.Designer.cs">
+      <DependentUpon>claimantInvoiceViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claimant\claimantViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claimant\claimantViewForm.Designer.cs">
+      <DependentUpon>claimantViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Anon.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Anon.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Db\db.cs">
+      <DependentUpon>db.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Db\db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Db\dbContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Ex\compareCollection.cs" />
+    <Compile Include="Ex\entityClone.cs" />
+    <Compile Include="Ex\entityCollectionClone.cs" />
+    <Compile Include="Ex\entityRemove.cs" />
+    <Compile Include="Ex\entityUpdate.cs" />
+    <Compile Include="Ex\exceptionMessages.cs" />
+    <Compile Include="Ex\reportLinqProgress.cs" />
+    <Compile Include="Ex\staticClasses.cs" />
+    <Compile Include="Ex\staticProperties.cs" />
+    <Compile Include="Helper\loadingViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper\loadingViewForm.Designer.cs">
+      <DependentUpon>loadingViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\newPatientViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\newPatientViewForm.Designer.cs">
+      <DependentUpon>newPatientViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\patientInvoiceViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\patientInvoiceViewForm.Designer.cs">
+      <DependentUpon>patientInvoiceViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referral\referralController.cs" />
+    <Compile Include="Referral\referralReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral\referralReportForm.Designer.cs">
+      <DependentUpon>referralReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral\referralSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral\referralSearchForm.Designer.cs">
+      <DependentUpon>referralSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral\referralViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral\referralViewForm.Designer.cs">
+      <DependentUpon>referralViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\invoicePrintReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\invoicePrintReport.Designer.cs">
+      <DependentUpon>invoicePrintReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\dateIntervalDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\dateIntervalDialog.Designer.cs">
+      <DependentUpon>dateIntervalDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\journalReportViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\journalReportViewForm.Designer.cs">
+      <DependentUpon>journalReportViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\newPatientStatsViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\newPatientStatsViewForm.Designer.cs">
+      <DependentUpon>newPatientStatsViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\paymentAuditTrail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\paymentAuditTrail.Designer.cs">
+      <DependentUpon>paymentAuditTrail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\receiptsByPhysioRateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\receiptsByPhysioRateForm.Designer.cs">
+      <DependentUpon>receiptsByPhysioRateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\reportInvoiceTemplate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\reportInvoiceTemplate.Designer.cs">
+      <DependentUpon>reportInvoiceTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\appointmentController.cs" />
+    <Compile Include="Scheduling\appointmentPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointmentPopUp.Designer.cs">
+      <DependentUpon>appointmentPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\appointmentsByPhysioViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointmentsByPhysioViewForm.Designer.cs">
+      <DependentUpon>appointmentsByPhysioViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\appointmentViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointmentViewForm.Designer.cs">
+      <DependentUpon>appointmentViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\appointUnAvailViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointUnAvailViewForm.Designer.cs">
+      <DependentUpon>appointUnAvailViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\physioSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\physioSelectDialog.Designer.cs">
+      <DependentUpon>physioSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\waitingRoomView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\waitingRoomView.Designer.cs">
+      <DependentUpon>waitingRoomView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\level1TemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\level1TemplateForm.Designer.cs">
+      <DependentUpon>level1TemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\level2TemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\level2TemplateForm.Designer.cs">
+      <DependentUpon>level2TemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\level3TemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\level3TemplateForm.Designer.cs">
+      <DependentUpon>level3TemplateForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounting\Credit\addCreditViewForm.resx">
+      <DependentUpon>addCreditViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Credit\cancelCreditViewForm.resx">
+      <DependentUpon>cancelCreditViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\addItemForm.resx">
+      <DependentUpon>addItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\cancellInvoiceViewForm.resx">
+      <DependentUpon>cancellInvoiceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\claimantSelectViewForm.resx">
+      <DependentUpon>claimantSelectViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\invoiceViewForm.resx">
+      <DependentUpon>invoiceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Receipt\addPaymentAmountViewForm.resx">
+      <DependentUpon>addPaymentAmountViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Receipt\multiReceiptViewForm.resx">
+      <DependentUpon>multiReceiptViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Receipt\receiptViewForm.resx">
+      <DependentUpon>receiptViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\itemViewForm.resx">
+      <DependentUpon>itemViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\physioRateViewForm.resx">
+      <DependentUpon>physioRateViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\physioViewForm.resx">
+      <DependentUpon>physioViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\postCodeViewForm.resx">
+      <DependentUpon>postCodeViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\userViewForm.resx">
+      <DependentUpon>userViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth\authForm.resx">
+      <DependentUpon>authForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claimant\claimantInvoiceViewForm.resx">
+      <DependentUpon>claimantInvoiceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claimant\claimantViewForm.resx">
+      <DependentUpon>claimantViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Db\Anon.dbml.layout">
+      <DependentUpon>Anon.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Helper\loadingViewForm.resx">
+      <DependentUpon>loadingViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\newPatientViewForm.resx">
+      <DependentUpon>newPatientViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\patientInvoiceViewForm.resx">
+      <DependentUpon>patientInvoiceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral\referralSearchForm.resx">
+      <DependentUpon>referralSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral\referralViewForm.resx">
+      <DependentUpon>referralViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\invoicePrintReport.resx">
+      <DependentUpon>invoicePrintReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\dateIntervalDialog.resx">
+      <DependentUpon>dateIntervalDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\journalReportViewForm.resx">
+      <DependentUpon>journalReportViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\newPatientStatsViewForm.resx">
+      <DependentUpon>newPatientStatsViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\paymentAuditTrail.resx">
+      <DependentUpon>paymentAuditTrail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\receiptsByPhysioRateForm.resx">
+      <DependentUpon>receiptsByPhysioRateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\reportInvoiceTemplate.resx">
+      <DependentUpon>reportInvoiceTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointmentPopUp.resx">
+      <DependentUpon>appointmentPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointmentsByPhysioViewForm.resx">
+      <DependentUpon>appointmentsByPhysioViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointmentViewForm.resx">
+      <DependentUpon>appointmentViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointUnAvailViewForm.resx">
+      <DependentUpon>appointUnAvailViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\physioSelectDialog.resx">
+      <DependentUpon>physioSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\waitingRoomView.resx">
+      <DependentUpon>waitingRoomView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\level1TemplateForm.resx">
+      <DependentUpon>level1TemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\level2TemplateForm.resx">
+      <DependentUpon>level2TemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\level3TemplateForm.resx">
+      <DependentUpon>level3TemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Db\Anon.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Anon.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Db\db.xsc">
+      <DependentUpon>db.xsd</DependentUpon>
+    </None>
+    <None Include="Db\db.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Db\db.xss">
+      <DependentUpon>db.xsd</DependentUpon>
+    </None>
+    <None Include="Db\dbContext.dbml.layout">
+      <DependentUpon>dbContext.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Db\dbContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FP-PMS_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\FP_PMS.Db.tblInvoice.datasource" />
+    <None Include="Properties\DataSources\FP_PMS.Db.tblPatientStat.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accounting\Invoice\Journal\" />
+    <Folder Include="Printing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

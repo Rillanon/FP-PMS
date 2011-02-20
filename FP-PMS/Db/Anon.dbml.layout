@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.875" name="Anon">
+  <DataContextMoniker Name="/AnonDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6fd5f0f5-7b98-4e52-8a15-1a62249ed417" absoluteBounds="6, 2.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AnonDataContext/AnonWaitingRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0bb2fbba-5956-47c1-b74a-4153b8aff83f" absoluteBounds="6.015, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7532912c-11a3-40b0-ad97-5187e0ed0358" absoluteBounds="8.375, 2.5, 2, 8.1168440755208326">
+      <DataClassMoniker Name="/AnonDataContext/AnonPatient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fb223d1-ca5d-4bbd-aaff-8886c696ced4" absoluteBounds="8.39, 2.96, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05a6c725-ecd7-4c15-a08c-f1f3cf38fd62" absoluteBounds="3.5, 2.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AnonDataContext/AnonClaimantInvoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69bb38d7-19d4-48f6-a028-96a52870c45f" absoluteBounds="3.515, 3.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a47841d9-80cd-4790-811c-41bb286cfa2b" absoluteBounds="3.5, 5.125, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/AnonDataContext/AnonUnPaidInvoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57fe07f9-2f4d-4c39-a236-49717a885a71" absoluteBounds="3.515, 5.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5032c2ce-b708-400f-a205-0e2b90c8214e" absoluteBounds="0.875, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AnonDataContext/AnonUnCancelledInvoices" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9976d954-6ccd-4049-b821-77596ea4bea8" absoluteBounds="0.89, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
