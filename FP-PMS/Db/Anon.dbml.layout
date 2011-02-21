@@ -32,5 +32,11 @@
         <elementListCompartment Id="9976d954-6ccd-4049-b821-77596ea4bea8" absoluteBounds="0.89, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="a04110b4-24be-4fd1-a9b4-c0ee8339ee8b" absoluteBounds="0.75, 8.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/AnonDataContext/AnonPhysioAppointments" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e84b262b-55d9-4719-8aa5-94200ee591b0" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -31,6 +31,11 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.appointmentsByPhysioGridControl = new DevExpress.XtraGrid.GridControl();
             this.appointmentsByPhysioGridLookUpView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rateCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.startCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateTimeRepositoryItem = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.endCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.checkOutCountSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -46,6 +51,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsByPhysioGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsByPhysioGridLookUpView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeRepositoryItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkOutCountSpinEdit.Properties)).BeginInit();
@@ -81,6 +87,8 @@
             this.appointmentsByPhysioGridControl.Location = new System.Drawing.Point(2, 22);
             this.appointmentsByPhysioGridControl.MainView = this.appointmentsByPhysioGridLookUpView;
             this.appointmentsByPhysioGridControl.Name = "appointmentsByPhysioGridControl";
+            this.appointmentsByPhysioGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.dateTimeRepositoryItem});
             this.appointmentsByPhysioGridControl.Size = new System.Drawing.Size(914, 361);
             this.appointmentsByPhysioGridControl.TabIndex = 7;
             this.appointmentsByPhysioGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -88,8 +96,69 @@
             // 
             // appointmentsByPhysioGridLookUpView
             // 
+            this.appointmentsByPhysioGridLookUpView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.nameCol,
+            this.rateCol,
+            this.startCol,
+            this.endCol});
             this.appointmentsByPhysioGridLookUpView.GridControl = this.appointmentsByPhysioGridControl;
             this.appointmentsByPhysioGridLookUpView.Name = "appointmentsByPhysioGridLookUpView";
+            // 
+            // nameCol
+            // 
+            this.nameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameCol.AppearanceCell.Options.UseFont = true;
+            this.nameCol.Caption = "Patient Name";
+            this.nameCol.FieldName = "Name";
+            this.nameCol.Name = "nameCol";
+            this.nameCol.Visible = true;
+            this.nameCol.VisibleIndex = 0;
+            // 
+            // rateCol
+            // 
+            this.rateCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rateCol.AppearanceCell.Options.UseFont = true;
+            this.rateCol.Caption = "Rate";
+            this.rateCol.FieldName = "Rate";
+            this.rateCol.Name = "rateCol";
+            this.rateCol.Visible = true;
+            this.rateCol.VisibleIndex = 1;
+            // 
+            // startCol
+            // 
+            this.startCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startCol.AppearanceCell.Options.UseFont = true;
+            this.startCol.Caption = "Start Date/Time";
+            this.startCol.ColumnEdit = this.dateTimeRepositoryItem;
+            this.startCol.DisplayFormat.FormatString = "d/MMM/yyyy hh:mm tt";
+            this.startCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.startCol.FieldName = "startDate";
+            this.startCol.Name = "startCol";
+            this.startCol.Visible = true;
+            this.startCol.VisibleIndex = 2;
+            // 
+            // dateTimeRepositoryItem
+            // 
+            this.dateTimeRepositoryItem.AutoHeight = false;
+            this.dateTimeRepositoryItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateTimeRepositoryItem.DisplayFormat.FormatString = "d";
+            this.dateTimeRepositoryItem.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateTimeRepositoryItem.Mask.EditMask = "g";
+            this.dateTimeRepositoryItem.Name = "dateTimeRepositoryItem";
+            // 
+            // endCol
+            // 
+            this.endCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endCol.AppearanceCell.Options.UseFont = true;
+            this.endCol.Caption = "End Date/Time";
+            this.endCol.ColumnEdit = this.dateTimeRepositoryItem;
+            this.endCol.DisplayFormat.FormatString = "d/MMM/yyyy hh:mm tt";
+            this.endCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.endCol.FieldName = "endDate";
+            this.endCol.Name = "endCol";
+            this.endCol.Visible = true;
+            this.endCol.VisibleIndex = 3;
             // 
             // groupControl2
             // 
@@ -250,6 +319,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsByPhysioGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsByPhysioGridLookUpView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeRepositoryItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -276,10 +346,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraScheduler.DateNavigator physioAppointmentDateNavigator;
         private DevExpress.XtraEditors.SpinEdit checkOutCountSpinEdit;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SpinEdit checkInCountSpinEdit;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraGrid.Columns.GridColumn nameCol;
+        private DevExpress.XtraGrid.Columns.GridColumn rateCol;
+        private DevExpress.XtraGrid.Columns.GridColumn startCol;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit dateTimeRepositoryItem;
+        private DevExpress.XtraGrid.Columns.GridColumn endCol;
+        private DevExpress.XtraScheduler.DateNavigator physioAppointmentDateNavigator;
     }
 }

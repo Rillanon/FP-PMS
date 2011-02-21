@@ -76,9 +76,18 @@
   <Table Name="" Member="AnonUnCancelledInvoices">
     <Type Name="AnonUnCancelledInvoices">
       <Column Name="InvoiceNo" Type="System.Int32" CanBeNull="false" />
-      <Column Member="InvoiceAmount" Type="System.Decimal" CanBeNull="false" />
-      <Column Member="InvoiceDate" Type="System.DateTime" CanBeNull="false" />
-      <Column Member="InvoiceCancelled" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="InvoiceAmount" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="InvoiceDate" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="InvoiceCancelled" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AnonPhysioAppointments">
+    <Type Name="AnonPhysioAppointments">
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="Physio" Type="System.String" CanBeNull="false" />
+      <Column Name="Rate" Type="System.String" CanBeNull="false" />
+      <Column Name="startDate" Storage="_Start" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="endDate" Storage="_End" Type="System.DateTime" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

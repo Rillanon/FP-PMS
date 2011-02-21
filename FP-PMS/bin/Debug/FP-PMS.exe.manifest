@@ -137,14 +137,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FP-PMS.exe" size="623104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FP-PMS.exe" size="622592">
       <assemblyIdentity name="FP-PMS" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ogaxTSv0FV2rEtu2M3sIy0MHK2s=</dsig:DigestValue>
+        <dsig:DigestValue>GC8izJPPf8lsNuhkZydZS1EtXts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

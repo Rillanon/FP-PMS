@@ -94,6 +94,14 @@ namespace FP_PMS.Db
 				return this.GetTable<AnonUnCancelledInvoices>();
 			}
 		}
+		
+		public System.Data.Linq.Table<AnonPhysioAppointments> AnonPhysioAppointments
+		{
+			get
+			{
+				return this.GetTable<AnonPhysioAppointments>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
@@ -1252,6 +1260,105 @@ namespace FP_PMS.Db
 				if ((this._InvoiceCancelled != value))
 				{
 					this._InvoiceCancelled = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class AnonPhysioAppointments
+	{
+		
+		private string _Name;
+		
+		private string _Physio;
+		
+		private string _Rate;
+		
+		private System.DateTime _Start;
+		
+		private System.DateTime _End;
+		
+		public AnonPhysioAppointments()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Physio", CanBeNull=false)]
+		public string Physio
+		{
+			get
+			{
+				return this._Physio;
+			}
+			set
+			{
+				if ((this._Physio != value))
+				{
+					this._Physio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rate", CanBeNull=false)]
+		public string Rate
+		{
+			get
+			{
+				return this._Rate;
+			}
+			set
+			{
+				if ((this._Rate != value))
+				{
+					this._Rate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start")]
+		public System.DateTime startDate
+		{
+			get
+			{
+				return this._Start;
+			}
+			set
+			{
+				if ((this._Start != value))
+				{
+					this._Start = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_End")]
+		public System.DateTime endDate
+		{
+			get
+			{
+				return this._End;
+			}
+			set
+			{
+				if ((this._End != value))
+				{
+					this._End = value;
 				}
 			}
 		}

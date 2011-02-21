@@ -8933,222 +8933,39 @@ namespace FP_PMS.Db
 	public partial class getPhysioAppointmentsResult
 	{
 		
-		private int _UniqueID;
-		
-		private System.Nullable<int> _Type;
-		
-		private System.Nullable<System.DateTime> _StartDate;
-		
-		private System.Nullable<System.DateTime> _EndDate;
-		
-		private System.Nullable<bool> _AllDay;
-		
-		private string _Subject;
-		
-		private string _Location;
-		
-		private string _Description;
-		
-		private System.Nullable<int> _Status;
-		
-		private System.Nullable<int> _Label;
+		private string _Name;
 		
 		private string _PhysioID;
 		
-		private string _ReminderInfo;
+		private string _Rate;
 		
-		private string _RecurrenceInfo;
+		private System.Nullable<System.DateTime> _startDate;
 		
-		private System.Nullable<int> _PatientID;
-		
-		private string _RateID;
-		
-		private System.Nullable<bool> _CheckIn;
-		
-		private System.Nullable<bool> _CheckOut;
-		
-		private System.Nullable<bool> _Invoiced;
-		
-		private System.Nullable<int> _ClaimantID;
-		
-		private System.Nullable<int> _ResourceID;
+		private System.Nullable<System.DateTime> _endDate;
 		
 		public getPhysioAppointmentsResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniqueID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int UniqueID
+		public string Name
 		{
 			get
 			{
-				return this._UniqueID;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._UniqueID != value))
+				if ((this._Name != value))
 				{
-					this._UniqueID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public System.Nullable<int> Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="SmallDateTime")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<System.DateTime> StartDate
-		{
-			get
-			{
-				return this._StartDate;
-			}
-			set
-			{
-				if ((this._StartDate != value))
-				{
-					this._StartDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="SmallDateTime")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<System.DateTime> EndDate
-		{
-			get
-			{
-				return this._EndDate;
-			}
-			set
-			{
-				if ((this._EndDate != value))
-				{
-					this._EndDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllDay", DbType="Bit")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-		public System.Nullable<bool> AllDay
-		{
-			get
-			{
-				return this._AllDay;
-			}
-			set
-			{
-				if ((this._AllDay != value))
-				{
-					this._AllDay = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-		public string Subject
-		{
-			get
-			{
-				return this._Subject;
-			}
-			set
-			{
-				if ((this._Subject != value))
-				{
-					this._Subject = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this._Description = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Label", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-		public System.Nullable<int> Label
-		{
-			get
-			{
-				return this._Label;
-			}
-			set
-			{
-				if ((this._Label != value))
-				{
-					this._Label = value;
+					this._Name = value;
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhysioID", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string PhysioID
 		{
 			get
@@ -9164,155 +8981,53 @@ namespace FP_PMS.Db
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReminderInfo", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-		public string ReminderInfo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rate", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public string Rate
 		{
 			get
 			{
-				return this._ReminderInfo;
+				return this._Rate;
 			}
 			set
 			{
-				if ((this._ReminderInfo != value))
+				if ((this._Rate != value))
 				{
-					this._ReminderInfo = value;
+					this._Rate = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecurrenceInfo", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13)]
-		public string RecurrenceInfo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startDate", DbType="SmallDateTime")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<System.DateTime> startDate
 		{
 			get
 			{
-				return this._RecurrenceInfo;
+				return this._startDate;
 			}
 			set
 			{
-				if ((this._RecurrenceInfo != value))
+				if ((this._startDate != value))
 				{
-					this._RecurrenceInfo = value;
+					this._startDate = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PatientID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-		public System.Nullable<int> PatientID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endDate", DbType="SmallDateTime")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<System.DateTime> endDate
 		{
 			get
 			{
-				return this._PatientID;
+				return this._endDate;
 			}
 			set
 			{
-				if ((this._PatientID != value))
+				if ((this._endDate != value))
 				{
-					this._PatientID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RateID", DbType="NVarChar(MAX)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-		public string RateID
-		{
-			get
-			{
-				return this._RateID;
-			}
-			set
-			{
-				if ((this._RateID != value))
-				{
-					this._RateID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckIn", DbType="Bit")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-		public System.Nullable<bool> CheckIn
-		{
-			get
-			{
-				return this._CheckIn;
-			}
-			set
-			{
-				if ((this._CheckIn != value))
-				{
-					this._CheckIn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckOut", DbType="Bit")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=17)]
-		public System.Nullable<bool> CheckOut
-		{
-			get
-			{
-				return this._CheckOut;
-			}
-			set
-			{
-				if ((this._CheckOut != value))
-				{
-					this._CheckOut = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Invoiced", DbType="Bit")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=18)]
-		public System.Nullable<bool> Invoiced
-		{
-			get
-			{
-				return this._Invoiced;
-			}
-			set
-			{
-				if ((this._Invoiced != value))
-				{
-					this._Invoiced = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClaimantID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=19)]
-		public System.Nullable<int> ClaimantID
-		{
-			get
-			{
-				return this._ClaimantID;
-			}
-			set
-			{
-				if ((this._ClaimantID != value))
-				{
-					this._ClaimantID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=20)]
-		public System.Nullable<int> ResourceID
-		{
-			get
-			{
-				return this._ResourceID;
-			}
-			set
-			{
-				if ((this._ResourceID != value))
-				{
-					this._ResourceID = value;
+					this._endDate = value;
 				}
 			}
 		}

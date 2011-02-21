@@ -18,10 +18,10 @@ namespace FP_PMS.Scheduling
         DateTime _startDate;
         DateTime _endDate;
         tblPhysio _myPhysio;
-        BindingList<PatientAppointment> _myAppointments = new BindingList<PatientAppointment> { };
+        BindingList<AnonPhysioAppointments> _myAppointments = new BindingList<AnonPhysioAppointments> { };
 
         tblPhysio myPhysio { get { return _myPhysio; } set { _myPhysio = value; } }
-        BindingList<PatientAppointment> myAppointments { get { return _myAppointments; } set { _myAppointments = value; } }
+        BindingList<AnonPhysioAppointments> myAppointments { get { return _myAppointments; } set { _myAppointments = value; } }
         DateTime startDate { get { return _startDate; } set { _startDate = value; } }
         DateTime endDate { get { return _endDate; } set { _endDate = value; } }
 
@@ -29,19 +29,21 @@ namespace FP_PMS.Scheduling
         {
             var newConnection = new dbContextDataContext();
             var apps = (from a in newConnection.getPhysioAppointments(myPhysio.PhysioID, startDate, endDate)
-                        select new PatientAppointment
+                        select new AnonPhysioAppointments
                         {
-                            UniqueID = a.UniqueID,
-                            Status = a.Status,
-                            RateID = a.RateID
-                        }).OrderBy(b => b.StartDate).ToList();
+                            Name = a.Name,
+                            startDate = a.startDate.GetValueOrDefault(DateTime.MinValue),
+                            endDate = a.endDate.GetValueOrDefault(DateTime.MinValue),
+                            Rate = a.Rate,
+                            Physio = a.PhysioID
+                        }).ToList();
+                        
             foreach (var a in apps)
             {
                 myAppointments.Add(a);
             }
             appointmentsByPhysioGridControl.DataSource = myAppointments;
         }
-
 
 
         public appointmentsByPhysioViewForm(DateTime Start, DateTime End, tblPhysio MyPhysio)
@@ -56,8 +58,6 @@ namespace FP_PMS.Scheduling
         private void myAppointments_ListChanged(object sender, ListChangedEventArgs e)
         {
             appointmentsCountSpinEdit.Value = myAppointments.Count();
-            checkInCountSpinEdit.Value = myAppointments.Count(a => a.CheckIn == true);
-            checkOutCountSpinEdit.Value = myAppointments.Count(a => a.CheckOut == true);
         }
 
         private void appointmentsByPhysioViewForm_Load(object sender, EventArgs e)

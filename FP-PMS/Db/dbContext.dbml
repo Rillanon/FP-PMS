@@ -482,26 +482,11 @@
     <Parameter Name="From" Parameter="from" Type="System.DateTime" DbType="SmallDateTime" />
     <Parameter Name="To" Parameter="to" Type="System.DateTime" DbType="SmallDateTime" />
     <ElementType Name="getPhysioAppointmentsResult">
-      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="AllDay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Subject" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Label" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="PhysioID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ReminderInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="RecurrenceInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RateID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CheckIn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CheckOut" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Invoiced" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="startDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="endDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
