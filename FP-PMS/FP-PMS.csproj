@@ -236,6 +236,9 @@
     <Compile Include="Helper\loadingViewForm.Designer.cs">
       <DependentUpon>loadingViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IPrinting.cs" />
+    <Compile Include="Interfaces\IReceipt.cs" />
+    <Compile Include="Interfaces\IReport.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

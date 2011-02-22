@@ -13,7 +13,7 @@ using FP_PMS.Ex;
 
 namespace FP_PMS.Scheduling
 {
-    public partial class appointmentsByPhysioViewForm : FP_PMS.Templates.level2TemplateForm
+    public partial class appointmentsByPhysioViewForm : FP_PMS.Templates.level2TemplateForm, Interfaces.IPrinting
     {
         DateTime _startDate;
         DateTime _endDate;
@@ -24,6 +24,11 @@ namespace FP_PMS.Scheduling
         BindingList<AnonPhysioAppointments> myAppointments { get { return _myAppointments; } set { _myAppointments = value; } }
         DateTime startDate { get { return _startDate; } set { _startDate = value; } }
         DateTime endDate { get { return _endDate; } set { _endDate = value; } }
+
+        public void print()
+        {
+            this.appointmentsByPhysioGridControl.ShowPrintPreview();
+        }
 
         void pullData()
         {

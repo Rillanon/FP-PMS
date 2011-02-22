@@ -20,10 +20,16 @@ using FP_PMS.Ex;
 
 namespace FP_PMS.Scheduling
 {
-    public partial class appointmentViewForm : FP_PMS.Templates.level1TemplateForm
+    public partial class appointmentViewForm : FP_PMS.Templates.level1TemplateForm, Interfaces.IPrinting
     {
         TimeInterval lastFetchedInterval = new TimeInterval();
         TimeInterval mySelectedInterval = new TimeInterval();
+
+        public void print()
+        {
+            this.appointmentSchedulerControl.ShowPrintOptionsForm();
+        }
+
 
         public appointmentViewForm()
         {

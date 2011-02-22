@@ -263,7 +263,6 @@ namespace FP_PMS.Accounting.Receipt
                     }
                     else
                     {
-                        MessageBox.Show(unusedCredit.Value.ToString());
                         remaining = unusedCredit.GetValueOrDefault(0.0M);
                         var newAmountForm = new addPaymentAmountViewForm(remaining);
                         if (IsMulti == true)

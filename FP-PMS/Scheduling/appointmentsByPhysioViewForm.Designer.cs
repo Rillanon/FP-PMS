@@ -338,7 +338,6 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl appointmentsByPhysioGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView appointmentsByPhysioGridLookUpView;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SpinEdit appointmentsCountSpinEdit;
@@ -356,5 +355,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit dateTimeRepositoryItem;
         private DevExpress.XtraGrid.Columns.GridColumn endCol;
         private DevExpress.XtraScheduler.DateNavigator physioAppointmentDateNavigator;
+        public DevExpress.XtraGrid.GridControl appointmentsByPhysioGridControl;
     }
 }

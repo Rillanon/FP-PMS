@@ -8,6 +8,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraPrintingLinks;
+using DevExpress.XtraGrid;
 using FP_PMS.Db;
 using FP_PMS.Auth;
 using FP_PMS.Accounting.Invoice;
@@ -327,14 +330,24 @@ namespace FP_PMS
                 if (newDateInterval.DialogResult == DialogResult.OK)
                 {
                     var foo = new Scheduling.appointmentsByPhysioViewForm(newDateInterval.startDate, newDateInterval.endDate, physioChoose.myPhysio);
-
-                    foo.ShowDialog();
-                    foo.Dispose();
+                    foo.MdiParent = this;
+                    foo.Show();
+                    //foo.Dispose();
                 }
                 newDateInterval.Dispose();
             }
             physioChoose.Dispose();
 
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm is Interfaces.IPrinting)
+            {
+                var printable = currentForm as Interfaces.IPrinting;
+                printable.print();
+            }
         }
     }
 }
