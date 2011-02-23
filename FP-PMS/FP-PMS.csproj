@@ -216,6 +216,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Db\dbContext.cs">
+      <DependentUpon>dbContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Db\dbContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,6 +239,7 @@
     <Compile Include="Helper\loadingViewForm.Designer.cs">
       <DependentUpon>loadingViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IInvoice.cs" />
     <Compile Include="Interfaces\IPrinting.cs" />
     <Compile Include="Interfaces\IReceipt.cs" />
     <Compile Include="Interfaces\IReport.cs" />
@@ -277,6 +281,12 @@
     </Compile>
     <Compile Include="Referral\referralViewForm.Designer.cs">
       <DependentUpon>referralViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\agedTrailBalanceViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\agedTrailBalanceViewForm.Designer.cs">
+      <DependentUpon>agedTrailBalanceViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\invoicePrintReport.cs">
       <SubType>Component</SubType>
@@ -443,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Referral\referralViewForm.resx">
       <DependentUpon>referralViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\agedTrailBalanceViewForm.resx">
+      <DependentUpon>agedTrailBalanceViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\invoicePrintReport.resx">
       <DependentUpon>invoicePrintReport.cs</DependentUpon>

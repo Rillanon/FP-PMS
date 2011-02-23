@@ -27,6 +27,11 @@ namespace FP_PMS.Scheduling
 
         public void print()
         {
+            this.appointmentSchedulerControl.Print();
+        }
+
+        public void printPreview()
+        {
             this.appointmentSchedulerControl.ShowPrintOptionsForm();
         }
 

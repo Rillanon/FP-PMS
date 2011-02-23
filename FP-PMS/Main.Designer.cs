@@ -35,7 +35,6 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPatientDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blankInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +69,9 @@
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ratesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.previewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.directToPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mainFormMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +96,7 @@
             // 
             this.mainMenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainToolStripMenuItem,
+            this.toolStripSeparator1,
             this.printToolStripMenuItem,
             this.logOutToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -109,6 +112,9 @@
             // 
             // printToolStripMenuItem
             // 
+            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.previewToolStripMenuItem,
+            this.directToPrinterToolStripMenuItem});
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
@@ -131,18 +137,11 @@
             // patientsToolStripMenuItem
             // 
             this.patientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewInvoicesToolStripMenuItem,
             this.viewPatientDetailsToolStripMenuItem});
             this.patientsToolStripMenuItem.Name = "patientsToolStripMenuItem";
             this.patientsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.patientsToolStripMenuItem.Text = "Patients";
             this.patientsToolStripMenuItem.Click += new System.EventHandler(this.patientsToolStripMenuItem_Click);
-            // 
-            // viewInvoicesToolStripMenuItem
-            // 
-            this.viewInvoicesToolStripMenuItem.Name = "viewInvoicesToolStripMenuItem";
-            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.viewInvoicesToolStripMenuItem.Text = "View Invoices";
             // 
             // viewPatientDetailsToolStripMenuItem
             // 
@@ -406,6 +405,25 @@
             this.mainFormStatusStrip.TabIndex = 2;
             this.mainFormStatusStrip.Text = "statusStrip1";
             // 
+            // previewToolStripMenuItem
+            // 
+            this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
+            this.previewToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.previewToolStripMenuItem.Text = "Preview";
+            this.previewToolStripMenuItem.Click += new System.EventHandler(this.previewToolStripMenuItem_Click);
+            // 
+            // directToPrinterToolStripMenuItem
+            // 
+            this.directToPrinterToolStripMenuItem.Name = "directToPrinterToolStripMenuItem";
+            this.directToPrinterToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.directToPrinterToolStripMenuItem.Text = "Direct to Printer";
+            this.directToPrinterToolStripMenuItem.Click += new System.EventHandler(this.directToPrinterToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,7 +456,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem claimantsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPatientDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blankInvoiceToolStripMenuItem;
@@ -472,6 +489,9 @@
         private System.Windows.Forms.ToolStripMenuItem cancellationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelReceiptsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelInvoicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem previewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem directToPrinterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 
     }
 }

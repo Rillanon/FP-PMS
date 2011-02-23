@@ -27,6 +27,11 @@ namespace FP_PMS.Scheduling
 
         public void print()
         {
+            this.appointmentsByPhysioGridControl.Print();
+        }
+
+        public void printPreview()
+        {
             this.appointmentsByPhysioGridControl.ShowPrintPreview();
         }
 

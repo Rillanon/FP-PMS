@@ -14,5 +14,6 @@ namespace FP_PMS.Interfaces
     interface IPrinting
     {
         void print();
+        void printPreview();
     }
 }

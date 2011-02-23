@@ -342,6 +342,21 @@ namespace FP_PMS
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void previewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm is Interfaces.IPrinting)
+            {
+                var printable = currentForm as Interfaces.IPrinting;
+                printable.printPreview();
+            }
+        }
+
+        private void directToPrinterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Form currentForm = this.ActiveMdiChild;
             if (currentForm is Interfaces.IPrinting)
             {
