@@ -9,10 +9,8 @@ namespace FP_PMS.Interfaces
     interface IReport: IPrinting
     {
         DateTime startDate { get; set; }
-        DateTime enddate { get; set; }
+        DateTime endDate { get; set; }
 
-        BindingList<Object> reportDataList { get; set; }
-        
         void fillData();
         void calculateSummaries();
         void updateView();

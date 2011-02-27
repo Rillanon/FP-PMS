@@ -51,3 +51,4 @@ C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\De
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.pdb
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Scheduling.appointmentsByPhysioViewForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Scheduling.physioSelectDialog.resources
+C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Report.agedTrailBalanceViewForm.resources

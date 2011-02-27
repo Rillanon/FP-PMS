@@ -364,5 +364,32 @@ namespace FP_PMS
                 printable.print();
             }
         }
+
+        private void agedBalanceTrailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var claimantChoose = new Accounting.Invoice.claimantSelectViewForm();
+            claimantChoose.ShowDialog();
+            if (claimantChoose.DialogResult == DialogResult.OK)
+            {
+                var physioChoose = new Scheduling.physioSelectDialog();
+                physioChoose.ShowDialog();
+                if (physioChoose.DialogResult == DialogResult.OK)
+                {
+                    var newDateInterval = new Report.dateIntervalDialog();
+                    newDateInterval.ShowDialog();
+
+                    if (newDateInterval.DialogResult == DialogResult.OK)
+                    {
+                        var foo = new Report.agedTrailBalanceViewForm(claimantChoose.myClaimant, physioChoose.myPhysio, newDateInterval.startDate, newDateInterval.endDate);
+                        foo.MdiParent = this;
+                        foo.Show();
+                        //foo.Dispose();
+                    }
+                    newDateInterval.Dispose();
+                }
+                physioChoose.Dispose();
+            }
+            claimantChoose.Dispose();
+        }
     }
 }

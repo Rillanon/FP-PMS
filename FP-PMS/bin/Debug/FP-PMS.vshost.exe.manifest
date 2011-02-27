@@ -83,6 +83,11 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="DevExpress.XtraCharts.v10.2.UI" version="10.2.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="DevExpress.XtraEditors.v10.2" version="10.2.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
@@ -137,14 +142,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FP-PMS.exe" size="624640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FP-PMS.exe" size="632832">
       <assemblyIdentity name="FP-PMS" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>uCk8T44ntbEZ8CJgPrKd/XRv6co=</dsig:DigestValue>
+        <dsig:DigestValue>d3QtqyDK6b0t2fAseDXcRzDjgzA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -70,6 +70,7 @@
     <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.2.UI, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -288,6 +289,12 @@
     <Compile Include="Report\agedTrailBalanceViewForm.Designer.cs">
       <DependentUpon>agedTrailBalanceViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\customInvoiceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\customInvoiceReport.Designer.cs">
+      <DependentUpon>customInvoiceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\invoicePrintReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -456,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\agedTrailBalanceViewForm.resx">
       <DependentUpon>agedTrailBalanceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\customInvoiceReport.resx">
+      <DependentUpon>customInvoiceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\invoicePrintReport.resx">
       <DependentUpon>invoicePrintReport.cs</DependentUpon>

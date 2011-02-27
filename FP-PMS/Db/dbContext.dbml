@@ -489,4 +489,22 @@
       <Column Name="endDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.getAgedTrailBalance" Method="getAgedTrailBalance">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PhysioID" Parameter="physioID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="getAgedTrailBalanceResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Physio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Terms" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Remaining" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Claimant" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

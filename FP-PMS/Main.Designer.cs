@@ -31,7 +31,10 @@
             this.mainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.directToPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,9 +72,7 @@
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ratesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.previewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.directToPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.agedBalanceTrailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +111,11 @@
             this.mainToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mainToolStripMenuItem.Text = "Main";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -119,6 +125,20 @@
             this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
+            // previewToolStripMenuItem
+            // 
+            this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
+            this.previewToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.previewToolStripMenuItem.Text = "Preview";
+            this.previewToolStripMenuItem.Click += new System.EventHandler(this.previewToolStripMenuItem_Click);
+            // 
+            // directToPrinterToolStripMenuItem
+            // 
+            this.directToPrinterToolStripMenuItem.Name = "directToPrinterToolStripMenuItem";
+            this.directToPrinterToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.directToPrinterToolStripMenuItem.Text = "Direct to Printer";
+            this.directToPrinterToolStripMenuItem.Click += new System.EventHandler(this.directToPrinterToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -287,7 +307,8 @@
             this.waitingRoomReportToolStripMenuItem,
             this.receiptByPhysioToolStripMenuItem,
             this.newPatientSessionsToolStripMenuItem,
-            this.paymentAuditTrailToolStripMenuItem});
+            this.paymentAuditTrailToolStripMenuItem,
+            this.agedBalanceTrailToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -405,24 +426,12 @@
             this.mainFormStatusStrip.TabIndex = 2;
             this.mainFormStatusStrip.Text = "statusStrip1";
             // 
-            // previewToolStripMenuItem
+            // agedBalanceTrailToolStripMenuItem
             // 
-            this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
-            this.previewToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.previewToolStripMenuItem.Text = "Preview";
-            this.previewToolStripMenuItem.Click += new System.EventHandler(this.previewToolStripMenuItem_Click);
-            // 
-            // directToPrinterToolStripMenuItem
-            // 
-            this.directToPrinterToolStripMenuItem.Name = "directToPrinterToolStripMenuItem";
-            this.directToPrinterToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.directToPrinterToolStripMenuItem.Text = "Direct to Printer";
-            this.directToPrinterToolStripMenuItem.Click += new System.EventHandler(this.directToPrinterToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.agedBalanceTrailToolStripMenuItem.Name = "agedBalanceTrailToolStripMenuItem";
+            this.agedBalanceTrailToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.agedBalanceTrailToolStripMenuItem.Text = "Aged Balance Trail";
+            this.agedBalanceTrailToolStripMenuItem.Click += new System.EventHandler(this.agedBalanceTrailToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -492,6 +501,7 @@
         private System.Windows.Forms.ToolStripMenuItem previewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem directToPrinterToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem agedBalanceTrailToolStripMenuItem;
 
     }
 }

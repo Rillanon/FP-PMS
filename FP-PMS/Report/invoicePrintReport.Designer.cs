@@ -63,6 +63,7 @@ namespace FP_PMS.Report
             this.totalLabel = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -71,7 +72,7 @@ namespace FP_PMS.Report
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.invoiceLineTable});
-            this.Detail.HeightF = 30.20833F;
+            this.Detail.HeightF = 31.25F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -360,6 +361,10 @@ namespace FP_PMS.Report
             this.totalLabel});
             this.GroupFooter1.Name = "GroupFooter1";
             // 
+            // formattingRule1
+            // 
+            this.formattingRule1.Name = "formattingRule1";
+            // 
             // invoicePrintReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -368,6 +373,8 @@ namespace FP_PMS.Report
             this.BottomMargin,
             this.GroupHeader1,
             this.GroupFooter1});
+            this.FormattingRuleSheet.AddRange(new DevExpress.XtraReports.UI.FormattingRule[] {
+            this.formattingRule1});
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 237, 100);
             this.Version = "10.2";
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineTable)).EndInit();
@@ -408,5 +415,6 @@ namespace FP_PMS.Report
         private DevExpress.XtraReports.UI.XRLabel totalLabel;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
+        private DevExpress.XtraReports.UI.FormattingRule formattingRule1;
     }
 }

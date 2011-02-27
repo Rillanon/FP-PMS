@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="FP-PMS.exe.manifest" size="9229">
+    <dependentAssembly dependencyType="install" codebase="FP-PMS.exe.manifest" size="9537">
       <assemblyIdentity name="FP-PMS.exe" version="1.0.0.12" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>N5imHrVbiFxzwFXhptvV8V16Po4=</dsig:DigestValue>
+        <dsig:DigestValue>XdbkdZgGKSSkQ8EyiEqejvIPLqk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

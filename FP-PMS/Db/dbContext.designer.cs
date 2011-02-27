@@ -442,6 +442,13 @@ namespace FP_PMS.Db
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, from, to);
 			return ((ISingleResult<getPhysioAppointmentsResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getAgedTrailBalance")]
+		public ISingleResult<getAgedTrailBalanceResult> getAgedTrailBalance([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ClaimantID", DbType="Int")] System.Nullable<int> claimantID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhysioID", DbType="VarChar(MAX)")] string physioID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EndDate", DbType="DateTime")] System.Nullable<System.DateTime> endDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), claimantID, physioID, startDate, endDate);
+			return ((ISingleResult<getAgedTrailBalanceResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblInvoice")]
@@ -9028,6 +9035,205 @@ namespace FP_PMS.Db
 				if ((this._endDate != value))
 				{
 					this._endDate = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class getAgedTrailBalanceResult
+	{
+		
+		private int _ID;
+		
+		private string _Physio;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private int _Terms;
+		
+		private System.Nullable<int> _Age;
+		
+		private System.Nullable<int> _InvoiceNo;
+		
+		private System.Nullable<decimal> _InvoiceTotal;
+		
+		private System.Nullable<decimal> _Remaining;
+		
+		private string _Status;
+		
+		private string _Claimant;
+		
+		public getAgedTrailBalanceResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Physio", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string Physio
+		{
+			get
+			{
+				return this._Physio;
+			}
+			set
+			{
+				if ((this._Physio != value))
+				{
+					this._Physio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Terms", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public int Terms
+		{
+			get
+			{
+				return this._Terms;
+			}
+			set
+			{
+				if ((this._Terms != value))
+				{
+					this._Terms = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public System.Nullable<int> InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this._InvoiceNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceTotal", DbType="Money")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public System.Nullable<decimal> InvoiceTotal
+		{
+			get
+			{
+				return this._InvoiceTotal;
+			}
+			set
+			{
+				if ((this._InvoiceTotal != value))
+				{
+					this._InvoiceTotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remaining", DbType="Money")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		public System.Nullable<decimal> Remaining
+		{
+			get
+			{
+				return this._Remaining;
+			}
+			set
+			{
+				if ((this._Remaining != value))
+				{
+					this._Remaining = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Claimant", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		public string Claimant
+		{
+			get
+			{
+				return this._Claimant;
+			}
+			set
+			{
+				if ((this._Claimant != value))
+				{
+					this._Claimant = value;
 				}
 			}
 		}
