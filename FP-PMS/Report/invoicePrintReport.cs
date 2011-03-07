@@ -25,6 +25,7 @@ namespace FP_PMS.Report
             
             var Lines = from p in new dbContextDataContext().tblPatientStats
                               where p.InvoiceNo == myInvoice.InvoiceNo
+                              
                               select p;
             this.DataSource = Lines;
 

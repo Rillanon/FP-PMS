@@ -189,10 +189,10 @@
             this.Name = "agedTrailBalanceViewForm";
             this.Text = "Aged Trail Balance";
             this.Load += new System.EventHandler(this.agedTrailBalanceViewForm_Load);
-            this.Controls.SetChildIndex(this.okBtn, 0);
-            this.Controls.SetChildIndex(this.quitBtn, 0);
             this.Controls.SetChildIndex(this.groupControl1, 0);
             this.Controls.SetChildIndex(this.groupControl2, 0);
+            this.Controls.SetChildIndex(this.okBtn, 0);
+            this.Controls.SetChildIndex(this.quitBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.agedTrailBalancePivotGrid)).EndInit();
