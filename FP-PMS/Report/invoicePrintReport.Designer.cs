@@ -28,18 +28,12 @@ namespace FP_PMS.Report
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary5 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.invoiceLineTable = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.patientCell = new DevExpress.XtraReports.UI.XRTableCell();
-            this.itemCell = new DevExpress.XtraReports.UI.XRTableCell();
-            this.feeCell = new DevExpress.XtraReports.UI.XRTableCell();
-            this.gstCell = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.postCodeLabel = new DevExpress.XtraReports.UI.XRLabel();
             this.suburbLabel = new DevExpress.XtraReports.UI.XRLabel();
@@ -58,85 +52,33 @@ namespace FP_PMS.Report
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
-            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.feeTotalLabel = new DevExpress.XtraReports.UI.XRLabel();
-            this.gstTotalLabel = new DevExpress.XtraReports.UI.XRLabel();
+            this.invoiceLinesPageBreak = new DevExpress.XtraReports.UI.FormattingRule();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.totalLabel = new DevExpress.XtraReports.UI.XRLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineTable)).BeginInit();
+            this.gstTotalLabel = new DevExpress.XtraReports.UI.XRLabel();
+            this.feeTotalLabel = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPageBreak1 = new DevExpress.XtraReports.UI.XRPageBreak();
+            this.invoiceLineTable = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.patientCell = new DevExpress.XtraReports.UI.XRTableCell();
+            this.itemCell = new DevExpress.XtraReports.UI.XRTableCell();
+            this.feeCell = new DevExpress.XtraReports.UI.XRTableCell();
+            this.gstCell = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.invoiceLineTable});
+            this.invoiceLineTable,
+            this.xrPageBreak1});
             this.Detail.Dpi = 254F;
-            this.Detail.HeightF = 97.37503F;
-            this.Detail.KeepTogether = true;
+            this.Detail.HeightF = 118.5417F;
+            this.Detail.KeepTogetherWithDetailReports = true;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // invoiceLineTable
-            // 
-            this.invoiceLineTable.BorderColor = System.Drawing.Color.Transparent;
-            this.invoiceLineTable.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dot;
-            this.invoiceLineTable.BorderWidth = 0;
-            this.invoiceLineTable.Dpi = 254F;
-            this.invoiceLineTable.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceLineTable.LocationFloat = new DevExpress.Utils.PointFloat(74.08327F, 0F);
-            this.invoiceLineTable.Name = "invoiceLineTable";
-            this.invoiceLineTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow1});
-            this.invoiceLineTable.SizeF = new System.Drawing.SizeF(1543.579F, 63.5F);
-            this.invoiceLineTable.StylePriority.UseBorderColor = false;
-            this.invoiceLineTable.StylePriority.UseBorderDashStyle = false;
-            this.invoiceLineTable.StylePriority.UseBorderWidth = false;
-            this.invoiceLineTable.StylePriority.UseFont = false;
-            // 
-            // xrTableRow1
-            // 
-            this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.patientCell,
-            this.itemCell,
-            this.feeCell,
-            this.gstCell});
-            this.xrTableRow1.Dpi = 254F;
-            this.xrTableRow1.Name = "xrTableRow1";
-            this.xrTableRow1.Weight = 1D;
-            // 
-            // patientCell
-            // 
-            this.patientCell.Dpi = 254F;
-            this.patientCell.Name = "patientCell";
-            this.patientCell.Text = "[PatientID]";
-            this.patientCell.Weight = 1.4911615948865387D;
-            // 
-            // itemCell
-            // 
-            this.itemCell.Dpi = 254F;
-            this.itemCell.Name = "itemCell";
-            this.itemCell.Text = "[ItemNo]";
-            this.itemCell.Weight = 1.1590544917680152D;
-            // 
-            // feeCell
-            // 
-            this.feeCell.Dpi = 254F;
-            this.feeCell.Name = "feeCell";
-            xrSummary1.FormatString = "{0:$0.00}";
-            this.feeCell.Summary = xrSummary1;
-            this.feeCell.Text = "[Fee]";
-            this.feeCell.Weight = 1.095666615448369D;
-            // 
-            // gstCell
-            // 
-            this.gstCell.Dpi = 254F;
-            this.gstCell.Name = "gstCell";
-            xrSummary2.FormatString = "{0:$0.00}";
-            this.gstCell.Summary = xrSummary2;
-            this.gstCell.Text = "[GST]";
-            this.gstCell.Weight = 1.3119278142544988D;
             // 
             // TopMargin
             // 
@@ -325,8 +267,10 @@ namespace FP_PMS.Report
             this.invoiceDateLabel,
             this.InvoiceNoLabel});
             this.GroupHeader1.Dpi = 254F;
-            this.GroupHeader1.HeightF = 711.9408F;
+            this.GroupHeader1.HeightF = 661.6699F;
+            this.GroupHeader1.KeepTogether = true;
             this.GroupHeader1.Name = "GroupHeader1";
+            this.GroupHeader1.RepeatEveryPage = true;
             // 
             // xrPageInfo1
             // 
@@ -336,26 +280,52 @@ namespace FP_PMS.Report
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(254F, 58.42F);
             // 
-            // formattingRule1
+            // invoiceLinesPageBreak
             // 
-            this.formattingRule1.Condition = "[DataSource.RowCount] > 7";
-            this.formattingRule1.Name = "formattingRule1";
+            this.invoiceLinesPageBreak.Condition = "([DataSource.CurrentRowIndex] % 7 == 0)  And ([DataSource.CurrentRowIndex] != 0)";
             // 
-            // PageFooter
             // 
-            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            // 
+            this.invoiceLinesPageBreak.Formatting.Visible = DevExpress.Utils.DefaultBoolean.True;
+            this.invoiceLinesPageBreak.Name = "invoiceLinesPageBreak";
+            // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.feeTotalLabel,
             this.gstTotalLabel,
             this.totalLabel});
-            this.PageFooter.Dpi = 254F;
-            this.PageFooter.HeightF = 220F;
-            this.PageFooter.Name = "PageFooter";
+            this.GroupFooter1.Dpi = 254F;
+            this.GroupFooter1.HeightF = 220F;
+            this.GroupFooter1.Name = "GroupFooter1";
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.Dpi = 254F;
+            this.totalLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.LocationFloat = new DevExpress.Utils.PointFloat(1489.359F, 151.9999F);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.totalLabel.SizeF = new System.Drawing.SizeF(519.6414F, 58.42F);
+            this.totalLabel.StylePriority.UseFont = false;
+            this.totalLabel.Text = "Total: $";
+            // 
+            // gstTotalLabel
+            // 
+            this.gstTotalLabel.Dpi = 254F;
+            this.gstTotalLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gstTotalLabel.LocationFloat = new DevExpress.Utils.PointFloat(1489.359F, 88.49992F);
+            this.gstTotalLabel.Name = "gstTotalLabel";
+            this.gstTotalLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.gstTotalLabel.SizeF = new System.Drawing.SizeF(519.6414F, 58.42001F);
+            this.gstTotalLabel.StylePriority.UseFont = false;
+            this.gstTotalLabel.Text = "GST: $";
             // 
             // feeTotalLabel
             // 
             this.feeTotalLabel.Dpi = 254F;
             this.feeTotalLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feeTotalLabel.LocationFloat = new DevExpress.Utils.PointFloat(1476.942F, 24.99993F);
+            this.feeTotalLabel.LocationFloat = new DevExpress.Utils.PointFloat(1489.359F, 24.99993F);
             this.feeTotalLabel.Name = "feeTotalLabel";
             this.feeTotalLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.feeTotalLabel.SizeF = new System.Drawing.SizeF(519.6414F, 58.42F);
@@ -364,27 +334,73 @@ namespace FP_PMS.Report
             this.feeTotalLabel.Summary = xrSummary5;
             this.feeTotalLabel.Text = "Fee: $";
             // 
-            // gstTotalLabel
+            // xrPageBreak1
             // 
-            this.gstTotalLabel.Dpi = 254F;
-            this.gstTotalLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gstTotalLabel.LocationFloat = new DevExpress.Utils.PointFloat(1476.942F, 88.49992F);
-            this.gstTotalLabel.Name = "gstTotalLabel";
-            this.gstTotalLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.gstTotalLabel.SizeF = new System.Drawing.SizeF(519.6414F, 58.42001F);
-            this.gstTotalLabel.StylePriority.UseFont = false;
-            this.gstTotalLabel.Text = "GST: $";
+            this.xrPageBreak1.Dpi = 254F;
+            this.xrPageBreak1.FormattingRules.Add(this.invoiceLinesPageBreak);
+            this.xrPageBreak1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrPageBreak1.Name = "xrPageBreak1";
+            this.xrPageBreak1.Visible = false;
             // 
-            // totalLabel
+            // invoiceLineTable
             // 
-            this.totalLabel.Dpi = 254F;
-            this.totalLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.LocationFloat = new DevExpress.Utils.PointFloat(1476.942F, 151.9999F);
-            this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.totalLabel.SizeF = new System.Drawing.SizeF(519.6414F, 58.42F);
-            this.totalLabel.StylePriority.UseFont = false;
-            this.totalLabel.Text = "Total: $";
+            this.invoiceLineTable.BorderColor = System.Drawing.Color.Transparent;
+            this.invoiceLineTable.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dot;
+            this.invoiceLineTable.BorderWidth = 0;
+            this.invoiceLineTable.Dpi = 254F;
+            this.invoiceLineTable.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceLineTable.LocationFloat = new DevExpress.Utils.PointFloat(74.08325F, 0F);
+            this.invoiceLineTable.Name = "invoiceLineTable";
+            this.invoiceLineTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow1});
+            this.invoiceLineTable.SizeF = new System.Drawing.SizeF(1543.579F, 63.5F);
+            this.invoiceLineTable.StylePriority.UseBorderColor = false;
+            this.invoiceLineTable.StylePriority.UseBorderDashStyle = false;
+            this.invoiceLineTable.StylePriority.UseBorderWidth = false;
+            this.invoiceLineTable.StylePriority.UseFont = false;
+            // 
+            // xrTableRow1
+            // 
+            this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.patientCell,
+            this.itemCell,
+            this.feeCell,
+            this.gstCell});
+            this.xrTableRow1.Dpi = 254F;
+            this.xrTableRow1.Name = "xrTableRow1";
+            this.xrTableRow1.Weight = 1D;
+            // 
+            // patientCell
+            // 
+            this.patientCell.Dpi = 254F;
+            this.patientCell.Name = "patientCell";
+            this.patientCell.Text = "[PatientID]";
+            this.patientCell.Weight = 1.4911615948865387D;
+            // 
+            // itemCell
+            // 
+            this.itemCell.Dpi = 254F;
+            this.itemCell.Name = "itemCell";
+            this.itemCell.Text = "[ItemNo]";
+            this.itemCell.Weight = 1.1590544917680152D;
+            // 
+            // feeCell
+            // 
+            this.feeCell.Dpi = 254F;
+            this.feeCell.Name = "feeCell";
+            xrSummary1.FormatString = "{0:$0.00}";
+            this.feeCell.Summary = xrSummary1;
+            this.feeCell.Text = "[Fee]";
+            this.feeCell.Weight = 1.095666615448369D;
+            // 
+            // gstCell
+            // 
+            this.gstCell.Dpi = 254F;
+            this.gstCell.Name = "gstCell";
+            xrSummary2.FormatString = "{0:$0.00}";
+            this.gstCell.Summary = xrSummary2;
+            this.gstCell.Text = "[GST]";
+            this.gstCell.Weight = 1.3119278142544988D;
             // 
             // invoicePrintReport
             // 
@@ -393,10 +409,10 @@ namespace FP_PMS.Report
             this.TopMargin,
             this.BottomMargin,
             this.GroupHeader1,
-            this.PageFooter});
+            this.GroupFooter1});
             this.Dpi = 254F;
             this.FormattingRuleSheet.AddRange(new DevExpress.XtraReports.UI.FormattingRule[] {
-            this.formattingRule1});
+            this.invoiceLinesPageBreak});
             this.Margins = new System.Drawing.Printing.Margins(41, 51, 429, 130);
             this.PageHeight = 2799;
             this.PageWidth = 2101;
@@ -404,8 +420,8 @@ namespace FP_PMS.Report
             this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
             this.SnapGridSize = 31.75F;
             this.Version = "10.2";
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -423,12 +439,6 @@ namespace FP_PMS.Report
         private DevExpress.XtraReports.UI.XRLabel streetLabel;
         private DevExpress.XtraReports.UI.XRLabel claimantNameLabel;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
-        private DevExpress.XtraReports.UI.XRTableCell itemCell;
-        private DevExpress.XtraReports.UI.XRTableCell feeCell;
-        private DevExpress.XtraReports.UI.XRTableCell gstCell;
-        public DevExpress.XtraReports.UI.XRTable invoiceLineTable;
-        private DevExpress.XtraReports.UI.XRTableCell patientCell;
         public DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
@@ -437,10 +447,17 @@ namespace FP_PMS.Report
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
-        private DevExpress.XtraReports.UI.FormattingRule formattingRule1;
-        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
+        private DevExpress.XtraReports.UI.FormattingRule invoiceLinesPageBreak;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
         private DevExpress.XtraReports.UI.XRLabel feeTotalLabel;
         private DevExpress.XtraReports.UI.XRLabel gstTotalLabel;
         private DevExpress.XtraReports.UI.XRLabel totalLabel;
+        private DevExpress.XtraReports.UI.XRPageBreak xrPageBreak1;
+        public DevExpress.XtraReports.UI.XRTable invoiceLineTable;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
+        private DevExpress.XtraReports.UI.XRTableCell patientCell;
+        private DevExpress.XtraReports.UI.XRTableCell itemCell;
+        private DevExpress.XtraReports.UI.XRTableCell feeCell;
+        private DevExpress.XtraReports.UI.XRTableCell gstCell;
     }
 }

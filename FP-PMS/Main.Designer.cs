@@ -62,6 +62,7 @@
             this.receiptByPhysioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newPatientSessionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentAuditTrailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agedBalanceTrailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.claimantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewClaimantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +73,7 @@
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ratesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.agedBalanceTrailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.mainFormMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,13 +109,13 @@
             // mainToolStripMenuItem
             // 
             this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.mainToolStripMenuItem.Text = "Main";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(112, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -122,7 +123,7 @@
             this.previewToolStripMenuItem,
             this.directToPrinterToolStripMenuItem});
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -143,14 +144,14 @@
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -347,6 +348,13 @@
             this.paymentAuditTrailToolStripMenuItem.Text = "Payment Audit Trail";
             this.paymentAuditTrailToolStripMenuItem.Click += new System.EventHandler(this.paymentAuditTrailToolStripMenuItem_Click);
             // 
+            // agedBalanceTrailToolStripMenuItem
+            // 
+            this.agedBalanceTrailToolStripMenuItem.Name = "agedBalanceTrailToolStripMenuItem";
+            this.agedBalanceTrailToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.agedBalanceTrailToolStripMenuItem.Text = "Aged Balance Trail";
+            this.agedBalanceTrailToolStripMenuItem.Click += new System.EventHandler(this.agedBalanceTrailToolStripMenuItem_Click);
+            // 
             // claimantsToolStripMenuItem
             // 
             this.claimantsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -426,18 +434,21 @@
             this.mainFormStatusStrip.TabIndex = 2;
             this.mainFormStatusStrip.Text = "statusStrip1";
             // 
-            // agedBalanceTrailToolStripMenuItem
+            // simpleButton1
             // 
-            this.agedBalanceTrailToolStripMenuItem.Name = "agedBalanceTrailToolStripMenuItem";
-            this.agedBalanceTrailToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.agedBalanceTrailToolStripMenuItem.Text = "Aged Balance Trail";
-            this.agedBalanceTrailToolStripMenuItem.Click += new System.EventHandler(this.agedBalanceTrailToolStripMenuItem_Click);
+            this.simpleButton1.Location = new System.Drawing.Point(574, 288);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 708);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.mainFormStatusStrip);
             this.Controls.Add(this.mainFormMenuStrip);
             this.IsMdiContainer = true;
@@ -502,6 +513,7 @@
         private System.Windows.Forms.ToolStripMenuItem directToPrinterToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem agedBalanceTrailToolStripMenuItem;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
 
     }
 }

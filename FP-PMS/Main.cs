@@ -391,5 +391,11 @@ namespace FP_PMS
             }
             claimantChoose.Dispose();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            var foo = new newInvoiceForm();
+            foo.Show();
+        }
     }
 }

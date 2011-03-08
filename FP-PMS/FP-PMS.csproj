@@ -135,6 +135,12 @@
     <Compile Include="Accounting\Invoice\invoiceViewForm.Designer.cs">
       <DependentUpon>invoiceViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accounting\Invoice\newInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\newInvoiceForm.Designer.cs">
+      <DependentUpon>newInvoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Accounting\Receipt\addPaymentAmountViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\Invoice\invoiceViewForm.resx">
       <DependentUpon>invoiceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\newInvoiceForm.resx">
+      <DependentUpon>newInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\Receipt\addPaymentAmountViewForm.resx">
       <DependentUpon>addPaymentAmountViewForm.cs</DependentUpon>
