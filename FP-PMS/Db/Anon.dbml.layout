@@ -38,5 +38,11 @@
         <elementListCompartment Id="e84b262b-55d9-4719-8aa5-94200ee591b0" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="c68e74c7-2b2e-42de-9b28-f46730614785" absoluteBounds="0.625, 4.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AnonDataContext/AnonInvoiceLines" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d108a33-f9a0-48ac-8251-112bbed4afa9" absoluteBounds="0.64, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

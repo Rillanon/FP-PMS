@@ -93,17 +93,25 @@ namespace FP_PMS.Scheduling
 
         private void appointmentSchedulerControl_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
         {
-            var popUpForm = new appointmentPopUp(this.appointmentSchedulerControl, this.appointmentSchedulerStorage, e.Appointment);
-            e.DialogResult = popUpForm.ShowDialog();
-            appointmentSchedulerControl.Refresh();
-            e.Handled = true;
+            if (e.Appointment.AllDay != true)
+            {
+                var popUpForm = new appointmentPopUp(this.appointmentSchedulerControl, this.appointmentSchedulerStorage, e.Appointment);
+                e.DialogResult = popUpForm.ShowDialog();
+                
+                appointmentSchedulerControl.Refresh();
+                e.Handled = true;
+            }
+            else
+            {
+                var allDayForm = new DevExpress.XtraScheduler.UI.AppointmentForm(appointmentSchedulerControl, e.Appointment);
+            }
         }
 
         private void appointmentViewForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'db1.tblPhysio' table. You can move, or remove it, as needed.
 
-            this.tblPhysioTableAdapter.Fill(this.db.tblPhysio);
+            this.tblPhysioTableAdapter.FillBy(this.db.tblPhysio);
 
             //appointmentSchedulerStorage.Appointments.AutoReload = true;
             
@@ -147,13 +155,15 @@ namespace FP_PMS.Scheduling
         {
             if (e.Menu.Id == DevExpress.XtraScheduler.SchedulerMenuItemId.DefaultMenu)
             {
-                e.Menu.RemoveMenuItem(SchedulerMenuItemId.NewAllDayEvent);
+                //e.Menu.RemoveMenuItem(SchedulerMenuItemId.NewAllDayEvent);
 
                 e.Menu.RemoveMenuItem(SchedulerMenuItemId.NewRecurringAppointment);
                 e.Menu.RemoveMenuItem(SchedulerMenuItemId.NewRecurringEvent);
-               
+
+                //e.Menu.Items.Add(new SchedulerMenuItem("New Event", MyEventClickHandler));
+
                 SchedulerMenuItem item = e.Menu.GetMenuItemById(SchedulerMenuItemId.NewAppointment);
-                if (item != null) item.Caption = "&New Patient Appointment";
+                if (item != null) item.Caption = "&New patient appointment";
                
             }
 
@@ -162,27 +172,40 @@ namespace FP_PMS.Scheduling
                 e.Menu.RemoveMenuItem(SchedulerMenuItemId.LabelSubMenu);
                 e.Menu.RemoveMenuItem(SchedulerMenuItemId.StatusSubMenu);
 
+                
                 e.Menu.Items.Add(new SchedulerMenuItem("Check In!", MyClickHandler));
+                
             }
+        }
+
+        public void MyEventClickHandler(object sender, EventArgs e)
+        {
+
+            //var eventForm = new DevExpress.XtraScheduler.UI.AppointmentForm(appointmentSchedulerControl, );
+            //eventForm.ShowDialog();
+            //appointmentSchedulerControl.Refresh();
         }
 
         public void MyClickHandler(object sender, EventArgs e)
         {
             foreach (Appointment a in this.appointmentSchedulerControl.SelectedAppointments)
             {
-                if (entityClone.IsNullOrDefault(a.CustomFields["PatientID"]))
+                if (a.AllDay != true)
                 {
-                    MessageBox.Show("You must select a patient before CHECK IN!");
-                    var popUpForm = new appointmentPopUp(this.appointmentSchedulerControl, this.appointmentSchedulerStorage, a);
-                    popUpForm.ShowDialog();
-                    appointmentSchedulerControl.Refresh();
-                }
-                else
-                {
-                    if (a.LabelId != 2)
+                    if (entityClone.IsNullOrDefault(a.CustomFields["PatientID"]))
                     {
-                        a.CustomFields["CheckIn"] = true;
-                        a.LabelId = 3;
+                        MessageBox.Show("You must select a patient before CHECK IN!");
+                        var popUpForm = new appointmentPopUp(this.appointmentSchedulerControl, this.appointmentSchedulerStorage, a);
+                        popUpForm.ShowDialog();
+                        appointmentSchedulerControl.Refresh();
+                    }
+                    else
+                    {
+                        if (a.LabelId != 2)
+                        {
+                            a.CustomFields["CheckIn"] = true;
+                            a.LabelId = 3;
+                        }
                     }
                 }
             }

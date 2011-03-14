@@ -298,18 +298,6 @@
       <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblPayin" Member="tblPayins">
-    <Type Name="tblPayin">
-      <Column Name="PayinNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PayinType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PayinAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Bank" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Branch" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Drawer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ChequeNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblPayinType" Member="tblPayinTypes">
     <Type Name="tblPayinType">
       <Column Name="PayinType" Type="System.String" DbType="NVARCHAR(MAX)" CanBeNull="true" />
@@ -320,18 +308,6 @@
     <Type Name="CreditType">
       <Column Name="CreditTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CreditTypeDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblReceiptCreditPatient" Member="tblReceiptCreditPatients">
-    <Type Name="tblReceiptCreditPatient">
-      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ReceiptDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CreditAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="PatientName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CreditID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RceiptCreditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Credit" Member="Credits">
@@ -371,6 +347,30 @@
       <Column Name="ExistingPatientAppDefaultDuration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="LunchStartTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
       <Column Name="LunchEndTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPayin" Member="tblPayins">
+    <Type Name="tblPayin">
+      <Column Name="PayinNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PayinType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PayinAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Drawer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ChequeNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceiptCreditPatient" Member="tblReceiptCreditPatients">
+    <Type Name="tblReceiptCreditPatient">
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreditAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PatientName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreditID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RceiptCreditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.RatesAndItemsSummaryReportFunction" Method="RatesAndItemsSummaryReportFunction" IsComposable="true">
@@ -489,6 +489,60 @@
       <Column Name="endDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.getInvoiceLines" Method="getInvoiceLines">
+    <Parameter Name="InvoiceID" Parameter="invoiceID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="getInvoiceLinesResult">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Patient" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ClaimNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getReceiptsOfSingleInvoice" Method="getReceiptsOfSingleInvoice">
+    <Parameter Name="InvoiceID" Parameter="invoiceID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="getReceiptsOfSingleInvoiceResult">
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvRecAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceReceiptID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getPatientsOfClaimant" Method="getPatientsOfClaimant">
+    <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="getPatientsOfClaimantResult">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getPhysioRateItems" Method="getPhysioRateItems">
+    <Parameter Name="PhysioID" Parameter="physioID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RateID" Parameter="rateID" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="getPhysioRateItemsResult">
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getPhysioNoChargeItems" Method="getPhysioNoChargeItems">
+    <Parameter Name="PhysioID" Parameter="physioID" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="getPhysioNoChargeItemsResult">
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GST" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.getAgedTrailBalance" Method="getAgedTrailBalance">
     <Parameter Name="ClaimantID" Parameter="claimantID" Type="System.Int32" DbType="Int" />
     <Parameter Name="PhysioID" Parameter="physioID" Type="System.String" DbType="VarChar(MAX)" />
@@ -505,6 +559,27 @@
       <Column Name="Remaining" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Claimant" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getPaymentAuditTrial" Method="getPaymentAuditTrial">
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="getPaymentAuditTrialResult">
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getNewPatients" Method="getNewPatients">
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="getNewPatientsResult">
+      <Column Name="Category" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Physio" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SessionTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PatientTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FeeTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

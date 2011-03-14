@@ -25,6 +25,7 @@ namespace FP_PMS.Claimant
 
         void updateForm()
         {
+            Cursor.Current = Cursors.WaitCursor;
             var newConnection = new dbContextDataContext();
             myInvoiceList = new BindingList<getClaimantInvoicesResult>(newConnection.getClaimantInvoices(myClaimant.ClaimantID, StartDate, EndDate).ToList());
             this.claimantInvoiceGridControl.DataSource = myInvoiceList;
@@ -38,6 +39,7 @@ namespace FP_PMS.Claimant
             invoiceTotalSpinEdit.Value = invoiceTotal.GetValueOrDefault(0.0M);
             receiptTotalSpinEdit.Value = receiptTotal.GetValueOrDefault(0.0M);
             balanceSpinEdit.Value = decimal.Subtract(invoiceTotal.GetValueOrDefault(0.0M), receiptTotal.GetValueOrDefault(0.0M));
+            Cursor.Current = Cursors.Default;
         }
 
         public claimantInvoiceViewForm(tblClaimant MyClaimant, DateTime Start, DateTime End)
@@ -87,19 +89,18 @@ namespace FP_PMS.Claimant
         {
             if ((getClaimantInvoicesResult)claimantInvoicesView.GetFocusedRow() != null)
             {
-
-                    var myInvoiceController = new Accounting.Invoice.invoiceController();
-                    myInvoiceController.myClaimant = this.myClaimant;
                     var currentRow = (getClaimantInvoicesResult)claimantInvoicesView.GetFocusedRow();
                     var newConnection = new dbContextDataContext();
                     var currentInvoice = newConnection.tblInvoices.Where(i => i.InvoiceNo == currentRow.InvoiceNo).SingleOrDefault();
+                    
                     if (currentInvoice != null)
                     {
-                        myInvoiceController.viewInvoice(currentInvoice);
-                        if(myInvoiceController.invoiceChanged)
+                        var viewInvoice = new Accounting.Invoice.newInvoiceForm(currentInvoice);
+                        viewInvoice.ShowDialog();
+                        if (viewInvoice.DialogResult == DialogResult.OK)
+                        {
                             updateForm();
-                        
-                        myInvoiceController.myForm.Dispose();
+                        }
                     }
                     else
                     {
@@ -132,14 +133,17 @@ namespace FP_PMS.Claimant
 
         private void newInvoiceBtn_Click(object sender, EventArgs e)
         {
-            var myInvoiceController = new Accounting.Invoice.invoiceController();
-            myInvoiceController.myClaimant = this.myClaimant;
-            myInvoiceController.newInvoice();
-            if (myInvoiceController.myForm.DialogResult == DialogResult.OK)
+            var physioChoose = new Scheduling.physioSelectDialog();
+            physioChoose.ShowDialog();
+            if (physioChoose.DialogResult == DialogResult.OK)
             {
-                updateForm();
+                var viewInvoice = new Accounting.Invoice.newInvoiceForm(this.myClaimant, physioChoose.myPhysio);
+                viewInvoice.ShowDialog();
+                if (viewInvoice.DialogResult == DialogResult.OK)
+                {
+                    updateForm();
+                }
             }
-            myInvoiceController.myForm.Dispose();
         }
     }
 }

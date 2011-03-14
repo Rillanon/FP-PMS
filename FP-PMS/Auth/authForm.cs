@@ -19,7 +19,7 @@ namespace FP_PMS.Auth
             _controller = new authController(this);
         }
 
-        private void signInBtnClick(object sender, EventArgs e)
+        private void logInBtnClick(object sender, EventArgs e)
         {
             this.DialogResult = _controller.newAuth();
         }
@@ -34,19 +34,19 @@ namespace FP_PMS.Auth
             if (this.DialogResult == System.Windows.Forms.DialogResult.Retry)
             {
                 e.Cancel = true;
-                userTextBox.Focus();
-                userTextBox.SelectAll();
+                userTextEdit.Focus();
+                userTextEdit.SelectAll();
             }
         }
 
         private void userTextBoxTextChanged(object sender, EventArgs e)
         {
-            _controller.userId = userTextBox.Text.Trim();
+            _controller.userId = userTextEdit.Text.Trim();
         }
 
         private void passwordTextBoxTextChanged(object sender, EventArgs e)
         {
-            _controller.password = passwordTextBox.Text.Trim();
+            _controller.password = passwordTextEdit.Text.Trim();
         }
     }
 }

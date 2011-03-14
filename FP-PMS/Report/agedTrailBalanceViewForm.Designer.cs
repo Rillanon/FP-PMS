@@ -28,175 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agedTrailBalanceViewForm));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.agedTrailBalancePivotGrid = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.fieldID1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldPhysio1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldClaimant1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldDate1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldTerms1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldAge1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldInvoiceNo1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldInvoiceTotal1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldRemaining1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldStatus1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.agedTrailGridControl = new DevExpress.XtraGrid.GridControl();
+            this.agedTrailGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.claimantCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.physioCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.termCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ageCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.invoiceNoCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.invoiceTotalCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.remainingCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.statusCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reportPrintingSystem = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.reportPrintableComponentLink = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.agedTrailBalancePivotGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agedTrailGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agedTrailGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportPrintingSystem)).BeginInit();
             this.SuspendLayout();
             // 
             // quitBtn
             // 
-            this.quitBtn.Location = new System.Drawing.Point(713, 500);
+            this.quitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.quitBtn.Location = new System.Drawing.Point(850, 541);
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(653, 500);
+            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okBtn.Location = new System.Drawing.Point(790, 541);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.agedTrailBalancePivotGrid);
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.agedTrailGridControl);
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(906, 372);
+            this.groupControl1.Size = new System.Drawing.Size(906, 536);
             this.groupControl1.TabIndex = 6;
             // 
-            // agedTrailBalancePivotGrid
+            // agedTrailGridControl
             // 
-            this.agedTrailBalancePivotGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.agedTrailBalancePivotGrid.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
-            this.fieldID1,
-            this.fieldPhysio1,
-            this.fieldClaimant1,
-            this.fieldDate1,
-            this.fieldTerms1,
-            this.fieldAge1,
-            this.fieldInvoiceNo1,
-            this.fieldInvoiceTotal1,
-            this.fieldRemaining1,
-            this.fieldStatus1});
-            this.agedTrailBalancePivotGrid.Location = new System.Drawing.Point(2, 22);
-            this.agedTrailBalancePivotGrid.Name = "agedTrailBalancePivotGrid";
-            this.agedTrailBalancePivotGrid.Size = new System.Drawing.Size(902, 348);
-            this.agedTrailBalancePivotGrid.TabIndex = 9;
+            this.agedTrailGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.agedTrailGridControl.Location = new System.Drawing.Point(2, 22);
+            this.agedTrailGridControl.MainView = this.agedTrailGridView;
+            this.agedTrailGridControl.Name = "agedTrailGridControl";
+            this.agedTrailGridControl.Size = new System.Drawing.Size(902, 512);
+            this.agedTrailGridControl.TabIndex = 0;
+            this.agedTrailGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.agedTrailGridView});
             // 
-            // fieldID1
+            // agedTrailGridView
             // 
-            this.fieldID1.AreaIndex = 0;
-            this.fieldID1.Caption = "ID";
-            this.fieldID1.FieldName = "ID";
-            this.fieldID1.Name = "fieldID1";
-            this.fieldID1.Options.ShowTotals = false;
+            this.agedTrailGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.claimantCol,
+            this.physioCol,
+            this.dateCol,
+            this.termCol,
+            this.ageCol,
+            this.invoiceNoCol,
+            this.invoiceTotalCol,
+            this.remainingCol,
+            this.statusCol});
+            this.agedTrailGridView.GridControl = this.agedTrailGridControl;
+            this.agedTrailGridView.Name = "agedTrailGridView";
+            this.agedTrailGridView.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.agedTrailGridView_CustomDrawCell);
             // 
-            // fieldPhysio1
+            // claimantCol
             // 
-            this.fieldPhysio1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldPhysio1.AreaIndex = 0;
-            this.fieldPhysio1.Caption = "Physio";
-            this.fieldPhysio1.FieldName = "Physio";
-            this.fieldPhysio1.Name = "fieldPhysio1";
+            this.claimantCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.claimantCol.AppearanceCell.Options.UseFont = true;
+            this.claimantCol.Caption = "Claimant";
+            this.claimantCol.FieldName = "Claimant";
+            this.claimantCol.Name = "claimantCol";
+            this.claimantCol.Visible = true;
+            this.claimantCol.VisibleIndex = 0;
             // 
-            // fieldClaimant1
+            // physioCol
             // 
-            this.fieldClaimant1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldClaimant1.AreaIndex = 1;
-            this.fieldClaimant1.Caption = "Claimant";
-            this.fieldClaimant1.FieldName = "Claimant";
-            this.fieldClaimant1.MinWidth = 50;
-            this.fieldClaimant1.Name = "fieldClaimant1";
+            this.physioCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.physioCol.AppearanceCell.Options.UseFont = true;
+            this.physioCol.Caption = "Physio";
+            this.physioCol.FieldName = "Physio";
+            this.physioCol.Name = "physioCol";
+            this.physioCol.Visible = true;
+            this.physioCol.VisibleIndex = 1;
             // 
-            // fieldDate1
+            // dateCol
             // 
-            this.fieldDate1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldDate1.AreaIndex = 5;
-            this.fieldDate1.Caption = "Date";
-            this.fieldDate1.CellFormat.FormatString = "d";
-            this.fieldDate1.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.fieldDate1.FieldName = "Date";
-            this.fieldDate1.Name = "fieldDate1";
-            this.fieldDate1.Options.ShowTotals = false;
-            this.fieldDate1.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
-            this.fieldDate1.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fieldDate1.ValueFormat.FormatString = "d";
-            this.fieldDate1.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCol.AppearanceCell.Options.UseFont = true;
+            this.dateCol.Caption = "Invoice Date";
+            this.dateCol.FieldName = "Date";
+            this.dateCol.Name = "dateCol";
+            this.dateCol.Visible = true;
+            this.dateCol.VisibleIndex = 2;
             // 
-            // fieldTerms1
+            // termCol
             // 
-            this.fieldTerms1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldTerms1.AreaIndex = 3;
-            this.fieldTerms1.Caption = "Terms";
-            this.fieldTerms1.FieldName = "Terms";
-            this.fieldTerms1.Name = "fieldTerms1";
+            this.termCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termCol.AppearanceCell.Options.UseFont = true;
+            this.termCol.Caption = "Terms";
+            this.termCol.FieldName = "Terms";
+            this.termCol.Name = "termCol";
+            this.termCol.Visible = true;
+            this.termCol.VisibleIndex = 3;
             // 
-            // fieldAge1
+            // ageCol
             // 
-            this.fieldAge1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldAge1.AreaIndex = 2;
-            this.fieldAge1.Caption = "Age";
-            this.fieldAge1.FieldName = "Age";
-            this.fieldAge1.Name = "fieldAge1";
+            this.ageCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageCol.AppearanceCell.Options.UseFont = true;
+            this.ageCol.Caption = "Age";
+            this.ageCol.FieldName = "Age";
+            this.ageCol.Name = "ageCol";
+            this.ageCol.Visible = true;
+            this.ageCol.VisibleIndex = 4;
             // 
-            // fieldInvoiceNo1
+            // invoiceNoCol
             // 
-            this.fieldInvoiceNo1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldInvoiceNo1.AreaIndex = 2;
-            this.fieldInvoiceNo1.Caption = "Invoice No";
-            this.fieldInvoiceNo1.FieldName = "InvoiceNo";
-            this.fieldInvoiceNo1.Name = "fieldInvoiceNo1";
+            this.invoiceNoCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceNoCol.AppearanceCell.Options.UseFont = true;
+            this.invoiceNoCol.Caption = "Invoice #";
+            this.invoiceNoCol.FieldName = "InvoiceNo";
+            this.invoiceNoCol.Name = "invoiceNoCol";
+            this.invoiceNoCol.Visible = true;
+            this.invoiceNoCol.VisibleIndex = 5;
             // 
-            // fieldInvoiceTotal1
+            // invoiceTotalCol
             // 
-            this.fieldInvoiceTotal1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldInvoiceTotal1.AreaIndex = 0;
-            this.fieldInvoiceTotal1.Caption = "Invoice Total";
-            this.fieldInvoiceTotal1.FieldName = "InvoiceTotal";
-            this.fieldInvoiceTotal1.Name = "fieldInvoiceTotal1";
+            this.invoiceTotalCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceTotalCol.AppearanceCell.Options.UseFont = true;
+            this.invoiceTotalCol.Caption = "Invoice Total";
+            this.invoiceTotalCol.DisplayFormat.FormatString = "c2";
+            this.invoiceTotalCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.invoiceTotalCol.FieldName = "InvoiceTotal";
+            this.invoiceTotalCol.Name = "invoiceTotalCol";
+            this.invoiceTotalCol.Visible = true;
+            this.invoiceTotalCol.VisibleIndex = 6;
             // 
-            // fieldRemaining1
+            // remainingCol
             // 
-            this.fieldRemaining1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldRemaining1.AreaIndex = 1;
-            this.fieldRemaining1.Caption = "Remaining";
-            this.fieldRemaining1.FieldName = "Remaining";
-            this.fieldRemaining1.Name = "fieldRemaining1";
+            this.remainingCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remainingCol.AppearanceCell.Options.UseFont = true;
+            this.remainingCol.Caption = "Remaining";
+            this.remainingCol.DisplayFormat.FormatString = "c2";
+            this.remainingCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.remainingCol.FieldName = "Remaining";
+            this.remainingCol.Name = "remainingCol";
+            this.remainingCol.Visible = true;
+            this.remainingCol.VisibleIndex = 7;
             // 
-            // fieldStatus1
+            // statusCol
             // 
-            this.fieldStatus1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldStatus1.AreaIndex = 4;
-            this.fieldStatus1.Caption = "Status";
-            this.fieldStatus1.FieldName = "Status";
-            this.fieldStatus1.Name = "fieldStatus1";
-            this.fieldStatus1.Options.ShowTotals = false;
-            this.fieldStatus1.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
-            this.fieldStatus1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.statusCol.Caption = "Status";
+            this.statusCol.FieldName = "Status";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.Visible = true;
+            this.statusCol.VisibleIndex = 8;
             // 
-            // groupControl2
+            // reportPrintingSystem
             // 
-            this.groupControl2.Location = new System.Drawing.Point(0, 378);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(342, 100);
-            this.groupControl2.TabIndex = 8;
+            this.reportPrintingSystem.Links.AddRange(new object[] {
+            this.reportPrintableComponentLink});
+            // 
+            // reportPrintableComponentLink
+            // 
+            this.reportPrintableComponentLink.Component = this.agedTrailGridControl;
+            // 
+            // 
+            // 
+            this.reportPrintableComponentLink.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("reportPrintableComponentLink.ImageCollection.ImageStream")));
+            this.reportPrintableComponentLink.PrintingSystem = this.reportPrintingSystem;
+            this.reportPrintableComponentLink.PrintingSystemBase = this.reportPrintingSystem;
+            this.reportPrintableComponentLink.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.reportPrintableComponent_CreateReportHeaderArea);
             // 
             // agedTrailBalanceViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(906, 530);
-            this.Controls.Add(this.groupControl2);
+            this.ClientSize = new System.Drawing.Size(906, 565);
             this.Controls.Add(this.groupControl1);
             this.Name = "agedTrailBalanceViewForm";
             this.Text = "Aged Trail Balance";
             this.Load += new System.EventHandler(this.agedTrailBalanceViewForm_Load);
-            this.Controls.SetChildIndex(this.groupControl1, 0);
-            this.Controls.SetChildIndex(this.groupControl2, 0);
             this.Controls.SetChildIndex(this.okBtn, 0);
             this.Controls.SetChildIndex(this.quitBtn, 0);
+            this.Controls.SetChildIndex(this.groupControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.agedTrailBalancePivotGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agedTrailGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agedTrailGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportPrintingSystem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,17 +230,18 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraPivotGrid.PivotGridControl agedTrailBalancePivotGrid;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldID1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldPhysio1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldClaimant1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldDate1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldTerms1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldAge1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldInvoiceNo1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldInvoiceTotal1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldRemaining1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldStatus1;
+        private DevExpress.XtraGrid.GridControl agedTrailGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView agedTrailGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn claimantCol;
+        private DevExpress.XtraGrid.Columns.GridColumn physioCol;
+        private DevExpress.XtraGrid.Columns.GridColumn dateCol;
+        private DevExpress.XtraGrid.Columns.GridColumn termCol;
+        private DevExpress.XtraGrid.Columns.GridColumn ageCol;
+        private DevExpress.XtraGrid.Columns.GridColumn invoiceNoCol;
+        private DevExpress.XtraGrid.Columns.GridColumn invoiceTotalCol;
+        private DevExpress.XtraGrid.Columns.GridColumn remainingCol;
+        private DevExpress.XtraGrid.Columns.GridColumn statusCol;
+        private DevExpress.XtraPrinting.PrintingSystem reportPrintingSystem;
+        private DevExpress.XtraPrinting.PrintableComponentLink reportPrintableComponentLink;
     }
 }

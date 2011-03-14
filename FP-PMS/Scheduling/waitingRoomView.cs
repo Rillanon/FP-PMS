@@ -20,6 +20,7 @@ namespace FP_PMS.Scheduling
 
         void updateWaitingRoom()
         {
+            Cursor.Current = Cursors.WaitCursor;
             var newConnection = new dbContextDataContext();
             waitingRoomGridControl.DataSource = from a in newConnection.PatientAppointments
                                                 where (a.StartDate.Value.Date == System.DateTime.Today.Date)
@@ -45,6 +46,7 @@ namespace FP_PMS.Scheduling
                                                     Start = a.StartDate.Value.ToShortTimeString(),
                                                     End = a.EndDate.Value.ToShortTimeString()
                                                 };
+            Cursor.Current = Cursors.Default;
         }
 
         private void waitingRoomView_Load(object sender, EventArgs e)
@@ -56,11 +58,17 @@ namespace FP_PMS.Scheduling
         {
             var currentRow = (AnonWaitingRoom)waitingRoomGridView.GetFocusedRow();
             
-            var newInvoiceController = new Accounting.Invoice.invoiceController();
-
             if (currentRow != null)
             {
-                newInvoiceController.chooseClaimant(currentRow.ID);
+                    var claimantChoose = new Accounting.Invoice.claimantSelectViewForm(currentRow.ID);
+                    claimantChoose.ShowDialog();
+                    if (claimantChoose.DialogResult == DialogResult.OK)
+                    {
+                        var newConnection = new dbContextDataContext();
+                        var currentPhysio = newConnection.tblPhysios.Where(physio => physio.PhysioID == currentRow.Physio).FirstOrDefault();
+                        var newInvoice = new Accounting.Invoice.newInvoiceForm(claimantChoose.myClaimant, currentPhysio);
+                        newInvoice.ShowDialog();
+                    }
             }
             else
             {
@@ -70,23 +78,30 @@ namespace FP_PMS.Scheduling
 
         private void checkOutBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var currentRow = (AnonWaitingRoom)waitingRoomGridView.GetFocusedRow();
             var newConnection = new dbContextDataContext();
-            
+            var formOpen = false;
 
             if (currentRow != null)
             {
                 var thisApp = newConnection.PatientAppointments.Where(a => a.UniqueID == currentRow.AppointmentID).FirstOrDefault();
-                newConnection.Connection.Close();
 
                 foreach (var f in Application.OpenForms)
                 {
                     if (f.GetType() == typeof(appointmentViewForm))
                     {
                         ((appointmentViewForm)f).RefreshAppointment(thisApp.UniqueID);
+                        formOpen = true;
                     }
                 }
 
+                if (formOpen == false)
+                {
+                    thisApp.CheckOut = true;
+                    thisApp.Label = 2;
+                    newConnection.SubmitChanges();
+                }
                 updateWaitingRoom();
                 
             }
@@ -94,6 +109,7 @@ namespace FP_PMS.Scheduling
             {
                 MessageBox.Show("Please Select a Patient first!");
             }
+            Cursor.Current = Cursors.Default;
         }
 
         public override void okBtn_Click(object sender, EventArgs e)

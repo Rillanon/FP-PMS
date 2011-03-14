@@ -30,6 +30,7 @@
         {
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.inactiveCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.defaultExistingPatientDuration = new DevExpress.XtraScheduler.UI.DurationEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inactiveCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultExistingPatientDuration.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultNewPatientDuration.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.providerNoTextEdit.Properties)).BeginInit();
@@ -127,6 +129,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.inactiveCheckEdit);
             this.xtraTabPage1.Controls.Add(this.labelControl4);
             this.xtraTabPage1.Controls.Add(this.defaultExistingPatientDuration);
             this.xtraTabPage1.Controls.Add(this.labelControl3);
@@ -140,6 +143,16 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(430, 280);
             this.xtraTabPage1.Text = "Physio Details";
+            // 
+            // inactiveCheckEdit
+            // 
+            this.inactiveCheckEdit.Location = new System.Drawing.Point(268, 21);
+            this.inactiveCheckEdit.Name = "inactiveCheckEdit";
+            this.inactiveCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inactiveCheckEdit.Properties.Appearance.Options.UseFont = true;
+            this.inactiveCheckEdit.Properties.Caption = "Inactive?";
+            this.inactiveCheckEdit.Size = new System.Drawing.Size(102, 24);
+            this.inactiveCheckEdit.TabIndex = 25;
             // 
             // labelControl4
             // 
@@ -562,6 +575,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inactiveCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultExistingPatientDuration.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultNewPatientDuration.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.providerNoTextEdit.Properties)).EndInit();
@@ -640,5 +654,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.TimeEdit lunchStartTimeEdit;
         private DevExpress.XtraEditors.TimeEdit lunchEndTimeEdit;
+        private DevExpress.XtraEditors.CheckEdit inactiveCheckEdit;
     }
 }

@@ -20,6 +20,7 @@ namespace FP_PMS.Scheduling
         SchedulerControl mySchedulerControl;
         SchedulerStorage mySchedulerStorage;
 
+        bool openRecurrenceForm = false;
         long appointmentDuration;
         int suspendUpdateCount;
 
@@ -50,6 +51,9 @@ namespace FP_PMS.Scheduling
                 suspendUpdateCount--;
         }
 
+
+
+
         void UpdateForm()
         {
             SuspendUpdate();
@@ -63,6 +67,13 @@ namespace FP_PMS.Scheduling
                         patientLastNameTextEdit.Text = myPatient.LastName;
                         patientGroupControl.Text = myPatient.FirstNames + @" " + myPatient.LastName;
                     }
+
+                    DateTime? date = new DateTime();
+                    new dbContextDataContext().getLastPatientVisitDate(myPatient.PatientID, ref date);
+                    if (date != null)
+                        lastSessionDateEdit.DateTime = date.Value;
+                    else
+                        lastSessionDateEdit.DateTime = System.DateTime.Today;
                 
                 if (this.res.CustomFields["PhysioID"].GetType() == typeof(string))
                 {
@@ -213,7 +224,7 @@ namespace FP_PMS.Scheduling
 
             physioLookUp.Properties.DisplayMember = "PhysioID";
             physioLookUp.Properties.ValueMember = "PhysioID";
-            physioLookUp.Properties.DataSource = new dbContextDataContext().tblPhysios;
+            physioLookUp.Properties.DataSource = new dbContextDataContext().tblPhysios.Where(p=>p.PhysioInActive.GetValueOrDefault(false) != true);
 
             rateComboBoxEdit.Properties.DisplayMember = "RateDesc";
             rateComboBoxEdit.Properties.ValueMember = "RateID";
@@ -285,6 +296,41 @@ namespace FP_PMS.Scheduling
                 patientLastNameTextEdit.Text = myPatient.LastName;
                 patientGroupControl.Text = myPatient.FirstNames + @" " + myPatient.LastName;
             }
+        }
+
+        private void recurrenceBtn_Click(object sender, EventArgs e)
+        {
+            ShowRecurrenceForm();
+        }
+
+        void ShowRecurrenceForm()
+        {
+            if (!mySchedulerControl.SupportsRecurrence)
+                return;
+            // Prepare to edit the appointment's recurrence.
+            Appointment editedAptCopy = myController.EditedAppointmentCopy;
+            Appointment editedPattern = myController.EditedPattern;
+            Appointment patternCopy = myController.PrepareToRecurrenceEdit();
+
+            var dlg = new AppointmentRecurrenceForm(patternCopy, mySchedulerControl.OptionsView.FirstDayOfWeek, myController);
+
+            // Required for skin support.
+            
+
+            DialogResult result = dlg.ShowDialog(this);
+            dlg.Dispose();
+
+            if (result == DialogResult.Abort)
+                myController.RemoveRecurrence();
+            else
+                if (result == DialogResult.OK)
+                {
+                    myController.ApplyRecurrence(patternCopy);
+                    if (myController.EditedAppointmentCopy != editedAptCopy)
+                        UpdateForm();
+                }
+            UpdateIntervalControls();
+            myController.ApplyChanges();
         }
     }
 }

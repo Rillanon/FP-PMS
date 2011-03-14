@@ -54,3 +54,6 @@ C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\De
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Report.agedTrailBalanceViewForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Report.customInvoiceReport.resources
 C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Accounting.Invoice.newInvoiceForm.resources
+C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Accounting.Invoice.newAddItemForm.resources
+C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Scheduling.eventViewForm.resources
+C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Report.nullSelectionForm.resources

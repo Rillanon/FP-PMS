@@ -45,6 +45,7 @@ namespace FP_PMS.Admin
             businessTextEdit.Text = _myPhysio.BusPhone;
             emailTextEdit.Text = _myPhysio.EmailAddr;
             faxTextEdit.Text = _myPhysio.FaxNo;
+            inactiveCheckEdit.Checked = _myPhysio.PhysioInActive.GetValueOrDefault(false);
             defaultNewPatientDuration.Duration = TimeSpan.FromTicks(_myPhysio.NewPatientAppDefaultDuration.GetValueOrDefault(9000000000L));
             defaultExistingPatientDuration.Duration = TimeSpan.FromTicks(_myPhysio.ExistingPatientAppDefaultDuration.GetValueOrDefault(9000000000L));
             lunchStartTimeEdit.Time = DateTime.MinValue + ((_myPhysio.LunchStartTime.GetValueOrDefault(defaultStartTime)));
@@ -73,6 +74,7 @@ namespace FP_PMS.Admin
                     myPhysio.BusPhone = businessTextEdit.Text;
                     myPhysio.EmailAddr = emailTextEdit.Text;
                     myPhysio.FaxNo = faxTextEdit.Text;
+                    myPhysio.PhysioInActive = inactiveCheckEdit.Checked;
                     myPhysio.NewPatientAppDefaultDuration = defaultNewPatientDuration.Duration.Ticks;
                     myPhysio.ExistingPatientAppDefaultDuration = defaultExistingPatientDuration.Duration.Ticks;
                     myPhysio.LunchEndTime = lunchEndTimeEdit.Time.TimeOfDay;
@@ -92,6 +94,7 @@ namespace FP_PMS.Admin
                 currentPhysio.BusPhone = businessTextEdit.Text;
                 currentPhysio.EmailAddr = emailTextEdit.Text;
                 currentPhysio.FaxNo = faxTextEdit.Text;
+                currentPhysio.PhysioInActive = inactiveCheckEdit.Checked;
                 currentPhysio.NewPatientAppDefaultDuration = defaultNewPatientDuration.Duration.Ticks;
                 currentPhysio.ExistingPatientAppDefaultDuration = defaultExistingPatientDuration.Duration.Ticks;
                 currentPhysio.LunchEndTime = lunchEndTimeEdit.Time.TimeOfDay;

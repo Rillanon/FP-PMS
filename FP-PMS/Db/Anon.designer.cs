@@ -102,6 +102,14 @@ namespace FP_PMS.Db
 				return this.GetTable<AnonPhysioAppointments>();
 			}
 		}
+		
+		public System.Data.Linq.Table<AnonInvoiceLines> AnonInvoiceLines
+		{
+			get
+			{
+				return this.GetTable<AnonInvoiceLines>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
@@ -1359,6 +1367,141 @@ namespace FP_PMS.Db
 				if ((this._End != value))
 				{
 					this._End = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class AnonInvoiceLines
+	{
+		
+		private System.Nullable<int> _PatientID;
+		
+		private System.Nullable<System.DateTime> _SessionDate;
+		
+		private string _RateID;
+		
+		private System.Nullable<decimal> _Fee;
+		
+		private string _ItemNo;
+		
+		private System.Nullable<decimal> _GST;
+		
+		private string _PatientName;
+		
+		public AnonInvoiceLines()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PatientID", DbType="Int")]
+		public System.Nullable<int> PatientID
+		{
+			get
+			{
+				return this._PatientID;
+			}
+			set
+			{
+				if ((this._PatientID != value))
+				{
+					this._PatientID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SessionDate", DbType="Date")]
+		public System.Nullable<System.DateTime> SessionDate
+		{
+			get
+			{
+				return this._SessionDate;
+			}
+			set
+			{
+				if ((this._SessionDate != value))
+				{
+					this._SessionDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RateID", DbType="NVarChar(2)")]
+		public string RateID
+		{
+			get
+			{
+				return this._RateID;
+			}
+			set
+			{
+				if ((this._RateID != value))
+				{
+					this._RateID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fee", DbType="Money")]
+		public System.Nullable<decimal> Fee
+		{
+			get
+			{
+				return this._Fee;
+			}
+			set
+			{
+				if ((this._Fee != value))
+				{
+					this._Fee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemNo", DbType="NVarChar(7)")]
+		public string ItemNo
+		{
+			get
+			{
+				return this._ItemNo;
+			}
+			set
+			{
+				if ((this._ItemNo != value))
+				{
+					this._ItemNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GST", DbType="Money")]
+		public System.Nullable<decimal> GST
+		{
+			get
+			{
+				return this._GST;
+			}
+			set
+			{
+				if ((this._GST != value))
+				{
+					this._GST = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PatientName", CanBeNull=false)]
+		public string PatientName
+		{
+			get
+			{
+				return this._PatientName;
+			}
+			set
+			{
+				if ((this._PatientName != value))
+				{
+					this._PatientName = value;
 				}
 			}
 		}

@@ -11,11 +11,24 @@ using FP_PMS.Db;
 
 namespace FP_PMS.Report
 {
-    public partial class newPatientStatsViewForm : FP_PMS.Templates.level2TemplateForm
+    public partial class newPatientStatsViewForm : FP_PMS.Templates.level2TemplateForm, Interfaces.IPrinting
     {
+        DateTime Start { get; set; }
+        DateTime End { get; set; }
+
         public newPatientStatsViewForm()
         {
             InitializeComponent();
+        }
+
+        public void print()
+        {
+            this.reportPrintingSystem.PrintDlg();
+        }
+
+        public void printPreview()
+        {
+            this.reportPrintableComponentLink.ShowPreview();
         }
 
         private void newPatientStatsViewForm_Load(object sender, EventArgs e)
@@ -27,10 +40,10 @@ namespace FP_PMS.Report
 
             if (newDatePickerDialog.DialogResult == DialogResult.OK)
             {
-                newPatientGridControl.DataSource = from p in newConnection.tblPatientStats
-                                                   where p.SessionDate >= newDatePickerDialog.startDate & p.SessionDate <= newDatePickerDialog.endDate
-                                                   select p;
+                Start = newDatePickerDialog.startDate;
+                End = newDatePickerDialog.endDate;
 
+                newPatientPivotGridControl.DataSource = newConnection.getNewPatients(Start, End);
                 newDatePickerDialog.Dispose();
             }
             else
@@ -38,6 +51,15 @@ namespace FP_PMS.Report
                 newDatePickerDialog.Dispose();
                 this.Close();
             }
+        }
+
+        private void reportPrintableComponentLink_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            DevExpress.XtraPrinting.TextBrick brick;
+            brick = e.Graph.DrawString("Patient Numbers Report " + Start.ToShortDateString() + "-" + End.ToShortDateString()
+            , Color.Navy, new RectangleF(0, 0, 500, 40), DevExpress.XtraPrinting.BorderSide.None);
+            brick.Font = new Font("Tahoma", 10);
+            brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
         }
     }
 }

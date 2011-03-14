@@ -82,7 +82,11 @@ namespace FP_PMS.Accounting.Receipt
         void applyReceipt()
         {
             var newConnection = new dbContextDataContext();
-            myReceipt = new tblReceipt();
+            
+            myReceipt.ReceiptDate = System.DateTime.Today;
+            myReceipt.ReceiptAmnt = myPayments.Sum(p => p.PayinAmnt);
+            myReceipt.UserID = staticProperties.userName;
+            
             newConnection.tblReceipts.InsertOnSubmit(myReceipt);
             newConnection.SubmitChanges();
 
@@ -107,6 +111,7 @@ namespace FP_PMS.Accounting.Receipt
 
         public override void okBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             base.okBtn_Click(sender, e);
 
             if (this.myUnPaidInvoices.Any() != true)
@@ -132,7 +137,7 @@ namespace FP_PMS.Accounting.Receipt
                         ir.ReceiptNo = myReceipt.ReceiptNo;
                         newConnection.tblInvoiceReceipts.InsertOnSubmit(ir);
                     }
-                    if (i.ReceiptAmount == i.InvoiceTotal)
+                    if ((i.ReceiptAmount + i.ReceiptTotal) == i.InvoiceTotal)
                     {
                         paidlist.Add(i.InvoiceNo);
                     }
@@ -178,6 +183,7 @@ namespace FP_PMS.Accounting.Receipt
 
                 newConnection.SubmitChanges();
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void multipleReceiptView_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -223,21 +229,21 @@ namespace FP_PMS.Accounting.Receipt
         {
             if ((AnonUnPaidInvoice)multipleReceiptView.GetFocusedRow() != null)
             {
-
-                var myInvoiceController = new Accounting.Invoice.invoiceController();
-                myInvoiceController.myClaimant = this.myClaimant;
                 var currentRow = (AnonUnPaidInvoice)multipleReceiptView.GetFocusedRow();
+                
                 Cursor.Current = Cursors.WaitCursor;
                 var newConnection = new dbContextDataContext();
+
+
                 var currentInvoice = newConnection.tblInvoices.Where(i => i.InvoiceNo == currentRow.InvoiceNo).SingleOrDefault();
                 if (currentInvoice != null)
                 {
-                    myInvoiceController.viewInvoice(currentInvoice);
+                    var newInvoice = new Accounting.Invoice.newInvoiceForm(currentInvoice);
+                    newInvoice.ShowDialog();
 
-                    if (myInvoiceController.invoiceChanged)
+                    if (newInvoice.DialogResult == DialogResult.OK)
                         updateForm();
-
-                    myInvoiceController.myForm.Dispose();
+                    newInvoice.Dispose();
                 }
                 else
                 {

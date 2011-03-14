@@ -51,6 +51,7 @@ namespace FP_PMS.Patient
 
 		void updateClaimantAccidents()
 		{
+			Cursor.Current = Cursors.WaitCursor;
 			if (patientPresentTabControl.SelectedTabPage.Name == "claimantTabPage")
 			{
 				if ((_sourceClaimantList.Any() == false) && (myPatient.PatientID != null))
@@ -95,6 +96,7 @@ namespace FP_PMS.Patient
 					accidentGridControl.DataSource = editCopyAccidents;
 				}
 			}
+			Cursor.Current = Cursors.Default;
 		}
 
 		void newPatient()
@@ -866,7 +868,6 @@ namespace FP_PMS.Patient
 
 			if ((currentRow != null) && (patientLookUp.EditValue != null))
 			{
-				MessageBox.Show(currentRow.RefDoctor.ToString());
 				//var newConnection = new dbContextDataContext();
 				//var patientData = (from a in newConnection.tblPatientAddrs.Where(ad => ad.PatientID == currentRow.PatientID).DefaultIfEmpty()
 				//                   select new AnonPatient
@@ -902,7 +903,7 @@ namespace FP_PMS.Patient
 				
 				//refDocLookUp.EditValue = null;
 				//}
-
+				
 			}
 
 			else
@@ -919,6 +920,7 @@ namespace FP_PMS.Patient
 			_sourceAccidentList.Clear();
 			editCopyAccidents.Clear();
 			editCopyClaimants.Clear();
+			
 			
 			updateClaimantAccidents();
 		}
@@ -952,7 +954,9 @@ namespace FP_PMS.Patient
 
 		private void patientPresentTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
 		{
+			
 			updateClaimantAccidents();
+			
 		}
 
 		private void newOkBtn_Click(object sender, EventArgs e)

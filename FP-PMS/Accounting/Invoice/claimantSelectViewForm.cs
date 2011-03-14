@@ -52,9 +52,6 @@ namespace FP_PMS.Accounting.Invoice
         {
             //claimantInstantFeedBack.DesignTimeElementType = typeof(tblClaimant);
             claimantInstantFeedBack.KeyExpression = "ClaimantID";
-            claimantLookUp.Properties.DisplayMember = "LastName";
-            claimantLookUp.Properties.ValueMember = "ClaimantID";
-            
         }
 
         void claimantInstantFeedBack_GetQueryable(object sender, GetQueryableEventArgs e)

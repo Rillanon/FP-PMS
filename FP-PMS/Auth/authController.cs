@@ -14,6 +14,7 @@ namespace FP_PMS.Auth
 
         public DialogResult newAuth()
         {
+            Cursor.Current = Cursors.WaitCursor;
             using (var newConnection = new Db.dbContextDataContext())
             {
                 try
@@ -28,10 +29,11 @@ namespace FP_PMS.Auth
                     {
                         Ex.staticProperties.userLevel = userObj.UserLevel;
                         Ex.staticProperties.userName = userObj.FirstNames + @" " + userObj.LastName;
-
+                        Cursor.Current = Cursors.Default;
                         return DialogResult.OK;
                     }
                     MessageBox.Show(Ex.exceptionMessages.authFailedException());
+                    Cursor.Current = Cursors.Default;
                     return DialogResult.Retry;
                 }
 
@@ -39,6 +41,7 @@ namespace FP_PMS.Auth
                 {
                     MessageBox.Show(e.Message);
                     MessageBox.Show(Ex.exceptionMessages.dbConnectionFailedException());
+                    Cursor.Current = Cursors.Default;
                     return DialogResult.Retry;
                 }
             }

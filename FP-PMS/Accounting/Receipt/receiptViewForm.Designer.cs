@@ -53,6 +53,8 @@
             this.paymentTypeDescCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.invoiceTotalSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.commentsMemoExEdit = new DevExpress.XtraEditors.MemoExEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.receiptLinesGroupControl)).BeginInit();
             this.receiptLinesGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentListGridControl)).BeginInit();
@@ -70,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTotalSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsMemoExEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // quitBtn
@@ -257,7 +260,9 @@
             this.existingCreditSpinEdit.Name = "existingCreditSpinEdit";
             this.existingCreditSpinEdit.Properties.AllowFocused = false;
             this.existingCreditSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Vrinda", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.existingCreditSpinEdit.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.existingCreditSpinEdit.Properties.Appearance.Options.UseFont = true;
+            this.existingCreditSpinEdit.Properties.Appearance.Options.UseForeColor = true;
             this.existingCreditSpinEdit.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
             this.existingCreditSpinEdit.Properties.AppearanceReadOnly.BackColor2 = System.Drawing.Color.White;
             this.existingCreditSpinEdit.Properties.AppearanceReadOnly.BorderColor = System.Drawing.Color.Coral;
@@ -357,7 +362,7 @@
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(165, 63);
             this.groupControl3.TabIndex = 18;
-            this.groupControl3.Text = "Invoice Total";
+            this.groupControl3.Text = "Invoice Remaining";
             // 
             // invoiceTotalSpinEdit
             // 
@@ -370,8 +375,10 @@
             this.invoiceTotalSpinEdit.Margin = new System.Windows.Forms.Padding(2);
             this.invoiceTotalSpinEdit.Name = "invoiceTotalSpinEdit";
             this.invoiceTotalSpinEdit.Properties.AllowFocused = false;
-            this.invoiceTotalSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Vrinda", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceTotalSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Vrinda", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceTotalSpinEdit.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.invoiceTotalSpinEdit.Properties.Appearance.Options.UseFont = true;
+            this.invoiceTotalSpinEdit.Properties.Appearance.Options.UseForeColor = true;
             this.invoiceTotalSpinEdit.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
             this.invoiceTotalSpinEdit.Properties.AppearanceReadOnly.BackColor2 = System.Drawing.Color.White;
             this.invoiceTotalSpinEdit.Properties.AppearanceReadOnly.BorderColor = System.Drawing.Color.Coral;
@@ -383,13 +390,39 @@
             this.invoiceTotalSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.invoiceTotalSpinEdit.Properties.Mask.EditMask = "c";
             this.invoiceTotalSpinEdit.Properties.ReadOnly = true;
-            this.invoiceTotalSpinEdit.Size = new System.Drawing.Size(150, 32);
+            this.invoiceTotalSpinEdit.Size = new System.Drawing.Size(150, 36);
             this.invoiceTotalSpinEdit.TabIndex = 17;
+            // 
+            // commentsMemoExEdit
+            // 
+            this.commentsMemoExEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.commentsMemoExEdit.Location = new System.Drawing.Point(97, 558);
+            this.commentsMemoExEdit.Name = "commentsMemoExEdit";
+            this.commentsMemoExEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commentsMemoExEdit.Properties.Appearance.Options.UseFont = true;
+            this.commentsMemoExEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.commentsMemoExEdit.Size = new System.Drawing.Size(350, 29);
+            this.commentsMemoExEdit.TabIndex = 22;
+            this.commentsMemoExEdit.EditValueChanged += new System.EventHandler(this.commentsMemoExEdit_EditValueChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(10, 561);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(82, 19);
+            this.labelControl3.TabIndex = 21;
+            this.labelControl3.Text = "Comments:";
             // 
             // receiptViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(856, 596);
+            this.Controls.Add(this.commentsMemoExEdit);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.paymentTypeGridControl);
             this.Controls.Add(this.groupControl2);
@@ -405,6 +438,8 @@
             this.Controls.SetChildIndex(this.groupControl2, 0);
             this.Controls.SetChildIndex(this.paymentTypeGridControl, 0);
             this.Controls.SetChildIndex(this.groupControl3, 0);
+            this.Controls.SetChildIndex(this.labelControl3, 0);
+            this.Controls.SetChildIndex(this.commentsMemoExEdit, 0);
             ((System.ComponentModel.ISupportInitialize)(this.receiptLinesGroupControl)).EndInit();
             this.receiptLinesGroupControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.paymentListGridControl)).EndInit();
@@ -422,7 +457,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTotalSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsMemoExEdit.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -450,5 +487,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         internal DevExpress.XtraEditors.SpinEdit invoiceTotalSpinEdit;
+        private DevExpress.XtraEditors.MemoExEdit commentsMemoExEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

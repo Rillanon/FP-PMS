@@ -51,6 +51,9 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.cancellInvoiceGridControl);
             this.groupControl1.Location = new System.Drawing.Point(-2, 2);
             this.groupControl1.Name = "groupControl1";

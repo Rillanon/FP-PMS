@@ -28,12 +28,13 @@ namespace FP_PMS.Accounting.Receipt
         private BindingList<tblPayin> _myPaymentLines = new BindingList<tblPayin> { };
 
         private tblPayin _myCurrentPayment;
-        private tblReceipt _myReceipt;
+        private tblReceipt _myReceipt = new tblReceipt();
         private BindingList<tblPayinType> myPaymentTypeList = new BindingList<tblPayinType> { };
-        public tblReceipt myReceipt { get { return _myReceipt; } }
+        public tblReceipt myReceipt { get { return _myReceipt; } set { _myReceipt = value; } }
+        public BindingList<tblInvoice> myInvoiceList { get { return _myInvoiceList; } set { _myInvoiceList = value; } }
 
-        public BindingList<tblInvoiceReceipt> myInvoiceReceipts { get { return _myInvoiceReceipts; } }
-        public BindingList<tblPayin> myPaymentLines { get { return _myPaymentLines; } }
+        public BindingList<tblInvoiceReceipt> myInvoiceReceipts { get { return _myInvoiceReceipts; } set { _myInvoiceReceipts = value; } }
+        public BindingList<tblPayin> myPaymentLines { get { return _myPaymentLines; } set { _myPaymentLines = value; } }
 
         bool _multi = false;
         public bool IsMulti { get { return _multi; } set { _multi = value; } }
@@ -49,6 +50,8 @@ namespace FP_PMS.Accounting.Receipt
 
                 foreach (var p in myPaymentLines)
                 {
+                    p.ReceiptNo = myReceipt.ReceiptNo;
+                    MessageBox.Show(p.PayinAmnt.ToString());
                     if (p.PayinType == "7")
                     {
                         var c = new tblReceiptCreditPatient();
@@ -67,18 +70,19 @@ namespace FP_PMS.Accounting.Receipt
         }
         private void commitReceipt()
         {
-            _myReceipt = new tblReceipt();
-            _myReceipt.ReceiptAmnt = _myPaymentLines.Sum(od => od.PayinAmnt);
-            _myReceipt.ReceiptDate = System.DateTime.Today;
-            _myReceipt.UserID = staticProperties.userName;
+            
+            myReceipt.ReceiptAmnt = myPaymentLines.Sum(od => od.PayinAmnt);
+            
+            myReceipt.ReceiptDate = System.DateTime.Today;
+            myReceipt.UserID = staticProperties.userName;
 
-            if (_myInvoiceList.Any())
+            if (myInvoiceList.Any())
             {
                 var newConnection = new dbContextDataContext();
-                newConnection.tblReceipts.InsertOnSubmit(_myReceipt);
+                newConnection.tblReceipts.InsertOnSubmit(myReceipt);
                 newConnection.SubmitChanges();
 
-                if (_myInvoiceList.Any())
+                if (myInvoiceList.Any())
                 {
                     foreach (tblInvoice x in _myInvoiceList)
                     {
@@ -86,9 +90,9 @@ namespace FP_PMS.Accounting.Receipt
                         y.InvoiceNo = x.InvoiceNo;
                         y.ReceiptNo = _myReceipt.ReceiptNo;
                         y.InvRecAmnt = _myPaymentLines.Sum(od => od.PayinAmnt);
-                        _myInvoiceReceipts.Add(y);
+                        myInvoiceReceipts.Add(y);
                     }
-                    newConnection.tblInvoiceReceipts.InsertAllOnSubmit(_myInvoiceReceipts);
+                    newConnection.tblInvoiceReceipts.InsertAllOnSubmit(myInvoiceReceipts);
                 }
                 newConnection.SubmitChanges();
             }
@@ -124,13 +128,12 @@ namespace FP_PMS.Accounting.Receipt
             myPaymentLines.ListChanged += new ListChangedEventHandler(myPaymentLines_ListChanged);
             myClaimant = MyClaimant;
             updateViewTotals();
-
         }
 
         public override void okBtn_Click(object sender, EventArgs e)
         {
-            
-            if (_myPaymentLines.Any())
+            Cursor.Current = Cursors.WaitCursor;
+            if (myPaymentLines.Any())
             {
                 this.commitReceipt();
                 this.commitPayments();
@@ -141,14 +144,14 @@ namespace FP_PMS.Accounting.Receipt
                 MessageBox.Show("Can not create empty receipt.");
                 this.DialogResult = DialogResult.Retry;
             }
-                
+            Cursor.Current = Cursors.Default;   
         }
 
         public receiptViewForm(tblInvoice MyInvoice, tblClaimant MyClaimant)
         {
             InitializeComponent();
             myPaymentLines.ListChanged += new ListChangedEventHandler(myPaymentLines_ListChanged);
-            _myInvoiceList.Add(MyInvoice);
+            myInvoiceList.Add(MyInvoice);
             myInvoice = MyInvoice;
             myClaimant = MyClaimant;
             updateViewTotals();
@@ -192,7 +195,6 @@ namespace FP_PMS.Accounting.Receipt
         {
             this.okBtn.Click -= new EventHandler(okBtn_Click);
         }
-
 
         private void paymentTypeGridView_MouseDown(object sender, MouseEventArgs e)
         {
@@ -336,6 +338,11 @@ namespace FP_PMS.Accounting.Receipt
                 }
 
             }
+        }
+
+        private void commentsMemoExEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            myReceipt.ReceiptComments = commentsMemoExEdit.Text;
         }
     }
 }

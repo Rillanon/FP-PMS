@@ -372,9 +372,9 @@ namespace FP_PMS.Accounting.Invoice
                     commitInvoice();
                 }
 
-                var InvoiceReportForm = new Report.invoicePrintReport(myInvoice, myClaimant, myInvoiceLines);
-                InvoiceReportForm.ShowPreviewDialog();
-                InvoiceReportForm.Dispose();
+                //var InvoiceReportForm = new Report.invoicePrintReport(myInvoice, myClaimant, myInvoiceLines);
+                //InvoiceReportForm.ShowPreviewDialog();
+                //InvoiceReportForm.Dispose();
             }
             else
             {

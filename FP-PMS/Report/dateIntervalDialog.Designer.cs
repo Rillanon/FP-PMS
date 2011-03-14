@@ -48,30 +48,34 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(42, 25);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(42, 18);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(50, 13);
+            this.labelControl1.Size = new System.Drawing.Size(70, 19);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Start Date";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(48, 51);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(48, 50);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 13);
+            this.labelControl2.Size = new System.Drawing.Size(64, 19);
             this.labelControl2.TabIndex = 9;
             this.labelControl2.Text = "End Date";
             // 
             // startDatePicker
             // 
             this.startDatePicker.EditValue = null;
-            this.startDatePicker.Location = new System.Drawing.Point(129, 22);
+            this.startDatePicker.Location = new System.Drawing.Point(129, 15);
             this.startDatePicker.Name = "startDatePicker";
+            this.startDatePicker.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDatePicker.Properties.Appearance.Options.UseFont = true;
             this.startDatePicker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.startDatePicker.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.startDatePicker.Size = new System.Drawing.Size(205, 20);
+            this.startDatePicker.Size = new System.Drawing.Size(205, 26);
             this.startDatePicker.TabIndex = 10;
             this.startDatePicker.EditValueChanged += new System.EventHandler(this.startDatePicker_EditValueChanged);
             // 
@@ -80,18 +84,20 @@
             this.endDatePicker.EditValue = null;
             this.endDatePicker.Location = new System.Drawing.Point(129, 47);
             this.endDatePicker.Name = "endDatePicker";
+            this.endDatePicker.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDatePicker.Properties.Appearance.Options.UseFont = true;
             this.endDatePicker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.endDatePicker.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.endDatePicker.Size = new System.Drawing.Size(205, 20);
+            this.endDatePicker.Size = new System.Drawing.Size(205, 26);
             this.endDatePicker.TabIndex = 11;
             this.endDatePicker.EditValueChanged += new System.EventHandler(this.endDatePicker_EditValueChanged);
             // 
             // dateIntervalDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(362, 115);
+            this.ClientSize = new System.Drawing.Size(350, 115);
             this.Controls.Add(this.endDatePicker);
             this.Controls.Add(this.startDatePicker);
             this.Controls.Add(this.labelControl2);

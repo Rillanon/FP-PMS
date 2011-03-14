@@ -11,15 +11,29 @@ using FP_PMS.Db;
 
 namespace FP_PMS.Report
 {
-    public partial class paymentAuditTrail : FP_PMS.Templates.level2TemplateForm
+    public partial class paymentAuditTrail : FP_PMS.Templates.level2TemplateForm, Interfaces.IPrinting
     {
+        DateTime Start { get; set; }
+        DateTime End { get; set; }
+
         public paymentAuditTrail()
         {
             InitializeComponent();
         }
 
+        public void printPreview()
+        {
+            this.reportPrintableComponentLink.ShowPreview();
+        }
+
+        public void print()
+        {
+            this.reportPrintingSystem.PrintDlg();
+        }
+
         private void paymentAuditTrail_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var newDatePickerDialog = new dateIntervalDialog();
             var newConnection = new dbContextDataContext();
 
@@ -27,7 +41,10 @@ namespace FP_PMS.Report
 
             if (newDatePickerDialog.DialogResult == DialogResult.OK)
             {
-                paymentAuditTrailGridControl.DataSource = newConnection.PaymentAuditTrail(newDatePickerDialog.startDate, newDatePickerDialog.endDate);
+                Start = newDatePickerDialog.startDate;
+                End = newDatePickerDialog.endDate;
+
+                paymentAuditTrialPivotGridControl.DataSource = newConnection.getPaymentAuditTrial(newDatePickerDialog.startDate, newDatePickerDialog.endDate);
                 newDatePickerDialog.Dispose();
             }
             else
@@ -35,6 +52,16 @@ namespace FP_PMS.Report
                 newDatePickerDialog.Dispose();
                 this.Close();
             }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void reportPrintableComponentLink_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            DevExpress.XtraPrinting.TextBrick brick;
+            brick = e.Graph.DrawString("Payment Audit Report " + Start.ToShortDateString() + "-" + End.ToShortDateString()
+            , Color.Navy, new RectangleF(0, 0, 500, 40), DevExpress.XtraPrinting.BorderSide.None);
+            brick.Font = new Font("Tahoma", 10);
+            brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
         }
     }
 }

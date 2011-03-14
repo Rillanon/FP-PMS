@@ -90,4 +90,15 @@
       <Column Name="endDate" Storage="_End" Type="System.DateTime" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="" Member="AnonInvoiceLines">
+    <Type Name="AnonInvoiceLines">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SessionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RateID" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ItemNo" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Member="PatientName" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

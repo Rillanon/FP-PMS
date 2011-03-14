@@ -54,14 +54,19 @@
             // 
             // quitBtn
             // 
+            this.quitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.quitBtn.Location = new System.Drawing.Point(938, 510);
             // 
             // okBtn
             // 
+            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okBtn.Location = new System.Drawing.Point(878, 510);
             // 
             // groupControl1
             // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.waitingRoomGridControl);
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
@@ -95,6 +100,8 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.Caption = "Name";
             this.gridColumn1.FieldName = "Name";
             this.gridColumn1.Name = "gridColumn1";
@@ -103,6 +110,8 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.Caption = "Physio";
             this.gridColumn2.FieldName = "Physio";
             this.gridColumn2.Name = "gridColumn2";
@@ -111,6 +120,8 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
             this.gridColumn3.Caption = "Rate";
             this.gridColumn3.FieldName = "Rate";
             this.gridColumn3.Name = "gridColumn3";
@@ -119,6 +130,8 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
             this.gridColumn4.Caption = "Start";
             this.gridColumn4.FieldName = "Start";
             this.gridColumn4.Name = "gridColumn4";
@@ -127,6 +140,8 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.Caption = "End";
             this.gridColumn5.FieldName = "End";
             this.gridColumn5.Name = "gridColumn5";
@@ -183,6 +198,7 @@
             // 
             // invoiceBtn
             // 
+            this.invoiceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.invoiceBtn.Location = new System.Drawing.Point(12, 506);
             this.invoiceBtn.Name = "invoiceBtn";
             this.invoiceBtn.Size = new System.Drawing.Size(75, 23);
@@ -192,6 +208,7 @@
             // 
             // checkOutBtn
             // 
+            this.checkOutBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.checkOutBtn.Location = new System.Drawing.Point(165, 506);
             this.checkOutBtn.Name = "checkOutBtn";
             this.checkOutBtn.Size = new System.Drawing.Size(75, 23);

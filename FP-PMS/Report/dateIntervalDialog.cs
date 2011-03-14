@@ -38,14 +38,14 @@ namespace FP_PMS.Report
 
         private void startDatePicker_EditValueChanged(object sender, EventArgs e)
         {
-            //if (startDatePicker.EditValue != null)
-            //startDate = (DateTime)startDatePicker.EditValue;
+            if (startDatePicker.EditValue != null)
+            startDate = (DateTime)startDatePicker.EditValue;
         }
 
         private void endDatePicker_EditValueChanged(object sender, EventArgs e)
         {
-            //if (endDatePicker.EditValue != null)
-            //endDate = (DateTime)endDatePicker.EditValue;
+            if (endDatePicker.EditValue != null)
+            endDate = (DateTime)endDatePicker.EditValue;
         }
     }
 }

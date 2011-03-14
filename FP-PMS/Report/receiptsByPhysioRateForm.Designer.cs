@@ -45,10 +45,12 @@
             // quitBtn
             // 
             this.quitBtn.Location = new System.Drawing.Point(801, 553);
+            this.quitBtn.Visible = false;
             // 
             // okBtn
             // 
             this.okBtn.Location = new System.Drawing.Point(741, 553);
+            this.okBtn.Visible = false;
             // 
             // groupControl1
             // 

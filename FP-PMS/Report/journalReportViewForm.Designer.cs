@@ -41,11 +41,13 @@
             // 
             this.quitBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.quitBtn.Location = new System.Drawing.Point(655, 359);
+            this.quitBtn.Visible = false;
             // 
             // okBtn
             // 
             this.okBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.okBtn.Location = new System.Drawing.Point(595, 359);
+            this.okBtn.Visible = false;
             // 
             // gridGroupControl
             // 

@@ -49,12 +49,12 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.physioLookUp = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.physioLookUpView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.physioIDCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.physioNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.appointmentDurationEdit = new DevExpress.XtraScheduler.UI.DurationEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rateComboBoxEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.physioIDCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.physioNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.patientFirstNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientLastNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientGroupControl)).BeginInit();
@@ -316,6 +316,22 @@
             this.physioLookUpView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.physioLookUpView.OptionsView.ShowGroupPanel = false;
             // 
+            // physioIDCol
+            // 
+            this.physioIDCol.Caption = "Physio ID";
+            this.physioIDCol.FieldName = "PhysioID";
+            this.physioIDCol.Name = "physioIDCol";
+            this.physioIDCol.Visible = true;
+            this.physioIDCol.VisibleIndex = 0;
+            // 
+            // physioNameCol
+            // 
+            this.physioNameCol.Caption = "Name";
+            this.physioNameCol.FieldName = "PhysioName";
+            this.physioNameCol.Name = "physioNameCol";
+            this.physioNameCol.Visible = true;
+            this.physioNameCol.VisibleIndex = 1;
+            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -360,22 +376,6 @@
             this.rateComboBoxEdit.Size = new System.Drawing.Size(157, 26);
             this.rateComboBoxEdit.TabIndex = 22;
             this.rateComboBoxEdit.EditValueChanged += new System.EventHandler(this.rateComboBoxEdit_EditValueChanged);
-            // 
-            // physioIDCol
-            // 
-            this.physioIDCol.Caption = "Physio ID";
-            this.physioIDCol.FieldName = "PhysioID";
-            this.physioIDCol.Name = "physioIDCol";
-            this.physioIDCol.Visible = true;
-            this.physioIDCol.VisibleIndex = 0;
-            // 
-            // physioNameCol
-            // 
-            this.physioNameCol.Caption = "Name";
-            this.physioNameCol.FieldName = "PhysioName";
-            this.physioNameCol.Name = "physioNameCol";
-            this.physioNameCol.Visible = true;
-            this.physioNameCol.VisibleIndex = 1;
             // 
             // appointmentPopUp
             // 

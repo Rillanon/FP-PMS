@@ -27,20 +27,39 @@ namespace FP_PMS.Report
 
         public void print()
         {
-            this.agedTrailBalancePivotGrid.Print();
+            this.reportPrintingSystem.PrintDlg();
+        }
+
+        private void reportPrintableComponent_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            DevExpress.XtraPrinting.TextBrick brick;
+            brick = e.Graph.DrawString("Aged Trail Balance Report " + startDate.ToShortDateString() + "-" + endDate.ToShortDateString()
+            , Color.Navy, new RectangleF(0, 0, 500, 40), DevExpress.XtraPrinting.BorderSide.None);
+            brick.Font = new Font("Tahoma", 10);
+            brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
         }
 
         public void printPreview()
         {
-            this.agedTrailBalancePivotGrid.ShowPrintPreview();
+            this.reportPrintableComponentLink.ShowPreview();
         }
 
         public void fillData()
         {
             Cursor.Current = Cursors.WaitCursor;
             var newConnection = new dbContextDataContext();
+            var cid = new object();
+            var pid = new object();
 
-            this.agedTrailBalancePivotGrid.DataSource = newConnection.getAgedTrailBalance(null, myPhysio.PhysioID, startDate, endDate);
+            if ((myClaimant.ClaimantID == 0) && (myPhysio.UniqueID != 0))
+                this.agedTrailGridControl.DataSource = newConnection.getAgedTrailBalance(null, myPhysio.PhysioID, startDate, endDate);
+
+            else if ((myClaimant.ClaimantID != 0) && (myPhysio.UniqueID == 0))
+                this.agedTrailGridControl.DataSource = newConnection.getAgedTrailBalance(myClaimant.ClaimantID, null, startDate, endDate);
+            else if ((myClaimant.ClaimantID == 0) && (myPhysio.UniqueID == 0))
+                this.agedTrailGridControl.DataSource = newConnection.getAgedTrailBalance(null, null, startDate, endDate);
+            else
+            this.agedTrailGridControl.DataSource = newConnection.getAgedTrailBalance(myClaimant.ClaimantID, myPhysio.PhysioID, startDate, endDate);
             
             Cursor.Current = Cursors.Default;
         }
@@ -73,6 +92,15 @@ namespace FP_PMS.Report
         {
             base.okBtn_Click(sender, e);
             
+        }
+
+        private void agedTrailGridView_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if ((e.DisplayText == "Overdue") || (e.DisplayText == "Private Claimant"))
+            {
+                e.Appearance.ForeColor = System.Drawing.Color.Red;
+                e.Appearance.Font = new Font("Tahoma", 10);
+            }
         }
     }
 }

@@ -46,8 +46,23 @@ namespace FP_PMS
 
         private void blankInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var _myInvoiceController = new invoiceController();
-            _myInvoiceController.chooseClaimant();
+            //var _myInvoiceController = new invoiceController();
+            //_myInvoiceController.chooseClaimant();
+            var claimantChoose = new Accounting.Invoice.claimantSelectViewForm();
+            claimantChoose.ShowDialog();
+            
+            if (claimantChoose.DialogResult == DialogResult.OK)
+            {
+                var physioChoose = new Scheduling.physioSelectDialog();
+                physioChoose.ShowDialog();
+                if (physioChoose.DialogResult == DialogResult.OK)
+                {
+                    var newInvoice = new Accounting.Invoice.newInvoiceForm(claimantChoose.myClaimant, physioChoose.myPhysio);
+                    newInvoice.ShowDialog();
+                }
+            
+            }
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,12 +81,8 @@ namespace FP_PMS
 
                 if (newDateInterval.DialogResult == DialogResult.OK)
                 {
-                    var newLoadForm = new Helper.loadingViewForm();
-                    newLoadForm.Show();
-                    newLoadForm.Update();
                     var foo = new Claimant.claimantInvoiceViewForm(claimantChoose.myClaimant, newDateInterval.startDate, newDateInterval.endDate);
-                    Thread.Sleep(3000);
-                    newLoadForm.Close();
+                    
                     foo.ShowDialog();
                     foo.Dispose();
                 }
@@ -111,7 +122,7 @@ namespace FP_PMS
             {
                 var foo = new appointmentViewForm();
                 foo.MdiParent = this;
-                foo.WindowState = FormWindowState.Maximized;
+               
                 foo.Show();
             }
         }
@@ -167,7 +178,8 @@ namespace FP_PMS
         private void journalReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var foo = new Report.journalReportViewForm();
-            foo.ShowDialog();
+            foo.MdiParent = this;
+            foo.Show();
         }
 
         private void receiptByPhysioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,13 +191,15 @@ namespace FP_PMS
         private void newPatientSessionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var foo = new Report.newPatientStatsViewForm();
-            foo.ShowDialog();
+            foo.MdiParent = this;
+            foo.Show();
         }
 
         private void paymentAuditTrailToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var foo = new Report.paymentAuditTrail();
-            foo.ShowDialog();
+            foo.MdiParent = this;
+            foo.Show();
         }
 
         private void viewPatientDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -299,23 +313,30 @@ namespace FP_PMS
 
         private void cancelInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var claimantChoose = new Accounting.Invoice.claimantSelectViewForm();
-            claimantChoose.ShowDialog();
-            if (claimantChoose.DialogResult == DialogResult.OK)
+            if (staticProperties.userLevel == 1)
             {
-                var newDateInterval = new Report.dateIntervalDialog();
-                newDateInterval.ShowDialog();
-
-                if (newDateInterval.DialogResult == DialogResult.OK)
+                var claimantChoose = new Accounting.Invoice.claimantSelectViewForm();
+                claimantChoose.ShowDialog();
+                if (claimantChoose.DialogResult == DialogResult.OK)
                 {
-                    var foo = new Accounting.Invoice.cancellInvoiceViewForm(claimantChoose.myClaimant, newDateInterval.startDate, newDateInterval.endDate);
+                    var newDateInterval = new Report.dateIntervalDialog();
+                    newDateInterval.ShowDialog();
 
-                    foo.ShowDialog();
-                    foo.Dispose();
+                    if (newDateInterval.DialogResult == DialogResult.OK)
+                    {
+                        var foo = new Accounting.Invoice.cancellInvoiceViewForm(claimantChoose.myClaimant, newDateInterval.startDate, newDateInterval.endDate);
+
+                        foo.ShowDialog();
+                        foo.Dispose();
+                    }
+                    newDateInterval.Dispose();
                 }
-                newDateInterval.Dispose();
+                claimantChoose.Dispose();
             }
-            claimantChoose.Dispose();
+            else
+            {
+                MessageBox.Show("General user can not access this function.");
+            }
         }
 
         private void appointmentsByPhysioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -367,35 +388,44 @@ namespace FP_PMS
 
         private void agedBalanceTrailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var claimantChoose = new Accounting.Invoice.claimantSelectViewForm();
-            claimantChoose.ShowDialog();
-            if (claimantChoose.DialogResult == DialogResult.OK)
+            var nullSelect = new Report.nullSelectionForm();
+            nullSelect.ShowDialog();
+            if (nullSelect.DialogResult == DialogResult.OK)
             {
-                var physioChoose = new Scheduling.physioSelectDialog();
-                physioChoose.ShowDialog();
-                if (physioChoose.DialogResult == DialogResult.OK)
-                {
-                    var newDateInterval = new Report.dateIntervalDialog();
-                    newDateInterval.ShowDialog();
-
-                    if (newDateInterval.DialogResult == DialogResult.OK)
-                    {
-                        var foo = new Report.agedTrailBalanceViewForm(claimantChoose.myClaimant, physioChoose.myPhysio, newDateInterval.startDate, newDateInterval.endDate);
-                        foo.MdiParent = this;
-                        foo.Show();
-                        //foo.Dispose();
-                    }
-                    newDateInterval.Dispose();
-                }
-                physioChoose.Dispose();
+                var agedTrailForm = new Report.agedTrailBalanceViewForm(nullSelect.myClaimant, nullSelect.myPhysio, nullSelect.startDate, nullSelect.endDate);
+                agedTrailForm.MdiParent = this;
+                agedTrailForm.Show();
             }
-            claimantChoose.Dispose();
+            nullSelect.Dispose();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void adHocEventsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var foo = new newInvoiceForm();
-            foo.Show();
+            bool formAlreadyOpened = false;
+            foreach (Form a in Application.OpenForms)
+            {
+                if (a.GetType() == typeof(eventViewForm))
+                {
+                    a.Show();
+                    a.Focus();
+                    formAlreadyOpened = true;
+                }
+            }
+
+            if (formAlreadyOpened == false)
+            {
+                var foo = new eventViewForm();
+                foo.MdiParent = this;
+                
+                foo.Show();
+            }
         }
+
+        private void viewClaimantDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var foo = new Claimant.claimantViewForm();
+            foo.ShowDialog();
+        }
+
     }
 }

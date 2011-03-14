@@ -31,7 +31,7 @@ namespace FP_PMS.Scheduling
         private void physioLinqInstantFeedBackSource_GetQueryable(object sender, DevExpress.Data.Linq.GetQueryableEventArgs e)
         {
             var newConnection = new dbContextDataContext();
-            e.QueryableSource = newConnection.tblPhysios;
+            e.QueryableSource = newConnection.tblPhysios.Where(p => p.PhysioInActive.GetValueOrDefault(false) != true);
             e.Tag = newConnection;
         }
 

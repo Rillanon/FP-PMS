@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.multipleReceiptGridControl = new DevExpress.XtraGrid.GridControl();
             this.multipleReceiptView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -118,6 +118,8 @@
             // 
             // invoiceNoCol
             // 
+            this.invoiceNoCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceNoCol.AppearanceCell.Options.UseFont = true;
             this.invoiceNoCol.Caption = "Invoice #";
             this.invoiceNoCol.FieldName = "InvoiceNo";
             this.invoiceNoCol.Name = "invoiceNoCol";
@@ -127,6 +129,8 @@
             // 
             // dateCol
             // 
+            this.dateCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCol.AppearanceCell.Options.UseFont = true;
             this.dateCol.Caption = "Date";
             this.dateCol.FieldName = "InvoiceDate";
             this.dateCol.Name = "dateCol";
@@ -136,6 +140,8 @@
             // 
             // totalCol
             // 
+            this.totalCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCol.AppearanceCell.Options.UseFont = true;
             this.totalCol.Caption = "Invoice Total";
             this.totalCol.DisplayFormat.FormatString = "c2";
             this.totalCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -147,6 +153,8 @@
             // 
             // receiptTotalCol
             // 
+            this.receiptTotalCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptTotalCol.AppearanceCell.Options.UseFont = true;
             this.receiptTotalCol.Caption = "Receipt Total";
             this.receiptTotalCol.DisplayFormat.FormatString = "c2";
             this.receiptTotalCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -158,6 +166,10 @@
             // 
             // balanceCol
             // 
+            this.balanceCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceCol.AppearanceCell.ForeColor = System.Drawing.Color.Red;
+            this.balanceCol.AppearanceCell.Options.UseFont = true;
+            this.balanceCol.AppearanceCell.Options.UseForeColor = true;
             this.balanceCol.Caption = "Balance";
             this.balanceCol.DisplayFormat.FormatString = "c2";
             this.balanceCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -169,6 +181,8 @@
             // 
             // receiptAmntCol
             // 
+            this.receiptAmntCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptAmntCol.AppearanceCell.Options.UseFont = true;
             this.receiptAmntCol.Caption = "Receipt Amount";
             this.receiptAmntCol.ColumnEdit = this.receiptAmountSpinEdit;
             this.receiptAmntCol.DisplayFormat.FormatString = "c2";
@@ -219,7 +233,7 @@
             this.appliedAmountSpinEdit.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.appliedAmountSpinEdit.Properties.AppearanceReadOnly.Options.UseBorderColor = true;
             this.appliedAmountSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Blah", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Blah", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.appliedAmountSpinEdit.Properties.DisplayFormat.FormatString = "c2";
             this.appliedAmountSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.appliedAmountSpinEdit.Properties.Mask.EditMask = "c";
@@ -256,7 +270,7 @@
             this.receiptTotalSpinEdit.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.receiptTotalSpinEdit.Properties.AppearanceReadOnly.Options.UseBorderColor = true;
             this.receiptTotalSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Blah", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Blah", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.receiptTotalSpinEdit.Properties.DisplayFormat.FormatString = "c2";
             this.receiptTotalSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.receiptTotalSpinEdit.Properties.Mask.EditMask = "c";
@@ -303,7 +317,7 @@
             this.remainingSpinEdit.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.remainingSpinEdit.Properties.AppearanceReadOnly.Options.UseBorderColor = true;
             this.remainingSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Blah", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Blah", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.remainingSpinEdit.Properties.DisplayFormat.FormatString = "c2";
             this.remainingSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.remainingSpinEdit.Properties.Mask.EditMask = "c";

@@ -37,6 +37,7 @@
             this.db = new FP_PMS.Db.db();
             this.tblPhysioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.resourcesCheckedListBoxControl = new DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl();
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
             this.patientAppointmentsTableAdapter = new FP_PMS.Db.dbTableAdapters.PatientAppointmentsTableAdapter();
             this.tblPhysioTableAdapter = new FP_PMS.Db.dbTableAdapters.tblPhysioTableAdapter();
@@ -48,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblPhysioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesCheckedListBoxControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,12 +166,22 @@
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupControl1.Controls.Add(this.resourcesCheckedListBoxControl);
             this.groupControl1.Controls.Add(this.dateNavigator1);
             this.groupControl1.Location = new System.Drawing.Point(1, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(200, 627);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "Date Navigator";
+            // 
+            // resourcesCheckedListBoxControl
+            // 
+            this.resourcesCheckedListBoxControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.resourcesCheckedListBoxControl.Location = new System.Drawing.Point(2, 497);
+            this.resourcesCheckedListBoxControl.Name = "resourcesCheckedListBoxControl";
+            this.resourcesCheckedListBoxControl.SchedulerControl = this.appointmentSchedulerControl;
+            this.resourcesCheckedListBoxControl.Size = new System.Drawing.Size(198, 130);
+            this.resourcesCheckedListBoxControl.TabIndex = 8;
             // 
             // dateNavigator1
             // 
@@ -180,7 +192,7 @@
             this.dateNavigator1.Location = new System.Drawing.Point(2, 22);
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.SchedulerControl = this.appointmentSchedulerControl;
-            this.dateNavigator1.Size = new System.Drawing.Size(196, 605);
+            this.dateNavigator1.Size = new System.Drawing.Size(196, 469);
             this.dateNavigator1.TabIndex = 7;
             // 
             // patientAppointmentsTableAdapter
@@ -198,6 +210,7 @@
             this.Controls.Add(this.appointmentSchedulerControl);
             this.Controls.Add(this.groupControl1);
             this.Name = "appointmentViewForm";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.appointmentViewForm_Load);
             this.Resize += new System.EventHandler(this.appointmentViewForm_Resize);
@@ -216,6 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblPhysioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesCheckedListBoxControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,5 +247,6 @@
         public DevExpress.XtraScheduler.SchedulerStorage appointmentSchedulerStorage;
         private System.Windows.Forms.BindingSource tblPhysioBindingSource;
         private Db.dbTableAdapters.tblPhysioTableAdapter tblPhysioTableAdapter;
+        private DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl resourcesCheckedListBoxControl;
     }
 }

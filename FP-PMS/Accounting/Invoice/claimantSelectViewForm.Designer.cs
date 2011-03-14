@@ -50,8 +50,10 @@
             // 
             // claimantLookUp
             // 
-            this.claimantLookUp.Location = new System.Drawing.Point(82, 38);
+            this.claimantLookUp.Location = new System.Drawing.Point(80, 30);
             this.claimantLookUp.Name = "claimantLookUp";
+            this.claimantLookUp.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.claimantLookUp.Properties.Appearance.Options.UseFont = true;
             this.claimantLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.claimantLookUp.Properties.DataSource = this.claimantInstantFeedBack;
@@ -59,7 +61,7 @@
             this.claimantLookUp.Properties.NullText = "";
             this.claimantLookUp.Properties.ValueMember = "ClaimantID";
             this.claimantLookUp.Properties.View = this.claimantLookUpView;
-            this.claimantLookUp.Size = new System.Drawing.Size(270, 20);
+            this.claimantLookUp.Size = new System.Drawing.Size(270, 29);
             this.claimantLookUp.TabIndex = 6;
             this.claimantLookUp.EditValueChanged += new System.EventHandler(this.claimantLookUp_EditValueChanged);
             // 
@@ -107,9 +109,10 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(13, 41);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(12, 36);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(41, 13);
+            this.labelControl1.Size = new System.Drawing.Size(62, 19);
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "Claimant";
             // 
