@@ -121,6 +121,8 @@
             this.appointmentSchedulerControl.PopupMenuShowing += new DevExpress.XtraScheduler.PopupMenuShowingEventHandler(this.appointmentSchedulerControl_PopupMenuShowing);
             this.appointmentSchedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.appointmentSchedulerControl_EditAppointmentFormShowing);
             this.appointmentSchedulerControl.CustomDrawTimeCell += new DevExpress.XtraScheduler.CustomDrawObjectEventHandler(this.appointmentSchedulerControl_CustomDrawTimeCell);
+            this.appointmentSchedulerControl.DragDrop += new System.Windows.Forms.DragEventHandler(this.appointmentSchedulerControl_DragDrop);
+            this.appointmentSchedulerControl.DragEnter += new System.Windows.Forms.DragEventHandler(this.appointmentSchedulerControl_DragEnter);
             this.appointmentSchedulerControl.Paint += new System.Windows.Forms.PaintEventHandler(this.appointmentSchedulerControl_Paint);
             this.appointmentSchedulerControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.appointmentSchedulerControl_MouseDown);
             // 
@@ -221,7 +223,7 @@
             // appointmentReloadTimer
             // 
             this.appointmentReloadTimer.Enabled = true;
-            this.appointmentReloadTimer.Interval = 60000;
+            this.appointmentReloadTimer.Interval = 10000;
             this.appointmentReloadTimer.Tick += new System.EventHandler(this.appointmentReloadTimer_Tick);
             // 
             // appointmentViewForm

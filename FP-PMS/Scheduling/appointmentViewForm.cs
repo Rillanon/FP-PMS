@@ -28,6 +28,8 @@ namespace FP_PMS.Scheduling
         DateTime Start;
         DateTime End;
 
+        int retryCounter {get;set;}
+
         public void print()
         {
             this.appointmentSchedulerControl.Print();
@@ -103,7 +105,7 @@ namespace FP_PMS.Scheduling
                 }
                 else
                 {
-                    MessageBox.Show("Not found.");
+                    MessageBox.Show("No patients found.");
                 }
                 
             }
@@ -146,16 +148,24 @@ namespace FP_PMS.Scheduling
                 
                 patientAppointmentsTableAdapter.ClearBeforeFill = true;
                 patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
-                
 
                 asyncResult = this.BeginInvoke((DoRefreshData)RefreshAsync);
+                retryCounter = 0;
                 
             }
             catch (System.Data.SqlClient.SqlException)
             {
                 //A transport error occured. Most likely a time out or connection reset error. 
                 // Doing a ugly retry till connection succeeds.
-                ReloadCollections();
+                if (retryCounter < 5)
+                {
+                    retryCounter++;
+                    ReloadCollections();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load data, Please check your internet connection.");
+                }
             }
             Cursor.Current = Cursors.Default;
         }
@@ -207,10 +217,15 @@ namespace FP_PMS.Scheduling
                 try
                 {
                     patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
+                    retryCounter = 0;
                 }
                 catch (System.Data.SqlClient.SqlException)
                 {
-                    appointmentSchedulerStorage_FetchAppointments(sender, e);
+                    if (retryCounter < 5)
+                    {
+                        retryCounter++;
+                        appointmentSchedulerStorage_FetchAppointments(sender, e);
+                    }
                 }
 
             }
@@ -234,11 +249,18 @@ namespace FP_PMS.Scheduling
                 patientAppointmentsTableAdapter.Update(db.PatientAppointments);
                 db.AcceptChanges();
                 ReloadCollections();
+                retryCounter = 0;
             }
             catch (DBConcurrencyException)
             {
                 MessageBox.Show("Appointments have changed. Data will be reloaded. Please Try again.");
                 ReloadCollections();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                //Retry for transport error.
+                retryCounter++;
+                OnApptChangedInsertedDeleted(sender, e);
             }
         }
 
@@ -413,7 +435,13 @@ namespace FP_PMS.Scheduling
 
         private void appointmentReloadTimer_Tick(object sender, EventArgs e)
         {
-            ReloadCollections();    
+            if (appointmentSchedulerControl.IsUpdateLocked == false)
+                ReloadCollections();
+            else
+            {
+                appointmentReloadTimer.Start();
+            }
+
         }
 
         private void appointmentSchedulerControl_AppointmentViewInfoCustomizing(object sender, AppointmentViewInfoCustomizingEventArgs e)
@@ -430,6 +458,16 @@ namespace FP_PMS.Scheduling
         private void appointmentSchedulerControl_SelectionChanged(object sender, EventArgs e)
         {
             this.appointmentSchedulerControl.Refresh();
+        }
+
+        private void appointmentSchedulerControl_DragDrop(object sender, DragEventArgs e)
+        {
+            this.appointmentSchedulerControl.EndInit();
+        }
+
+        private void appointmentSchedulerControl_DragEnter(object sender, DragEventArgs e)
+        {
+            this.appointmentSchedulerControl.BeginInit();
         }
 
     }
