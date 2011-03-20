@@ -98,6 +98,7 @@ namespace FP_PMS.Scheduling
                 if (myApp != null)
                 {
                     appointmentSchedulerControl.ActiveView.SelectAppointment(myApp);
+                    this.appointmentSchedulerControl.Refresh();
                     
                 }
                 else
@@ -161,7 +162,7 @@ namespace FP_PMS.Scheduling
 
         private void appointmentSchedulerControl_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
         {
-            if (e.Appointment.AllDay != true)
+            if ((e.Appointment.AllDay != true) && (appointmentSchedulerControl.SelectedResource.Id.ToString() != "DevExpress.XtraScheduler.Resource"))
             {
                 var popUpForm = new appointmentPopUp(this.appointmentSchedulerControl, this.appointmentSchedulerStorage, e.Appointment);
                 e.DialogResult = popUpForm.ShowDialog();
@@ -405,6 +406,22 @@ namespace FP_PMS.Scheduling
         private void appointmentReloadTimer_Tick(object sender, EventArgs e)
         {
             ReloadCollections();    
+        }
+
+        private void appointmentSchedulerControl_AppointmentViewInfoCustomizing(object sender, AppointmentViewInfoCustomizingEventArgs e)
+        {
+            foreach (var apt in appointmentSchedulerControl.SelectedAppointments)
+            {
+                if (apt.Equals(e.ViewInfo.Appointment))
+                {
+                    e.ViewInfo.Appearance.BackColor = Color.Yellow;
+                }
+            }
+        }
+
+        private void appointmentSchedulerControl_SelectionChanged(object sender, EventArgs e)
+        {
+            this.appointmentSchedulerControl.Refresh();
         }
 
     }

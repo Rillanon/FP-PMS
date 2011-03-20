@@ -188,21 +188,23 @@ namespace FP_PMS.Scheduling
             
             this.myController = new appointmentController(myControl, apt);
             this.apt = apt;
-            this.res = myControl.SelectedResource;
-
-            if (this.res.CustomFields["NewPatientAppDefaultDuration"].GetType() != typeof(long))
-            {
-                //default appointment interval time in long AKA 15mins.
-                appointmentDuration = 9000000000L;
-            }
-            else
-            {
-                appointmentDuration = (long)this.res.CustomFields["NewPatientAppDefaultDuration"];
-            }
-            SuspendUpdate();
-            InitializeComponent();
-            ResumeUpdate();
+                this.res = myControl.SelectedResource;
+                
+                if (this.res.CustomFields["NewPatientAppDefaultDuration"].GetType() != typeof(long))
+                {
+                    //default appointment interval time in long AKA 15mins.
+                    appointmentDuration = 9000000000L;
+                }
+                else
+                {
+                    appointmentDuration = (long)this.res.CustomFields["NewPatientAppDefaultDuration"];
+                }
+                SuspendUpdate();
+                InitializeComponent();
+                ResumeUpdate();
+            
         }
+
 
         private void patientLinqInstantFeedBack_DismissQueryable(object sender, DevExpress.Data.Linq.GetQueryableEventArgs e)
         {

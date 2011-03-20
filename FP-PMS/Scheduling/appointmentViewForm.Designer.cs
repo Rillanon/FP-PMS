@@ -82,6 +82,18 @@
             this.appointmentSchedulerControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.appointmentSchedulerControl.Appearance.AlternateHeaderCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentSchedulerControl.Appearance.AlternateHeaderCaption.Options.UseFont = true;
+            this.appointmentSchedulerControl.Appearance.AlternateHeaderCaptionLine.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentSchedulerControl.Appearance.AlternateHeaderCaptionLine.Options.UseFont = true;
+            this.appointmentSchedulerControl.Appearance.HeaderCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentSchedulerControl.Appearance.HeaderCaption.Options.UseFont = true;
+            this.appointmentSchedulerControl.Appearance.Selection.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.appointmentSchedulerControl.Appearance.Selection.BorderColor = System.Drawing.Color.Red;
+            this.appointmentSchedulerControl.Appearance.Selection.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentSchedulerControl.Appearance.Selection.Options.UseBackColor = true;
+            this.appointmentSchedulerControl.Appearance.Selection.Options.UseBorderColor = true;
+            this.appointmentSchedulerControl.Appearance.Selection.Options.UseFont = true;
             this.appointmentSchedulerControl.GroupType = DevExpress.XtraScheduler.SchedulerGroupType.Date;
             this.appointmentSchedulerControl.Location = new System.Drawing.Point(205, 0);
             this.appointmentSchedulerControl.Name = "appointmentSchedulerControl";
@@ -103,6 +115,8 @@
             this.appointmentSchedulerControl.Views.DayView.VisibleTime.End = System.TimeSpan.Parse("20:00:00");
             this.appointmentSchedulerControl.Views.DayView.VisibleTime.Start = System.TimeSpan.Parse("06:00:00");
             this.appointmentSchedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler2);
+            this.appointmentSchedulerControl.SelectionChanged += new System.EventHandler(this.appointmentSchedulerControl_SelectionChanged);
+            this.appointmentSchedulerControl.AppointmentViewInfoCustomizing += new DevExpress.XtraScheduler.AppointmentViewInfoCustomizingEventHandler(this.appointmentSchedulerControl_AppointmentViewInfoCustomizing);
             this.appointmentSchedulerControl.AllowAppointmentConflicts += new DevExpress.XtraScheduler.AppointmentConflictEventHandler(this.appointmentSchedulerControl_AllowAppointmentConflicts);
             this.appointmentSchedulerControl.PopupMenuShowing += new DevExpress.XtraScheduler.PopupMenuShowingEventHandler(this.appointmentSchedulerControl_PopupMenuShowing);
             this.appointmentSchedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.appointmentSchedulerControl_EditAppointmentFormShowing);
