@@ -8,6 +8,7 @@
       <Column Name="Start" Type="System.String" CanBeNull="false" />
       <Column Name="End" Type="System.String" CanBeNull="false" />
       <Column Name="AppointmentID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="" Member="AnonPatients">
@@ -98,7 +99,20 @@
       <Column Name="Fee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="ItemNo" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
       <Column Name="GST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Member="PatientName" Type="System.String" CanBeNull="false" />
+      <Column Name="PatientName" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AnonAppointments">
+    <Type Name="AnonAppointments">
+      <Column Name="ID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="Physio" Type="System.String" CanBeNull="false" />
+      <Column Name="Rate" Type="System.String" CanBeNull="false" />
+      <Column Name="Start" Type="System.String" CanBeNull="false" />
+      <Column Name="End" Type="System.String" CanBeNull="false" />
+      <Column Name="AppointmentID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" CanBeNull="true" />
+      <Column Member="Date" Type="System.DateTime" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

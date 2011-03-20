@@ -110,6 +110,14 @@ namespace FP_PMS.Db
 				return this.GetTable<AnonInvoiceLines>();
 			}
 		}
+		
+		public System.Data.Linq.Table<AnonAppointments> AnonAppointments
+		{
+			get
+			{
+				return this.GetTable<AnonAppointments>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
@@ -129,6 +137,8 @@ namespace FP_PMS.Db
 		private string _End;
 		
 		private int _AppointmentID;
+		
+		private System.Nullable<System.DateTime> _DOB;
 		
 		public AnonWaitingRoom()
 		{
@@ -242,6 +252,22 @@ namespace FP_PMS.Db
 				if ((this._AppointmentID != value))
 				{
 					this._AppointmentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOB")]
+		public System.Nullable<System.DateTime> DOB
+		{
+			get
+			{
+				return this._DOB;
+			}
+			set
+			{
+				if ((this._DOB != value))
+				{
+					this._DOB = value;
 				}
 			}
 		}
@@ -1502,6 +1528,177 @@ namespace FP_PMS.Db
 				if ((this._PatientName != value))
 				{
 					this._PatientName = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class AnonAppointments
+	{
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Physio;
+		
+		private string _Rate;
+		
+		private string _Start;
+		
+		private string _End;
+		
+		private int _AppointmentID;
+		
+		private System.Nullable<System.DateTime> _DOB;
+		
+		private System.DateTime _Date;
+		
+		public AnonAppointments()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Physio", CanBeNull=false)]
+		public string Physio
+		{
+			get
+			{
+				return this._Physio;
+			}
+			set
+			{
+				if ((this._Physio != value))
+				{
+					this._Physio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rate", CanBeNull=false)]
+		public string Rate
+		{
+			get
+			{
+				return this._Rate;
+			}
+			set
+			{
+				if ((this._Rate != value))
+				{
+					this._Rate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start", CanBeNull=false)]
+		public string Start
+		{
+			get
+			{
+				return this._Start;
+			}
+			set
+			{
+				if ((this._Start != value))
+				{
+					this._Start = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_End", CanBeNull=false)]
+		public string End
+		{
+			get
+			{
+				return this._End;
+			}
+			set
+			{
+				if ((this._End != value))
+				{
+					this._End = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppointmentID")]
+		public int AppointmentID
+		{
+			get
+			{
+				return this._AppointmentID;
+			}
+			set
+			{
+				if ((this._AppointmentID != value))
+				{
+					this._AppointmentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOB")]
+		public System.Nullable<System.DateTime> DOB
+		{
+			get
+			{
+				return this._DOB;
+			}
+			set
+			{
+				if ((this._DOB != value))
+				{
+					this._DOB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
 				}
 			}
 		}

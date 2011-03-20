@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.875" name="Anon">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.5" name="Anon">
   <DataContextMoniker Name="/AnonDataContext" />
   <nestedChildShapes>
-    <classShape Id="6fd5f0f5-7b98-4e52-8a15-1a62249ed417" absoluteBounds="6, 2.5, 2, 2.1554996744791666">
+    <classShape Id="6fd5f0f5-7b98-4e52-8a15-1a62249ed417" absoluteBounds="6, 2.5, 2, 2.3478011067708326">
       <DataClassMoniker Name="/AnonDataContext/AnonWaitingRoom" />
       <nestedChildShapes>
-        <elementListCompartment Id="0bb2fbba-5956-47c1-b74a-4153b8aff83f" absoluteBounds="6.015, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0bb2fbba-5956-47c1-b74a-4153b8aff83f" absoluteBounds="6.015, 2.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="7532912c-11a3-40b0-ad97-5187e0ed0358" absoluteBounds="8.375, 2.5, 2, 8.1168440755208326">
@@ -42,6 +42,12 @@
       <DataClassMoniker Name="/AnonDataContext/AnonInvoiceLines" />
       <nestedChildShapes>
         <elementListCompartment Id="5d108a33-f9a0-48ac-8251-112bbed4afa9" absoluteBounds="0.64, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1debd40c-da5e-4539-acf1-cbbacf7fb088" absoluteBounds="3.375, 8.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AnonDataContext/AnonAppointments" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d15c6d4-754a-4da7-983e-06f7b0ce16e6" absoluteBounds="3.39, 9.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -147,6 +147,7 @@ namespace FP_PMS.Accounting.Invoice
                 myClaimant = myConnection.tblClaimants.Where(claimant => claimant.ClaimantID == myTransaction.ClaimantID).FirstOrDefault();
                 myPhysio = myConnection.tblPhysios.Where(physio => physio.PhysioID == myTransaction.PhysioID).FirstOrDefault();
                 var myReceiptLines = myConnection.getReceiptsOfSingleInvoice(myInvoice.InvoiceNo).ToList();
+                var myReceiptDetails = myConnection.getReceiptDetailsOfSingleInvoice(myInvoice.InvoiceNo).ToList();
 
                 foreach (var line in myReceiptLines)
                 {
@@ -156,6 +157,18 @@ namespace FP_PMS.Accounting.Invoice
                     myLine.InvRecAmnt = line.InvRecAmnt;
                     myLine.ReceiptNo = line.ReceiptNo;
                     myReceiptAmounts.Add(myLine);
+                }
+
+                foreach (var line in myReceiptDetails)
+                {
+                    tblReceipt myLine = new tblReceipt();
+                    myLine.ReceiptNo = line.ReceiptNo;
+                    myLine.ReceiptDate = line.ReceiptDate;
+                    myLine.ReceiptComments = line.ReceiptComments;
+                    myLine.ReceiptAmnt = line.ReceiptAmnt;
+                    myLine.IsMulti = line.IsMulti;
+                    myLine.ReceiptCancelled = line.ReceiptCancelled;
+                    myReceipts.Add(myLine);
                 }
 
                 this.claimantBillingAddressMemoEdit.Text = myClaimant.FirstNames + Environment.NewLine + myClaimant.LastName + Environment.NewLine
@@ -368,7 +381,25 @@ namespace FP_PMS.Accounting.Invoice
                         foreach (var r in myReceipts)
                         {
                             myConnection.tblReceipts.Attach(r);
-                            r.ReceiptCancelled = true;
+                            if (r.IsMulti == true)
+                            {
+                                var newCredit = new Db.Credit();
+                                newCredit.CreditDate = System.DateTime.Today;
+                                newCredit.CreditComment = "Cancelled receipt from invoice: " + myInvoice.InvoiceNo;
+                                newCredit.CreditType = 2;
+                                newCredit.ClaimantID = myClaimant.ClaimantID;
+                                
+                                tblInvoiceReceipt relation = myConnection.tblInvoiceReceipts.Where(i => i.InvoiceNo == myInvoice.InvoiceNo && i.ReceiptNo == r.ReceiptNo).FirstOrDefault();
+                                newCredit.CreditAmount = relation.InvRecAmnt.GetValueOrDefault(0);
+                                if (relation != null)
+                                    myConnection.tblInvoiceReceipts.DeleteOnSubmit(relation);
+                                myConnection.Credits.InsertOnSubmit(newCredit);
+                            }
+                            else
+                            {
+                                r.ReceiptCancelled = true;
+                            }
+                            
                         }
                     }
                     myConnection.SubmitChanges();
@@ -387,7 +418,24 @@ namespace FP_PMS.Accounting.Invoice
                             foreach (var r in myReceipts)
                             {
                                 myConnection.tblReceipts.Attach(r);
-                                r.ReceiptCancelled = true;
+                                if (r.IsMulti == true)
+                                {
+                                    var newCredit = new Db.Credit();
+                                    newCredit.CreditDate = System.DateTime.Today;
+                                    newCredit.CreditComment = "Cancelled receipt from invoice: " + myInvoice.InvoiceNo;
+                                    newCredit.CreditType = 2;
+                                    newCredit.ClaimantID = myClaimant.ClaimantID;
+                                    
+                                    tblInvoiceReceipt relation = myConnection.tblInvoiceReceipts.Where(i => i.InvoiceNo == myInvoice.InvoiceNo && i.ReceiptNo == r.ReceiptNo).FirstOrDefault();
+                                    newCredit.CreditAmount = relation.InvRecAmnt.GetValueOrDefault(0);
+                                    if (relation != null)
+                                        myConnection.tblInvoiceReceipts.DeleteOnSubmit(relation);
+                                    myConnection.Credits.InsertOnSubmit(newCredit);
+                                }
+                                else
+                                {
+                                    r.ReceiptCancelled = true;
+                                }
                             }
                         }
                         myConnection.SubmitChanges();

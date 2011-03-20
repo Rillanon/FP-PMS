@@ -67,10 +67,8 @@ namespace FP_PMS.Report
         private void nullSelectionForm_Load(object sender, EventArgs e)
         {
             physioLookUp.Properties.DataSource = new dbContextDataContext().tblPhysios;
-            claimantlinqInstantFeedbackSource.KeyExpression = "ClaimantID";
-            claimantlinqInstantFeedbackSource.DesignTimeElementType = typeof(tblClaimant);
-            claimantLookUp.Properties.DisplayMember = "LastName";
-            claimantLookUp.Properties.ValueMember = "ClaimantID";
+            
+           
         }
 
         private void claimantlinqInstantFeedbackSource_DismissQueryable(object sender, DevExpress.Data.Linq.GetQueryableEventArgs e)

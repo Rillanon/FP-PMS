@@ -41,6 +41,7 @@
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
             this.patientAppointmentsTableAdapter = new FP_PMS.Db.dbTableAdapters.PatientAppointmentsTableAdapter();
             this.tblPhysioTableAdapter = new FP_PMS.Db.dbTableAdapters.tblPhysioTableAdapter();
+            this.appointmentReloadTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.formSearchLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentSchedulerControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentSchedulerStorage)).BeginInit();
@@ -203,6 +204,12 @@
             // 
             this.tblPhysioTableAdapter.ClearBeforeFill = true;
             // 
+            // appointmentReloadTimer
+            // 
+            this.appointmentReloadTimer.Enabled = true;
+            this.appointmentReloadTimer.Interval = 60000;
+            this.appointmentReloadTimer.Tick += new System.EventHandler(this.appointmentReloadTimer_Tick);
+            // 
             // appointmentViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,5 +255,6 @@
         private System.Windows.Forms.BindingSource tblPhysioBindingSource;
         private Db.dbTableAdapters.tblPhysioTableAdapter tblPhysioTableAdapter;
         private DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl resourcesCheckedListBoxControl;
+        private System.Windows.Forms.Timer appointmentReloadTimer;
     }
 }

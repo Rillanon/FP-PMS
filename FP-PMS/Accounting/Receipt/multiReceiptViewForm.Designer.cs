@@ -51,7 +51,6 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.claimantDetailMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.invoiceDetailsBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.receiptDetailBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multipleReceiptGridControl)).BeginInit();
@@ -354,20 +353,10 @@
             this.invoiceDetailsBtn.Text = "Invoice Details";
             this.invoiceDetailsBtn.Click += new System.EventHandler(this.invoiceDetailsBtn_Click);
             // 
-            // receiptDetailBtn
-            // 
-            this.receiptDetailBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.receiptDetailBtn.Location = new System.Drawing.Point(715, 453);
-            this.receiptDetailBtn.Name = "receiptDetailBtn";
-            this.receiptDetailBtn.Size = new System.Drawing.Size(88, 23);
-            this.receiptDetailBtn.TabIndex = 43;
-            this.receiptDetailBtn.Text = "Receipt Details";
-            // 
             // multiReceiptViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1003, 624);
-            this.Controls.Add(this.receiptDetailBtn);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.invoiceDetailsBtn);
             this.Controls.Add(this.groupControl2);
@@ -380,7 +369,6 @@
             this.Controls.SetChildIndex(this.groupControl2, 0);
             this.Controls.SetChildIndex(this.invoiceDetailsBtn, 0);
             this.Controls.SetChildIndex(this.groupControl3, 0);
-            this.Controls.SetChildIndex(this.receiptDetailBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.multipleReceiptGridControl)).EndInit();
@@ -419,7 +407,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.MemoEdit claimantDetailMemoEdit;
         private DevExpress.XtraEditors.SimpleButton invoiceDetailsBtn;
-        private DevExpress.XtraEditors.SimpleButton receiptDetailBtn;
         private DevExpress.XtraGrid.Columns.GridColumn receiptTotalCol;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit receiptAmountSpinEdit;
     }

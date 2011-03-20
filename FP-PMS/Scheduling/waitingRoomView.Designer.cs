@@ -31,11 +31,12 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.waitingRoomGridControl = new DevExpress.XtraGrid.GridControl();
             this.waitingRoomGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dobCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.physioCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rateCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.startCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.endCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.patientRepositoryItemSearchLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.patientRepositoryItemSearchLookUpEditView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFirstNames = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,63 +91,81 @@
             // waitingRoomGridView
             // 
             this.waitingRoomGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
+            this.nameCol,
+            this.dobCol,
+            this.physioCol,
+            this.rateCol,
+            this.startCol,
+            this.endCol});
             this.waitingRoomGridView.GridControl = this.waitingRoomGridControl;
             this.waitingRoomGridView.Name = "waitingRoomGridView";
             // 
-            // gridColumn1
+            // nameCol
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.Caption = "Name";
-            this.gridColumn1.FieldName = "Name";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.nameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.nameCol.AppearanceCell.Options.UseFont = true;
+            this.nameCol.Caption = "Name";
+            this.nameCol.FieldName = "Name";
+            this.nameCol.Name = "nameCol";
+            this.nameCol.OptionsColumn.ReadOnly = true;
+            this.nameCol.Visible = true;
+            this.nameCol.VisibleIndex = 0;
             // 
-            // gridColumn2
+            // dobCol
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.Caption = "Physio";
-            this.gridColumn2.FieldName = "Physio";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.dobCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dobCol.AppearanceCell.Options.UseFont = true;
+            this.dobCol.Caption = "Date of Birth";
+            this.dobCol.DisplayFormat.FormatString = "d";
+            this.dobCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dobCol.FieldName = "DOB";
+            this.dobCol.Name = "dobCol";
+            this.dobCol.Visible = true;
+            this.dobCol.VisibleIndex = 1;
             // 
-            // gridColumn3
+            // physioCol
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.Caption = "Rate";
-            this.gridColumn3.FieldName = "Rate";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.physioCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.physioCol.AppearanceCell.Options.UseFont = true;
+            this.physioCol.Caption = "Physio";
+            this.physioCol.FieldName = "Physio";
+            this.physioCol.Name = "physioCol";
+            this.physioCol.OptionsColumn.ReadOnly = true;
+            this.physioCol.Visible = true;
+            this.physioCol.VisibleIndex = 2;
             // 
-            // gridColumn4
+            // rateCol
             // 
-            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn4.AppearanceCell.Options.UseFont = true;
-            this.gridColumn4.Caption = "Start";
-            this.gridColumn4.FieldName = "Start";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.rateCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.rateCol.AppearanceCell.Options.UseFont = true;
+            this.rateCol.Caption = "Rate";
+            this.rateCol.FieldName = "Rate";
+            this.rateCol.Name = "rateCol";
+            this.rateCol.OptionsColumn.ReadOnly = true;
+            this.rateCol.Visible = true;
+            this.rateCol.VisibleIndex = 3;
             // 
-            // gridColumn5
+            // startCol
             // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.Caption = "End";
-            this.gridColumn5.FieldName = "End";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.startCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.startCol.AppearanceCell.Options.UseFont = true;
+            this.startCol.Caption = "Start";
+            this.startCol.FieldName = "Start";
+            this.startCol.Name = "startCol";
+            this.startCol.OptionsColumn.ReadOnly = true;
+            this.startCol.Visible = true;
+            this.startCol.VisibleIndex = 4;
+            // 
+            // endCol
+            // 
+            this.endCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.endCol.AppearanceCell.Options.UseFont = true;
+            this.endCol.Caption = "End";
+            this.endCol.FieldName = "End";
+            this.endCol.Name = "endCol";
+            this.endCol.OptionsColumn.ReadOnly = true;
+            this.endCol.Visible = true;
+            this.endCol.VisibleIndex = 5;
             // 
             // patientRepositoryItemSearchLookUpEdit
             // 
@@ -253,12 +272,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLastName;
         private DevExpress.XtraGrid.Columns.GridColumn colSex;
         private DevExpress.XtraGrid.Columns.GridColumn colDVANumber;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn nameCol;
+        private DevExpress.XtraGrid.Columns.GridColumn physioCol;
+        private DevExpress.XtraGrid.Columns.GridColumn rateCol;
+        private DevExpress.XtraGrid.Columns.GridColumn startCol;
+        private DevExpress.XtraGrid.Columns.GridColumn endCol;
         private DevExpress.XtraEditors.SimpleButton checkOutBtn;
+        private DevExpress.XtraGrid.Columns.GridColumn dobCol;
 
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FP_OLD_MIGRATION_DEV_DB" Class="dbContextDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=184.168.87.130;Initial Catalog=FP_OLD_MIGRATION_DEV_DB;Persist Security Info=True;User ID=physio" SettingsObjectName="FP_PMS.Properties.Settings" SettingsPropertyName="FP_OLD_MIGRATION_DEV_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.168.87.130;Initial Catalog=FP_OLD_MIGRATION_DEV_DB;Persist Security Info=True;User ID=physio;Pooling=False" SettingsObjectName="FP_PMS.Properties.Settings" SettingsPropertyName="FP_OLD_MIGRATION_DEV_DBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblInvoice" Member="tblInvoices">
     <Type Name="tblInvoice">
       <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -93,7 +93,6 @@
       <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ClaimantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="tblClaimant_tblPatientClaimant" Member="tblClaimant" ThisKey="ClaimantID" OtherKey="ClaimantID" Type="tblClaimant" IsForeignKey="true" />
-      <Association Name="tblPatient_tblPatientClaimant" Member="tblPatient" ThisKey="PatientID" OtherKey="PatientID" Type="tblPatient" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GeneralSetting" Member="GeneralSettings">
@@ -110,16 +109,6 @@
       <Column Name="ReceiptNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="InvRecAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="InvoiceReceiptID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblReceipt" Member="tblReceipts">
-    <Type Name="tblReceipt">
-      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ReceiptDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ReceiptAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="ReceiptCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="UserID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="ReceiptComments" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.qryReceiptClaimants" Member="qryReceiptClaimants">
@@ -279,7 +268,6 @@
       <Column Name="SurgeryInThePast3Months" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Smoker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ReferredByDoc" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="tblPatient_tblPatientClaimant" Member="tblPatientClaimants" ThisKey="PatientID" OtherKey="PatientID" Type="tblPatientClaimant" />
     </Type>
   </Table>
   <Table Name="dbo.tblTransaction" Member="tblTransactions">
@@ -371,6 +359,17 @@
       <Column Name="PatientName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CreditID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="RceiptCreditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceipt" Member="tblReceipts">
+    <Type Name="tblReceipt">
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiptAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReceiptComments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsMulti" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.RatesAndItemsSummaryReportFunction" Method="RatesAndItemsSummaryReportFunction" IsComposable="true">
@@ -580,6 +579,22 @@
       <Column Name="SessionTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PatientTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FeeTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getReceiptDetailsOfSingleInvoice" Method="getReceiptDetailsOfSingleInvoice">
+    <Parameter Name="InvoiceID" Parameter="invoiceID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="getReceiptDetailsOfSingleInvoiceResult">
+      <Column Name="ReceiptNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReceiptDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiptAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReceiptCancelled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReceiptComments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsMulti" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReceiptNo1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvRecAmnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceReceiptID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

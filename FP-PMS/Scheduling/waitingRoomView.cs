@@ -41,6 +41,7 @@ namespace FP_PMS.Scheduling
                                                     ID = p.PatientID,
                                                     AppointmentID = a.UniqueID,
                                                     Name = p.FirstNames + @" " + p.LastName,
+                                                    DOB = p.BirthDate,
                                                     Physio = a.PhysioID,
                                                     Rate = r.RateDesc,
                                                     Start = a.StartDate.Value.ToShortTimeString(),
@@ -78,38 +79,49 @@ namespace FP_PMS.Scheduling
 
         private void checkOutBtn_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            var currentRow = (AnonWaitingRoom)waitingRoomGridView.GetFocusedRow();
-            var newConnection = new dbContextDataContext();
-            var formOpen = false;
-
-            if (currentRow != null)
+            try
             {
-                var thisApp = newConnection.PatientAppointments.Where(a => a.UniqueID == currentRow.AppointmentID).FirstOrDefault();
+                Cursor.Current = Cursors.WaitCursor;
+                var currentRow = (AnonWaitingRoom)waitingRoomGridView.GetFocusedRow();
+                var newConnection = new dbContextDataContext();
+                var formOpen = false;
 
-                foreach (var f in Application.OpenForms)
+                if (currentRow != null)
                 {
-                    if (f.GetType() == typeof(appointmentViewForm))
+                    var thisApp = newConnection.PatientAppointments.Where(a => a.UniqueID == currentRow.AppointmentID).FirstOrDefault();
+
+                    foreach (var f in Application.OpenForms)
                     {
-                        ((appointmentViewForm)f).RefreshAppointment(thisApp.UniqueID);
-                        formOpen = true;
-                    }
-                }
+                        if (f.GetType() == typeof(appointmentViewForm))
+                        {
+                            thisApp.CheckOut = true;
+                            thisApp.Label = 2;
+                            newConnection.SubmitChanges();
 
-                if (formOpen == false)
-                {
-                    thisApp.CheckOut = true;
-                    thisApp.Label = 2;
-                    newConnection.SubmitChanges();
+                            ((appointmentViewForm)f).RefreshAppointment(thisApp.UniqueID);
+                            formOpen = true;
+                        }
+                    }
+
+                    if (formOpen == false)
+                    {
+                        thisApp.CheckOut = true;
+                        thisApp.Label = 2;
+                        newConnection.SubmitChanges();
+                    }
+                    updateWaitingRoom();
+
                 }
-                updateWaitingRoom();
-                
+                else
+                {
+                    MessageBox.Show("Please Select a Patient first!");
+                }
+                Cursor.Current = Cursors.Default;
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Please Select a Patient first!");
+                MessageBox.Show("Data changed. Waiting room will be reloaded. Please try again.");
             }
-            Cursor.Current = Cursors.Default;
         }
 
         public override void okBtn_Click(object sender, EventArgs e)

@@ -25,6 +25,9 @@ namespace FP_PMS.Scheduling
         TimeInterval lastFetchedInterval = new TimeInterval();
         TimeInterval mySelectedInterval = new TimeInterval();
 
+        DateTime Start;
+        DateTime End;
+
         public void print()
         {
             this.appointmentSchedulerControl.Print();
@@ -35,32 +38,47 @@ namespace FP_PMS.Scheduling
             this.appointmentSchedulerControl.ShowPrintOptionsForm();
         }
 
+        delegate void DoRefreshData();
+        IAsyncResult asyncResult;
 
         public appointmentViewForm()
         {
             InitializeComponent();
             this.appointmentSchedulerControl.Start = System.DateTime.Today;
-            
+
             ApplyCustomMapping();
         }
 
         public void RefreshAppointment(int AppID)
         {
-            Appointment app;
-            AppointmentBaseCollection a = appointmentSchedulerStorage.GetAppointments(System.DateTime.Today, System.DateTime.Today.AddDays(1));
-            foreach (var x in a)
-            {
-                app = x;
-                int y= (int)app.GetValue(appointmentSchedulerStorage, "UniqueID");
-                if (y == AppID)
-                {
-                    app.LabelId = 2;
-                    app.CustomFields["CheckOut"] = true;
-                }
-            }
+            Cursor.Current = Cursors.WaitCursor;
+            //AppointmentBaseCollection a = appointmentSchedulerStorage.GetAppointments(System.DateTime.Today, System.DateTime.Today.AddDays(1));
+            
+            //foreach (Appointment x in a)
+            //{
+            //    var myInt = x.CustomFields["UniqueID"];
+            //    int? y = myInt as int?;
+                
+            //    if (y.IsNullOrDefault() == false)
+            //    {
+            //        if (y.Value == AppID)
+            //        {
+            //            x.LabelId = 2;
+            //            x.CustomFields["CheckOut"] = true;
+            //        }
+            //    }
+            //}
 
-            this.appointmentSchedulerStorage.RefreshData();
-            this.appointmentSchedulerControl.RefreshData();
+            //this.appointmentSchedulerStorage.RefreshData();
+            //this.appointmentSchedulerControl.RefreshData();
+            ReloadCollections();
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        void findAppointment()
+        {
+
         }
 
         void ApplyCustomMapping()
@@ -89,6 +107,24 @@ namespace FP_PMS.Scheduling
         private void FixPositionInResize(Control CtrlToResize)
         {
             CtrlToResize.Width = this.Width - this.groupControl1.Width;
+        }
+
+        private void ReloadCollections()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                patientAppointmentsTableAdapter.ClearBeforeFill = true;
+                patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
+                asyncResult = this.BeginInvoke((DoRefreshData)RefreshAsync);
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                //A transport error occured. Most likely a time out or connection reset error. 
+                // Doing a ugly retry till connection succeeds.
+                ReloadCollections();
+            }
+            Cursor.Current = Cursors.Default;
         }
 
         private void appointmentSchedulerControl_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
@@ -128,22 +164,39 @@ namespace FP_PMS.Scheduling
         private void appointmentSchedulerStorage_FetchAppointments(object sender, FetchAppointmentsEventArgs e) 
         {
             Cursor.Current = Cursors.WaitCursor;
-            DateTime start = e.Interval.Start;
-            DateTime end = e.Interval.End;
+            Start = e.Interval.Start;
+            End = e.Interval.End;
 
-            if (start <= lastFetchedInterval.Start || end >= lastFetchedInterval.End)
+            if (Start <= lastFetchedInterval.Start || End >= lastFetchedInterval.End)
             {
-                lastFetchedInterval = new TimeInterval(start - TimeSpan.FromDays(1), end +
+                lastFetchedInterval = new TimeInterval(Start - TimeSpan.FromDays(1), End +
                     TimeSpan.FromDays(1));
-                patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, start, end);
+                patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
             }
             Cursor.Current = Cursors.Default;
         }
 
+
+
+        void RefreshAsync()
+        {
+            this.EndInvoke(asyncResult);
+            this.appointmentSchedulerControl.RefreshData();
+        }
+
         private void OnApptChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)
         {
-            patientAppointmentsTableAdapter.Update(db.PatientAppointments);
-            db.AcceptChanges();
+            try
+            {
+                patientAppointmentsTableAdapter.Update(db.PatientAppointments);
+                db.AcceptChanges();
+                ReloadCollections();
+            }
+            catch (DBConcurrencyException)
+            {
+                MessageBox.Show("Appointments have changed. Data will be reloaded. Please Try again.");
+                ReloadCollections();
+            }
         }
 
         private void appointmentSchedulerControl_MouseDown(object sender, MouseEventArgs e)
@@ -313,6 +366,11 @@ namespace FP_PMS.Scheduling
                 
             }
 
+        }
+
+        private void appointmentReloadTimer_Tick(object sender, EventArgs e)
+        {
+            ReloadCollections();    
         }
 
     }

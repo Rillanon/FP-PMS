@@ -63,12 +63,6 @@
         <elementListCompartment Id="4c0b6278-7027-4ff3-bf89-d0b1c8a55918" absoluteBounds="3.7650000000000006, 10.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="dff6e24d-a952-4137-b741-74f77034f82f" absoluteBounds="12.75, 0.75, 2, 1.9631982421875">
-      <DataClassMoniker Name="/dbContextDataContext/tblReceipt" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b51c2cb2-c2b8-42af-bec7-3664a5f82b7a" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="bb075c82-3f3c-4695-9f0a-4d6ff13788ad" isExpanded="false" absoluteBounds="12.75, 3.75, 2, 0.45">
       <DataClassMoniker Name="/dbContextDataContext/qryReceiptClaimant" />
       <nestedChildShapes>
@@ -135,13 +129,6 @@
         <elementListCompartment Id="27dd004b-f04b-4325-9745-78ad62b448af" absoluteBounds="0.76499999999999968, 11.335, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 13.78125); (3.59375 : 13.78125); (3.59375 : 4.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/dbContextDataContext/tblPatient/tblPatient_tblPatientClaimant" />
-      <nodes>
-        <classShapeMoniker Id="304551a4-490b-4fe9-abad-9fc4b2244448" />
-        <classShapeMoniker Id="e5e8ef17-9426-4b12-a203-7a85d66ae6eb" />
-      </nodes>
-    </associationConnector>
     <classShape Id="50081904-09dc-40a1-b892-9a641f8e2407" isExpanded="false" absoluteBounds="15.75, 1.5, 2, 0.45">
       <DataClassMoniker Name="/dbContextDataContext/tblTransaction" />
       <nestedChildShapes>
@@ -182,6 +169,12 @@
       <DataClassMoniker Name="/dbContextDataContext/tblReceiptCreditPatient" />
       <nestedChildShapes>
         <elementListCompartment Id="e0acef7e-abaa-4d88-9d19-a3c9e6f855cd" absoluteBounds="7.015, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="754dc119-d893-4e54-903e-a1003ba09347" absoluteBounds="13, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbContextDataContext/tblReceipt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f498f8db-c4eb-494d-a41b-76c3f1f0e116" absoluteBounds="13.015, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

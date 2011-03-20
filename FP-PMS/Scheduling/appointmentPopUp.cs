@@ -20,7 +20,6 @@ namespace FP_PMS.Scheduling
         SchedulerControl mySchedulerControl;
         SchedulerStorage mySchedulerStorage;
 
-        bool openRecurrenceForm = false;
         long appointmentDuration;
         int suspendUpdateCount;
 
@@ -102,6 +101,7 @@ namespace FP_PMS.Scheduling
 
         public override void okBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             base.okBtn_Click(sender, e);
 
             // Required to check the appointment for conflicts.
@@ -133,6 +133,7 @@ namespace FP_PMS.Scheduling
 
                 newConnection.tblPatientClaimants.InsertOnSubmit(relation);
                 newConnection.SubmitChanges();
+                Cursor.Current = Cursors.Default;
             }
 
             if (appointmentDurationEdit.Duration != null)
@@ -253,6 +254,7 @@ namespace FP_PMS.Scheduling
 
         private void patientLookUp_EditValueChanged(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
                 myPatient = entityClone.Clone(((tblPatient)patientLookUpView.GetFocusedRow()));
 
                 if (myPatient != null)
@@ -274,6 +276,7 @@ namespace FP_PMS.Scheduling
                     else
                         lastSessionDateEdit.DateTime = System.DateTime.Today;
                 }
+                Cursor.Current = Cursors.Default;
         }
 
         private void rateComboBoxEdit_EditValueChanged(object sender, EventArgs e)

@@ -65,6 +65,7 @@
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ratesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.appointmentLookUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,7 +228,8 @@
             this.appointmentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.appointmentBookToolStripMenuItem,
             this.waitingRoomLISTToolStripMenuItem,
-            this.adHocEventsToolStripMenuItem});
+            this.adHocEventsToolStripMenuItem,
+            this.appointmentLookUpToolStripMenuItem});
             this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
             this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(120, 25);
             this.appointmentsToolStripMenuItem.Text = "Appointments";
@@ -235,21 +237,21 @@
             // appointmentBookToolStripMenuItem
             // 
             this.appointmentBookToolStripMenuItem.Name = "appointmentBookToolStripMenuItem";
-            this.appointmentBookToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.appointmentBookToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.appointmentBookToolStripMenuItem.Text = "Appointment Book";
             this.appointmentBookToolStripMenuItem.Click += new System.EventHandler(this.appointmentBookToolStripMenuItem_Click);
             // 
             // waitingRoomLISTToolStripMenuItem
             // 
             this.waitingRoomLISTToolStripMenuItem.Name = "waitingRoomLISTToolStripMenuItem";
-            this.waitingRoomLISTToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.waitingRoomLISTToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.waitingRoomLISTToolStripMenuItem.Text = "Waiting Room";
             this.waitingRoomLISTToolStripMenuItem.Click += new System.EventHandler(this.waitingRoomLISTToolStripMenuItem_Click);
             // 
             // adHocEventsToolStripMenuItem
             // 
             this.adHocEventsToolStripMenuItem.Name = "adHocEventsToolStripMenuItem";
-            this.adHocEventsToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.adHocEventsToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.adHocEventsToolStripMenuItem.Text = "Events";
             this.adHocEventsToolStripMenuItem.Click += new System.EventHandler(this.adHocEventsToolStripMenuItem_Click);
             // 
@@ -364,6 +366,13 @@
             this.mainFormStatusStrip.TabIndex = 2;
             this.mainFormStatusStrip.Text = "statusStrip1";
             // 
+            // appointmentLookUpToolStripMenuItem
+            // 
+            this.appointmentLookUpToolStripMenuItem.Name = "appointmentLookUpToolStripMenuItem";
+            this.appointmentLookUpToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.appointmentLookUpToolStripMenuItem.Text = "Appointment Look Up";
+            this.appointmentLookUpToolStripMenuItem.Click += new System.EventHandler(this.appointmentLookUpToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,6 +434,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewClaimantDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem appointmentLookUpToolStripMenuItem;
 
     }
 }

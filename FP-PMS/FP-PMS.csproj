@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Yinan Ma\Desktop\FP-PMS11\</PublishUrl>
+    <PublishUrl>C:\Users\Yinan Ma\Desktop\FP-PMS15\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -252,6 +252,7 @@
     <Compile Include="Helper\loadingViewForm.Designer.cs">
       <DependentUpon>loadingViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IGeneralForm.cs" />
     <Compile Include="Interfaces\IInvoice.cs" />
     <Compile Include="Interfaces\IPrinting.cs" />
     <Compile Include="Interfaces\IReceipt.cs" />
@@ -356,6 +357,12 @@
       <DependentUpon>reportInvoiceTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Scheduling\appointmentController.cs" />
+    <Compile Include="Scheduling\appointmentLookUpViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointmentLookUpViewForm.Designer.cs">
+      <DependentUpon>appointmentLookUpViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scheduling\appointmentPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\reportInvoiceTemplate.resx">
       <DependentUpon>reportInvoiceTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointmentLookUpViewForm.resx">
+      <DependentUpon>appointmentLookUpViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scheduling\appointmentPopUp.resx">
       <DependentUpon>appointmentPopUp.cs</DependentUpon>

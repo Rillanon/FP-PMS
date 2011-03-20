@@ -52,9 +52,6 @@ namespace FP_PMS.Db
     partial void InserttblInvoiceReceipt(tblInvoiceReceipt instance);
     partial void UpdatetblInvoiceReceipt(tblInvoiceReceipt instance);
     partial void DeletetblInvoiceReceipt(tblInvoiceReceipt instance);
-    partial void InserttblReceipt(tblReceipt instance);
-    partial void UpdatetblReceipt(tblReceipt instance);
-    partial void DeletetblReceipt(tblReceipt instance);
     partial void InserttblItem(tblItem instance);
     partial void UpdatetblItem(tblItem instance);
     partial void DeletetblItem(tblItem instance);
@@ -100,6 +97,9 @@ namespace FP_PMS.Db
     partial void InserttblReceiptCreditPatient(tblReceiptCreditPatient instance);
     partial void UpdatetblReceiptCreditPatient(tblReceiptCreditPatient instance);
     partial void DeletetblReceiptCreditPatient(tblReceiptCreditPatient instance);
+    partial void InserttblReceipt(tblReceipt instance);
+    partial void UpdatetblReceipt(tblReceipt instance);
+    partial void DeletetblReceipt(tblReceipt instance);
     #endregion
 		
 		public dbContextDataContext() : 
@@ -201,14 +201,6 @@ namespace FP_PMS.Db
 			get
 			{
 				return this.GetTable<tblInvoiceReceipt>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblReceipt> tblReceipts
-		{
-			get
-			{
-				return this.GetTable<tblReceipt>();
 			}
 		}
 		
@@ -356,6 +348,14 @@ namespace FP_PMS.Db
 			}
 		}
 		
+		public System.Data.Linq.Table<tblReceipt> tblReceipts
+		{
+			get
+			{
+				return this.GetTable<tblReceipt>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RatesAndItemsSummaryReportFunction", IsComposable=true)]
 		public IQueryable<RatesAndItemsSummaryReportFunctionResult> RatesAndItemsSummaryReportFunction([global::System.Data.Linq.Mapping.ParameterAttribute(Name="StartDate", DbType="Date")] System.Nullable<System.DateTime> startDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EndDate", DbType="Date")] System.Nullable<System.DateTime> endDate)
 		{
@@ -497,6 +497,13 @@ namespace FP_PMS.Db
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), startDate, endDate);
 			return ((ISingleResult<getNewPatientsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getReceiptDetailsOfSingleInvoice")]
+		public ISingleResult<getReceiptDetailsOfSingleInvoiceResult> getReceiptDetailsOfSingleInvoice([global::System.Data.Linq.Mapping.ParameterAttribute(Name="InvoiceID", DbType="Int")] System.Nullable<int> invoiceID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), invoiceID);
+			return ((ISingleResult<getReceiptDetailsOfSingleInvoiceResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2309,8 +2316,6 @@ namespace FP_PMS.Db
 		
 		private EntityRef<tblClaimant> _tblClaimant;
 		
-		private EntityRef<tblPatient> _tblPatient;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2361,10 +2366,6 @@ namespace FP_PMS.Db
 			{
 				if ((this._PatientID != value))
 				{
-					if (this._tblPatient.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnPatientIDChanging(value);
 					this.SendPropertyChanging();
 					this._PatientID = value;
@@ -2433,40 +2434,6 @@ namespace FP_PMS.Db
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblPatient_tblPatientClaimant", Storage="_tblPatient", ThisKey="PatientID", OtherKey="PatientID", IsForeignKey=true)]
-		public tblPatient tblPatient
-		{
-			get
-			{
-				return this._tblPatient.Entity;
-			}
-			set
-			{
-				tblPatient previousValue = this._tblPatient.Entity;
-				if (((previousValue != value) 
-							|| (this._tblPatient.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblPatient.Entity = null;
-						previousValue.tblPatientClaimants.Remove(this);
-					}
-					this._tblPatient.Entity = value;
-					if ((value != null))
-					{
-						value.tblPatientClaimants.Add(this);
-						this._PatientID = value.PatientID;
-					}
-					else
-					{
-						this._PatientID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tblPatient");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2490,7 +2457,6 @@ namespace FP_PMS.Db
 		private void Initialize()
 		{
 			this._tblClaimant = default(EntityRef<tblClaimant>);
-			this._tblPatient = default(EntityRef<tblPatient>);
 			OnCreated();
 		}
 		
@@ -2767,207 +2733,6 @@ namespace FP_PMS.Db
 					this._InvoiceReceiptID = value;
 					this.SendPropertyChanged("InvoiceReceiptID");
 					this.OnInvoiceReceiptIDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void Initialize()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnDeserializing(StreamingContext context)
-		{
-			this.Initialize();
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblReceipt")]
-	[global::System.Runtime.Serialization.DataContractAttribute()]
-	public partial class tblReceipt : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ReceiptNo;
-		
-		private System.Nullable<System.DateTime> _ReceiptDate;
-		
-		private System.Nullable<decimal> _ReceiptAmnt;
-		
-		private System.Nullable<bool> _ReceiptCancelled;
-		
-		private string _UserID;
-		
-		private string _ReceiptComments;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnReceiptNoChanging(int value);
-    partial void OnReceiptNoChanged();
-    partial void OnReceiptDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnReceiptDateChanged();
-    partial void OnReceiptAmntChanging(System.Nullable<decimal> value);
-    partial void OnReceiptAmntChanged();
-    partial void OnReceiptCancelledChanging(System.Nullable<bool> value);
-    partial void OnReceiptCancelledChanged();
-    partial void OnUserIDChanging(string value);
-    partial void OnUserIDChanged();
-    partial void OnReceiptCommentsChanging(string value);
-    partial void OnReceiptCommentsChanged();
-    #endregion
-		
-		public tblReceipt()
-		{
-			this.Initialize();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int ReceiptNo
-		{
-			get
-			{
-				return this._ReceiptNo;
-			}
-			set
-			{
-				if ((this._ReceiptNo != value))
-				{
-					this.OnReceiptNoChanging(value);
-					this.SendPropertyChanging();
-					this._ReceiptNo = value;
-					this.SendPropertyChanged("ReceiptNo");
-					this.OnReceiptNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptDate", DbType="DateTime")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public System.Nullable<System.DateTime> ReceiptDate
-		{
-			get
-			{
-				return this._ReceiptDate;
-			}
-			set
-			{
-				if ((this._ReceiptDate != value))
-				{
-					this.OnReceiptDateChanging(value);
-					this.SendPropertyChanging();
-					this._ReceiptDate = value;
-					this.SendPropertyChanged("ReceiptDate");
-					this.OnReceiptDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptAmnt", DbType="Money")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public System.Nullable<decimal> ReceiptAmnt
-		{
-			get
-			{
-				return this._ReceiptAmnt;
-			}
-			set
-			{
-				if ((this._ReceiptAmnt != value))
-				{
-					this.OnReceiptAmntChanging(value);
-					this.SendPropertyChanging();
-					this._ReceiptAmnt = value;
-					this.SendPropertyChanged("ReceiptAmnt");
-					this.OnReceiptAmntChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptCancelled", DbType="Bit")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public System.Nullable<bool> ReceiptCancelled
-		{
-			get
-			{
-				return this._ReceiptCancelled;
-			}
-			set
-			{
-				if ((this._ReceiptCancelled != value))
-				{
-					this.OnReceiptCancelledChanging(value);
-					this.SendPropertyChanging();
-					this._ReceiptCancelled = value;
-					this.SendPropertyChanged("ReceiptCancelled");
-					this.OnReceiptCancelledChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="NVarChar(10)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-		public string UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptComments", DbType="NVarChar(200)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-		public string ReceiptComments
-		{
-			get
-			{
-				return this._ReceiptComments;
-			}
-			set
-			{
-				if ((this._ReceiptComments != value))
-				{
-					this.OnReceiptCommentsChanging(value);
-					this.SendPropertyChanging();
-					this._ReceiptComments = value;
-					this.SendPropertyChanged("ReceiptComments");
-					this.OnReceiptCommentsChanged();
 				}
 			}
 		}
@@ -5542,10 +5307,6 @@ namespace FP_PMS.Db
 		
 		private System.Nullable<bool> _ReferredByDoc;
 		
-		private EntitySet<tblPatientClaimant> _tblPatientClaimants;
-		
-		private bool serializing;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -6270,25 +6031,6 @@ namespace FP_PMS.Db
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblPatient_tblPatientClaimant", Storage="_tblPatientClaimants", ThisKey="PatientID", OtherKey="PatientID")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=32, EmitDefaultValue=false)]
-		public EntitySet<tblPatientClaimant> tblPatientClaimants
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._tblPatientClaimants.HasLoadedOrAssignedValues == false)))
-				{
-					return null;
-				}
-				return this._tblPatientClaimants;
-			}
-			set
-			{
-				this._tblPatientClaimants.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -6309,21 +6051,8 @@ namespace FP_PMS.Db
 			}
 		}
 		
-		private void attach_tblPatientClaimants(tblPatientClaimant entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblPatient = this;
-		}
-		
-		private void detach_tblPatientClaimants(tblPatientClaimant entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblPatient = null;
-		}
-		
 		private void Initialize()
 		{
-			this._tblPatientClaimants = new EntitySet<tblPatientClaimant>(new Action<tblPatientClaimant>(this.attach_tblPatientClaimants), new Action<tblPatientClaimant>(this.detach_tblPatientClaimants));
 			OnCreated();
 		}
 		
@@ -6332,20 +6061,6 @@ namespace FP_PMS.Db
 		public void OnDeserializing(StreamingContext context)
 		{
 			this.Initialize();
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializingAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerializing(StreamingContext context)
-		{
-			this.serializing = true;
-		}
-		
-		[global::System.Runtime.Serialization.OnSerializedAttribute()]
-		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
-		public void OnSerialized(StreamingContext context)
-		{
-			this.serializing = false;
 		}
 	}
 	
@@ -8228,6 +7943,232 @@ namespace FP_PMS.Db
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblReceipt")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class tblReceipt : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ReceiptNo;
+		
+		private System.Nullable<System.DateTime> _ReceiptDate;
+		
+		private System.Nullable<decimal> _ReceiptAmnt;
+		
+		private System.Nullable<bool> _ReceiptCancelled;
+		
+		private string _UserID;
+		
+		private string _ReceiptComments;
+		
+		private System.Nullable<bool> _IsMulti;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnReceiptNoChanging(int value);
+    partial void OnReceiptNoChanged();
+    partial void OnReceiptDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnReceiptDateChanged();
+    partial void OnReceiptAmntChanging(System.Nullable<decimal> value);
+    partial void OnReceiptAmntChanged();
+    partial void OnReceiptCancelledChanging(System.Nullable<bool> value);
+    partial void OnReceiptCancelledChanged();
+    partial void OnUserIDChanging(string value);
+    partial void OnUserIDChanged();
+    partial void OnReceiptCommentsChanging(string value);
+    partial void OnReceiptCommentsChanged();
+    partial void OnIsMultiChanging(System.Nullable<bool> value);
+    partial void OnIsMultiChanged();
+    #endregion
+		
+		public tblReceipt()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int ReceiptNo
+		{
+			get
+			{
+				return this._ReceiptNo;
+			}
+			set
+			{
+				if ((this._ReceiptNo != value))
+				{
+					this.OnReceiptNoChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptNo = value;
+					this.SendPropertyChanged("ReceiptNo");
+					this.OnReceiptNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptDate", DbType="DateTime")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public System.Nullable<System.DateTime> ReceiptDate
+		{
+			get
+			{
+				return this._ReceiptDate;
+			}
+			set
+			{
+				if ((this._ReceiptDate != value))
+				{
+					this.OnReceiptDateChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptDate = value;
+					this.SendPropertyChanged("ReceiptDate");
+					this.OnReceiptDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptAmnt", DbType="Money")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<decimal> ReceiptAmnt
+		{
+			get
+			{
+				return this._ReceiptAmnt;
+			}
+			set
+			{
+				if ((this._ReceiptAmnt != value))
+				{
+					this.OnReceiptAmntChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptAmnt = value;
+					this.SendPropertyChanged("ReceiptAmnt");
+					this.OnReceiptAmntChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptCancelled", DbType="Bit")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<bool> ReceiptCancelled
+		{
+			get
+			{
+				return this._ReceiptCancelled;
+			}
+			set
+			{
+				if ((this._ReceiptCancelled != value))
+				{
+					this.OnReceiptCancelledChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptCancelled = value;
+					this.SendPropertyChanged("ReceiptCancelled");
+					this.OnReceiptCancelledChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptComments", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public string ReceiptComments
+		{
+			get
+			{
+				return this._ReceiptComments;
+			}
+			set
+			{
+				if ((this._ReceiptComments != value))
+				{
+					this.OnReceiptCommentsChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptComments = value;
+					this.SendPropertyChanged("ReceiptComments");
+					this.OnReceiptCommentsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsMulti", DbType="Bit")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public System.Nullable<bool> IsMulti
+		{
+			get
+			{
+				return this._IsMulti;
+			}
+			set
+			{
+				if ((this._IsMulti != value))
+				{
+					this.OnIsMultiChanging(value);
+					this.SendPropertyChanging();
+					this._IsMulti = value;
+					this.SendPropertyChanged("IsMulti");
+					this.OnIsMultiChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+	}
+	
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class RatesAndItemsSummaryReportFunctionResult
 	{
@@ -10049,6 +9990,224 @@ namespace FP_PMS.Db
 				if ((this._FeeTotal != value))
 				{
 					this._FeeTotal = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class getReceiptDetailsOfSingleInvoiceResult
+	{
+		
+		private int _ReceiptNo;
+		
+		private System.Nullable<System.DateTime> _ReceiptDate;
+		
+		private System.Nullable<decimal> _ReceiptAmnt;
+		
+		private System.Nullable<bool> _ReceiptCancelled;
+		
+		private string _UserID;
+		
+		private string _ReceiptComments;
+		
+		private System.Nullable<bool> _IsMulti;
+		
+		private int _InvoiceNo;
+		
+		private System.Nullable<int> _ReceiptNo1;
+		
+		private System.Nullable<decimal> _InvRecAmnt;
+		
+		private int _InvoiceReceiptID;
+		
+		public getReceiptDetailsOfSingleInvoiceResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int ReceiptNo
+		{
+			get
+			{
+				return this._ReceiptNo;
+			}
+			set
+			{
+				if ((this._ReceiptNo != value))
+				{
+					this._ReceiptNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptDate", DbType="DateTime")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public System.Nullable<System.DateTime> ReceiptDate
+		{
+			get
+			{
+				return this._ReceiptDate;
+			}
+			set
+			{
+				if ((this._ReceiptDate != value))
+				{
+					this._ReceiptDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptAmnt", DbType="Money")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<decimal> ReceiptAmnt
+		{
+			get
+			{
+				return this._ReceiptAmnt;
+			}
+			set
+			{
+				if ((this._ReceiptAmnt != value))
+				{
+					this._ReceiptAmnt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptCancelled", DbType="Bit")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<bool> ReceiptCancelled
+		{
+			get
+			{
+				return this._ReceiptCancelled;
+			}
+			set
+			{
+				if ((this._ReceiptCancelled != value))
+				{
+					this._ReceiptCancelled = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptComments", DbType="NVarChar(MAX)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public string ReceiptComments
+		{
+			get
+			{
+				return this._ReceiptComments;
+			}
+			set
+			{
+				if ((this._ReceiptComments != value))
+				{
+					this._ReceiptComments = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsMulti", DbType="Bit")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public System.Nullable<bool> IsMulti
+		{
+			get
+			{
+				return this._IsMulti;
+			}
+			set
+			{
+				if ((this._IsMulti != value))
+				{
+					this._IsMulti = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		public int InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this._InvoiceNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo1", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+		public System.Nullable<int> ReceiptNo1
+		{
+			get
+			{
+				return this._ReceiptNo1;
+			}
+			set
+			{
+				if ((this._ReceiptNo1 != value))
+				{
+					this._ReceiptNo1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvRecAmnt", DbType="Money")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		public System.Nullable<decimal> InvRecAmnt
+		{
+			get
+			{
+				return this._InvRecAmnt;
+			}
+			set
+			{
+				if ((this._InvRecAmnt != value))
+				{
+					this._InvRecAmnt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceReceiptID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+		public int InvoiceReceiptID
+		{
+			get
+			{
+				return this._InvoiceReceiptID;
+			}
+			set
+			{
+				if ((this._InvoiceReceiptID != value))
+				{
+					this._InvoiceReceiptID = value;
 				}
 			}
 		}

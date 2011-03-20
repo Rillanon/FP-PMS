@@ -86,6 +86,7 @@ namespace FP_PMS.Accounting.Receipt
             myReceipt.ReceiptDate = System.DateTime.Today;
             myReceipt.ReceiptAmnt = myPayments.Sum(p => p.PayinAmnt);
             myReceipt.UserID = staticProperties.userName;
+            myReceipt.IsMulti = true;
             
             newConnection.tblReceipts.InsertOnSubmit(myReceipt);
             newConnection.SubmitChanges();

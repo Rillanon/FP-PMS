@@ -427,5 +427,11 @@ namespace FP_PMS
             foo.ShowDialog();
         }
 
+        private void appointmentLookUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var foo = new Scheduling.appointmentLookUpViewForm();
+            foo.ShowDialog();
+        }
+
     }
 }

@@ -137,6 +137,7 @@
             // claimantlinqInstantFeedbackSource
             // 
             this.claimantlinqInstantFeedbackSource.AreSourceRowsThreadSafe = true;
+            this.claimantlinqInstantFeedbackSource.DesignTimeElementType = typeof(FP_PMS.Db.tblClaimant);
             this.claimantlinqInstantFeedbackSource.KeyExpression = "ClaimantID";
             this.claimantlinqInstantFeedbackSource.GetQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.claimantlinqInstantFeedbackSource_GetQueryable);
             this.claimantlinqInstantFeedbackSource.DismissQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.claimantlinqInstantFeedbackSource_DismissQueryable);
