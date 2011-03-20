@@ -40,7 +40,7 @@
             this.okBtn.Location = new System.Drawing.Point(124, 48);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
-            this.okBtn.TabIndex = 0;
+            this.okBtn.TabIndex = 1;
             this.okBtn.Text = "OK";
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
@@ -50,8 +50,9 @@
             this.quitBtn.Location = new System.Drawing.Point(205, 48);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(75, 23);
-            this.quitBtn.TabIndex = 1;
+            this.quitBtn.TabIndex = 2;
             this.quitBtn.Text = "Quit";
+            this.quitBtn.Click += new System.EventHandler(this.quitBtn_Click);
             // 
             // searchTermTextEdit
             // 
@@ -60,7 +61,7 @@
             this.searchTermTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTermTextEdit.Properties.Appearance.Options.UseFont = true;
             this.searchTermTextEdit.Size = new System.Drawing.Size(268, 29);
-            this.searchTermTextEdit.TabIndex = 2;
+            this.searchTermTextEdit.TabIndex = 0;
             // 
             // findForm
             // 
@@ -75,6 +76,8 @@
             this.Name = "findForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Find a Patient";
+            this.Load += new System.EventHandler(this.findForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.findForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.searchTermTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 

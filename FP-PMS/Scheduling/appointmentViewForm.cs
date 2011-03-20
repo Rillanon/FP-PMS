@@ -76,9 +76,37 @@ namespace FP_PMS.Scheduling
             Cursor.Current = Cursors.Default;
         }
 
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.F)
+            {
+                this.findAppointment();
+            }
+        }
+
         void findAppointment()
         {
-
+            var newFindForm = new findForm();
+            newFindForm.ShowDialog();
+            if (newFindForm.DialogResult == DialogResult.OK)
+            {
+                Appointment myApp = (from a in appointmentSchedulerStorage.Appointments.Items
+                                     where a.Subject.ToUpper().Contains(newFindForm.mySearchTerm)
+                                     || a.Subject.ToLower().Contains(newFindForm.mySearchTerm)
+                                     select a).FirstOrDefault();
+                if (myApp != null)
+                {
+                    appointmentSchedulerControl.ActiveView.SelectAppointment(myApp);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Not found.");
+                }
+                
+            }
+            newFindForm.Dispose();
         }
 
         void ApplyCustomMapping()
@@ -114,9 +142,13 @@ namespace FP_PMS.Scheduling
             Cursor.Current = Cursors.WaitCursor;
             try
             {
+                
                 patientAppointmentsTableAdapter.ClearBeforeFill = true;
                 patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
+                
+
                 asyncResult = this.BeginInvoke((DoRefreshData)RefreshAsync);
+                
             }
             catch (System.Data.SqlClient.SqlException)
             {
@@ -181,7 +213,9 @@ namespace FP_PMS.Scheduling
         void RefreshAsync()
         {
             this.EndInvoke(asyncResult);
+           
             this.appointmentSchedulerControl.RefreshData();
+            
         }
 
         private void OnApptChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)

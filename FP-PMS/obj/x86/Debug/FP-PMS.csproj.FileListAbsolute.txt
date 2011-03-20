@@ -58,3 +58,4 @@ C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\De
 C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.application
 C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.exe
 C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.pdb
+C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Scheduling.findForm.resources
