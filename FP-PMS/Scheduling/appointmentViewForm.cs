@@ -204,7 +204,15 @@ namespace FP_PMS.Scheduling
             {
                 lastFetchedInterval = new TimeInterval(Start - TimeSpan.FromDays(1), End +
                     TimeSpan.FromDays(1));
-                patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
+                try
+                {
+                    patientAppointmentsTableAdapter.FillBy(db.PatientAppointments, Start, End);
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    appointmentSchedulerStorage_FetchAppointments(sender, e);
+                }
+
             }
             Cursor.Current = Cursors.Default;
         }
