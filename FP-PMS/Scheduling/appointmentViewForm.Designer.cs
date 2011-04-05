@@ -223,7 +223,7 @@
             // appointmentReloadTimer
             // 
             this.appointmentReloadTimer.Enabled = true;
-            this.appointmentReloadTimer.Interval = 10000;
+            this.appointmentReloadTimer.Interval = 60000;
             this.appointmentReloadTimer.Tick += new System.EventHandler(this.appointmentReloadTimer_Tick);
             // 
             // appointmentViewForm

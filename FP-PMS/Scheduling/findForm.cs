@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Data.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraScheduler;
+using DevExpress.XtraScheduler.Drawing;
+using DevExpress.XtraScheduler.Services;
+using DevExpress.XtraScheduler.Commands;
+using DevExpress.Utils.Menu;
 
 namespace FP_PMS.Scheduling
 {
@@ -23,7 +31,6 @@ namespace FP_PMS.Scheduling
         {
             mySearchTerm = searchTermTextEdit.Text.Trim();
             this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void findForm_Load(object sender, EventArgs e)
@@ -48,6 +55,11 @@ namespace FP_PMS.Scheduling
             {
                 this.quitBtn_Click(this, new EventArgs());
             }
+        }
+
+        private void findForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

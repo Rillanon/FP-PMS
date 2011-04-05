@@ -423,8 +423,9 @@ namespace FP_PMS
 
         private void viewClaimantDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var foo = new Claimant.claimantViewForm();
-            foo.ShowDialog();
+            var foo = new Claimant.claimantDetailsForm();
+            foo.MdiParent = this;
+            foo.Show();
         }
 
         private void appointmentLookUpToolStripMenuItem_Click(object sender, EventArgs e)

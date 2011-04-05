@@ -28,6 +28,10 @@ namespace FP_PMS.Scheduling
         DateTime Start;
         DateTime End;
 
+        List<Appointment> myfindResults = new List<Appointment> { };
+
+        bool isDrag = false;
+
         int retryCounter {get;set;}
 
         public void print()
@@ -85,6 +89,26 @@ namespace FP_PMS.Scheduling
             {
                 this.findAppointment();
             }
+            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.F2)
+            {
+                this.nextAppointment();
+            }
+        }
+
+        private void nextAppointment()
+        {
+            if (myfindResults.Any())
+            {
+                this.selectCurrentAppointment();
+            }
+        }
+
+        void selectCurrentAppointment()
+        {
+                this.appointmentSchedulerControl.ActiveView.SelectAppointment(myfindResults.First());
+                this.appointmentSchedulerControl.Refresh();
+                myfindResults.Add(myfindResults.First());
+                myfindResults.Remove(myfindResults.First());
         }
 
         void findAppointment()
@@ -93,23 +117,22 @@ namespace FP_PMS.Scheduling
             newFindForm.ShowDialog();
             if (newFindForm.DialogResult == DialogResult.OK)
             {
-                Appointment myApp = (from a in appointmentSchedulerStorage.Appointments.Items
-                                     where a.Subject.ToUpper().Contains(newFindForm.mySearchTerm)
-                                     || a.Subject.ToLower().Contains(newFindForm.mySearchTerm)
-                                     select a).FirstOrDefault();
-                if (myApp != null)
+                myfindResults.Clear();
+                myfindResults = (from a in this.appointmentSchedulerStorage.Appointments.Items
+                                 where a.Subject.ToUpper().Contains(newFindForm.mySearchTerm)
+                                 || a.Subject.ToLower().Contains(newFindForm.mySearchTerm)
+                                 select a).ToList();
+
+                if (myfindResults.Any())
                 {
-                    appointmentSchedulerControl.ActiveView.SelectAppointment(myApp);
-                    this.appointmentSchedulerControl.Refresh();
-                    
+                    selectCurrentAppointment();
                 }
                 else
                 {
                     MessageBox.Show("No patients found.");
                 }
-                
+                newFindForm.Dispose();
             }
-            newFindForm.Dispose();
         }
 
         void ApplyCustomMapping()
@@ -435,7 +458,7 @@ namespace FP_PMS.Scheduling
 
         private void appointmentReloadTimer_Tick(object sender, EventArgs e)
         {
-            if (appointmentSchedulerControl.IsUpdateLocked == false)
+            if (isDrag == false)
                 ReloadCollections();
             else
             {
@@ -462,12 +485,12 @@ namespace FP_PMS.Scheduling
 
         private void appointmentSchedulerControl_DragDrop(object sender, DragEventArgs e)
         {
-            this.appointmentSchedulerControl.EndInit();
+            this.isDrag = false;
         }
 
         private void appointmentSchedulerControl_DragEnter(object sender, DragEventArgs e)
         {
-            this.appointmentSchedulerControl.BeginInit();
+            this.isDrag = true;
         }
 
     }

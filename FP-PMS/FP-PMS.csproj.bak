@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Yinan Ma\Desktop\FP-PMS11\</PublishUrl>
+    <PublishUrl>C:\Users\Yinan Ma\Desktop\FP-PMS-200311\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -62,24 +62,25 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v10.2.Linq, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraScheduler.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraScheduler.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.2.Linq, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.2.UI, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -133,6 +134,18 @@
     </Compile>
     <Compile Include="Accounting\Invoice\invoiceViewForm.Designer.cs">
       <DependentUpon>invoiceViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Invoice\newAddItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\newAddItemForm.Designer.cs">
+      <DependentUpon>newAddItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Invoice\newInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\Invoice\newInvoiceForm.Designer.cs">
+      <DependentUpon>newInvoiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Accounting\Receipt\addPaymentAmountViewForm.cs">
       <SubType>Form</SubType>
@@ -190,6 +203,12 @@
       <DependentUpon>authForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Claimant\claimantController.cs" />
+    <Compile Include="Claimant\claimantDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claimant\claimantDetailsForm.Designer.cs">
+      <DependentUpon>claimantDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Claimant\claimantInvoiceViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +235,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Db\dbContext.cs">
+      <DependentUpon>dbContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Db\dbContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,6 +258,11 @@
     <Compile Include="Helper\loadingViewForm.Designer.cs">
       <DependentUpon>loadingViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IGeneralForm.cs" />
+    <Compile Include="Interfaces\IInvoice.cs" />
+    <Compile Include="Interfaces\IPrinting.cs" />
+    <Compile Include="Interfaces\IReceipt.cs" />
+    <Compile Include="Interfaces\IReport.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +302,18 @@
     <Compile Include="Referral\referralViewForm.Designer.cs">
       <DependentUpon>referralViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\agedTrailBalanceViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\agedTrailBalanceViewForm.Designer.cs">
+      <DependentUpon>agedTrailBalanceViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\customInvoiceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\customInvoiceReport.Designer.cs">
+      <DependentUpon>customInvoiceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\invoicePrintReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -299,6 +338,12 @@
     <Compile Include="Report\newPatientStatsViewForm.Designer.cs">
       <DependentUpon>newPatientStatsViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\nullSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\nullSelectionForm.Designer.cs">
+      <DependentUpon>nullSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\paymentAuditTrail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,11 +363,23 @@
       <DependentUpon>reportInvoiceTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Scheduling\appointmentController.cs" />
+    <Compile Include="Scheduling\appointmentLookUpViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointmentLookUpViewForm.Designer.cs">
+      <DependentUpon>appointmentLookUpViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scheduling\appointmentPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Scheduling\appointmentPopUp.Designer.cs">
       <DependentUpon>appointmentPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\appointmentsByPhysioViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\appointmentsByPhysioViewForm.Designer.cs">
+      <DependentUpon>appointmentsByPhysioViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Scheduling\appointmentViewForm.cs">
       <SubType>Form</SubType>
@@ -335,6 +392,24 @@
     </Compile>
     <Compile Include="Scheduling\appointUnAvailViewForm.Designer.cs">
       <DependentUpon>appointUnAvailViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\eventViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\eventViewForm.Designer.cs">
+      <DependentUpon>eventViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\findForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\findForm.Designer.cs">
+      <DependentUpon>findForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\physioSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\physioSelectDialog.Designer.cs">
+      <DependentUpon>physioSelectDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Scheduling\waitingRoomView.cs">
       <SubType>Form</SubType>
@@ -378,6 +453,12 @@
     <EmbeddedResource Include="Accounting\Invoice\invoiceViewForm.resx">
       <DependentUpon>invoiceViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\newAddItemForm.resx">
+      <DependentUpon>newAddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\Invoice\newInvoiceForm.resx">
+      <DependentUpon>newInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounting\Receipt\addPaymentAmountViewForm.resx">
       <DependentUpon>addPaymentAmountViewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +486,9 @@
     <EmbeddedResource Include="Auth\authForm.resx">
       <DependentUpon>authForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Claimant\claimantDetailsForm.resx">
+      <DependentUpon>claimantDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Claimant\claimantInvoiceViewForm.resx">
       <DependentUpon>claimantInvoiceViewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +513,12 @@
     <EmbeddedResource Include="Referral\referralViewForm.resx">
       <DependentUpon>referralViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\agedTrailBalanceViewForm.resx">
+      <DependentUpon>agedTrailBalanceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\customInvoiceReport.resx">
+      <DependentUpon>customInvoiceReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\invoicePrintReport.resx">
       <DependentUpon>invoicePrintReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +531,9 @@
     <EmbeddedResource Include="Report\newPatientStatsViewForm.resx">
       <DependentUpon>newPatientStatsViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\nullSelectionForm.resx">
+      <DependentUpon>nullSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\paymentAuditTrail.resx">
       <DependentUpon>paymentAuditTrail.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,14 +543,29 @@
     <EmbeddedResource Include="Report\reportInvoiceTemplate.resx">
       <DependentUpon>reportInvoiceTemplate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointmentLookUpViewForm.resx">
+      <DependentUpon>appointmentLookUpViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scheduling\appointmentPopUp.resx">
       <DependentUpon>appointmentPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\appointmentsByPhysioViewForm.resx">
+      <DependentUpon>appointmentsByPhysioViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scheduling\appointmentViewForm.resx">
       <DependentUpon>appointmentViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scheduling\appointUnAvailViewForm.resx">
       <DependentUpon>appointUnAvailViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\eventViewForm.resx">
+      <DependentUpon>eventViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\findForm.resx">
+      <DependentUpon>findForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\physioSelectDialog.resx">
+      <DependentUpon>physioSelectDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scheduling\waitingRoomView.resx">
       <DependentUpon>waitingRoomView.cs</DependentUpon>

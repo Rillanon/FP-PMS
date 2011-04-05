@@ -41,7 +41,7 @@
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 1;
-            this.okBtn.Text = "OK";
+            this.okBtn.Text = "Find";
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // quitBtn
@@ -76,6 +76,7 @@
             this.Name = "findForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Find a Patient";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.findForm_FormClosing);
             this.Load += new System.EventHandler(this.findForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.findForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.searchTermTextEdit.Properties)).EndInit();

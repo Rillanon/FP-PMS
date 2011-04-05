@@ -27,7 +27,8 @@ namespace FP_PMS.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=184.168.87.130;Initial Catalog=FP_OLD_MIGRATION_DEV_DB;Persist Securi" +
-            "ty Info=True;User ID=physio;Password=Physio2011;")]
+            "ty Info=True;User ID=physio;Password=Physio2011;Pooling=False;MultipleActiveResu" +
+            "ltSets=True")]
         public string FP_OLD_MIGRATION_DEV_DBConnectionString {
             get {
                 return ((string)(this["FP_OLD_MIGRATION_DEV_DBConnectionString"]));

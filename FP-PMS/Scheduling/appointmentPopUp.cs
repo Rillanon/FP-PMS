@@ -173,7 +173,8 @@ namespace FP_PMS.Scheduling
 
                 else
                 {
-                    this.myController.editCopyPhysioID = res.CustomFields["PhysioID"].ToString();
+                    string physioID = mySchedulerControl.SelectedResource.CustomFields["PhysioID"].ToString();
+                    this.myController.editCopyPhysioID = physioID;
                 }
 
                 this.myController.Subject = this.myController.Subject;
