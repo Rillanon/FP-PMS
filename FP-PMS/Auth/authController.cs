@@ -31,10 +31,13 @@ namespace FP_PMS.Auth
                         Ex.staticProperties.userName = userObj.FirstNames + @" " + userObj.LastName;
                         Cursor.Current = Cursors.Default;
                         return DialogResult.OK;
+                        
                     }
                     MessageBox.Show(Ex.exceptionMessages.authFailedException());
                     Cursor.Current = Cursors.Default;
+                    
                     return DialogResult.Retry;
+                    
                 }
 
                 catch(Exception e)
@@ -44,6 +47,7 @@ namespace FP_PMS.Auth
                     Cursor.Current = Cursors.Default;
                     return DialogResult.Retry;
                 }
+                
             }
             
         }

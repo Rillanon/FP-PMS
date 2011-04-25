@@ -46,7 +46,7 @@
             // 
             this.labelTitle.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(189, 11);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(125, 18);
             this.labelTitle.TabIndex = 8;
@@ -126,12 +126,11 @@
             this.Controls.Add(this.labelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "authForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Portal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.authFormFormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.userTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordTextEdit.Properties)).EndInit();

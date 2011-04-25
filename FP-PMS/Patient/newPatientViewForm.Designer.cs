@@ -199,17 +199,17 @@
             // 
             // quitBtn
             // 
-            this.quitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.quitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.quitBtn.Location = new System.Drawing.Point(252, 557);
             this.quitBtn.Size = new System.Drawing.Size(58, 10);
             // 
             // okBtn
             // 
-            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.okBtn.Location = new System.Drawing.Point(192, 568);
             this.okBtn.Size = new System.Drawing.Size(58, 10);
             // 
@@ -317,8 +317,8 @@
             // 
             // newPatientBtn
             // 
-            this.newPatientBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.newPatientBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.newPatientBtn.Location = new System.Drawing.Point(405, 38);
             this.newPatientBtn.Name = "newPatientBtn";
             this.newPatientBtn.Size = new System.Drawing.Size(74, 23);
@@ -349,9 +349,9 @@
             // 
             // patientPresentTabControl
             // 
-            this.patientPresentTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.patientPresentTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.patientPresentTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientPresentTabControl.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal;
             this.patientPresentTabControl.Location = new System.Drawing.Point(0, 81);
@@ -373,7 +373,7 @@
             this.detailTabPage.Controls.Add(this.splitContainerControl1);
             this.detailTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailTabPage.Name = "detailTabPage";
-            this.detailTabPage.Size = new System.Drawing.Size(777, 457);
+            this.detailTabPage.Size = new System.Drawing.Size(777, 458);
             this.detailTabPage.Text = "Details";
             // 
             // splitContainerControl1
@@ -403,7 +403,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.lastNameTextEdit);
             this.splitContainerControl1.Panel2.Controls.Add(this.firstNameTextEdit);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(777, 457);
+            this.splitContainerControl1.Size = new System.Drawing.Size(777, 458);
             this.splitContainerControl1.SplitterPosition = 124;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -497,8 +497,8 @@
             // 
             // emailTextEdit
             // 
-            this.emailTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.emailTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.emailTextEdit.Location = new System.Drawing.Point(23, 363);
             this.emailTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailTextEdit.Name = "emailTextEdit";
@@ -512,8 +512,8 @@
             // 
             // faxTextEdit
             // 
-            this.faxTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.faxTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.faxTextEdit.Location = new System.Drawing.Point(23, 321);
             this.faxTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.faxTextEdit.Name = "faxTextEdit";
@@ -527,8 +527,8 @@
             // 
             // workPhoneTextEdit
             // 
-            this.workPhoneTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.workPhoneTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.workPhoneTextEdit.Location = new System.Drawing.Point(23, 240);
             this.workPhoneTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.workPhoneTextEdit.Name = "workPhoneTextEdit";
@@ -541,8 +541,8 @@
             // 
             // mobileTextEdit
             // 
-            this.mobileTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.mobileTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mobileTextEdit.Location = new System.Drawing.Point(23, 280);
             this.mobileTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mobileTextEdit.Name = "mobileTextEdit";
@@ -556,8 +556,8 @@
             // 
             // homePhoneTextEdit
             // 
-            this.homePhoneTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.homePhoneTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.homePhoneTextEdit.Location = new System.Drawing.Point(23, 198);
             this.homePhoneTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.homePhoneTextEdit.Name = "homePhoneTextEdit";
@@ -582,14 +582,14 @@
             this.personalGroupControl.Dock = System.Windows.Forms.DockStyle.Right;
             this.personalGroupControl.Location = new System.Drawing.Point(298, 0);
             this.personalGroupControl.Name = "personalGroupControl";
-            this.personalGroupControl.Size = new System.Drawing.Size(346, 453);
+            this.personalGroupControl.Size = new System.Drawing.Size(346, 454);
             this.personalGroupControl.TabIndex = 75;
             this.personalGroupControl.Text = "Personal";
             // 
             // genderComboBox
             // 
-            this.genderComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.genderComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.genderComboBox.FormattingEnabled = true;
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
@@ -602,8 +602,8 @@
             // 
             // titleComboBox
             // 
-            this.titleComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.titleComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.titleComboBox.FormattingEnabled = true;
             this.titleComboBox.Items.AddRange(new object[] {
             "Mr",
@@ -619,8 +619,8 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Location = new System.Drawing.Point(81, 37);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -631,8 +631,8 @@
             // 
             // dobDateEdit
             // 
-            this.dobDateEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dobDateEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dobDateEdit.EditValue = null;
             this.dobDateEdit.Location = new System.Drawing.Point(150, 109);
             this.dobDateEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -648,8 +648,8 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Location = new System.Drawing.Point(23, 111);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -660,12 +660,12 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl1.Controls.Add(this.commentMemoEdit);
             this.groupControl1.Location = new System.Drawing.Point(2, 150);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(346, 235);
+            this.groupControl1.Size = new System.Drawing.Size(346, 236);
             this.groupControl1.TabIndex = 25;
             this.groupControl1.Text = "Comments";
             // 
@@ -674,13 +674,13 @@
             this.commentMemoEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.commentMemoEdit.Location = new System.Drawing.Point(2, 22);
             this.commentMemoEdit.Name = "commentMemoEdit";
-            this.commentMemoEdit.Size = new System.Drawing.Size(342, 211);
+            this.commentMemoEdit.Size = new System.Drawing.Size(342, 212);
             this.commentMemoEdit.TabIndex = 0;
             // 
             // labelControl6
             // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Location = new System.Drawing.Point(61, 72);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -692,7 +692,7 @@
             // physioLookUp
             // 
             this.physioLookUp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.physioLookUp.Location = new System.Drawing.Point(2, 425);
+            this.physioLookUp.Location = new System.Drawing.Point(2, 426);
             this.physioLookUp.Margin = new System.Windows.Forms.Padding(2);
             this.physioLookUp.Name = "physioLookUp";
             this.physioLookUp.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -757,10 +757,10 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Location = new System.Drawing.Point(117, 402);
+            this.labelControl12.Location = new System.Drawing.Point(117, 403);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(136, 19);
@@ -769,8 +769,8 @@
             // 
             // dvaTextEdit
             // 
-            this.dvaTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvaTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvaTextEdit.Location = new System.Drawing.Point(23, 120);
             this.dvaTextEdit.Name = "dvaTextEdit";
             this.dvaTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -780,8 +780,8 @@
             // 
             // lastNameTextEdit
             // 
-            this.lastNameTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lastNameTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lastNameTextEdit.Location = new System.Drawing.Point(23, 81);
             this.lastNameTextEdit.Name = "lastNameTextEdit";
             this.lastNameTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -791,8 +791,8 @@
             // 
             // firstNameTextEdit
             // 
-            this.firstNameTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.firstNameTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.firstNameTextEdit.Location = new System.Drawing.Point(23, 44);
             this.firstNameTextEdit.Name = "firstNameTextEdit";
             this.firstNameTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -811,14 +811,14 @@
             this.addressTabPage.Controls.Add(this.addressTextEdit);
             this.addressTabPage.Controls.Add(this.labelControl13);
             this.addressTabPage.Name = "addressTabPage";
-            this.addressTabPage.Size = new System.Drawing.Size(777, 457);
+            this.addressTabPage.Size = new System.Drawing.Size(777, 458);
             this.addressTabPage.Text = "Address";
             // 
             // suburbTextEdit
             // 
-            this.suburbTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.suburbTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.suburbTextEdit.EditValue = "";
             this.suburbTextEdit.Location = new System.Drawing.Point(250, 120);
             this.suburbTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -831,9 +831,9 @@
             // 
             // postCodeLookUp
             // 
-            this.postCodeLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.postCodeLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.postCodeLookUp.Location = new System.Drawing.Point(464, 120);
             this.postCodeLookUp.Name = "postCodeLookUp";
             this.postCodeLookUp.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -894,9 +894,9 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl19.Location = new System.Drawing.Point(69, 189);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -907,9 +907,9 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl18.Location = new System.Drawing.Point(140, 123);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -920,9 +920,9 @@
             // 
             // postCodeTextEdit
             // 
-            this.postCodeTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.postCodeTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.postCodeTextEdit.Location = new System.Drawing.Point(464, 186);
             this.postCodeTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postCodeTextEdit.Name = "postCodeTextEdit";
@@ -934,9 +934,9 @@
             // 
             // stateTextEdit
             // 
-            this.stateTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.stateTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stateTextEdit.EditValue = "";
             this.stateTextEdit.Location = new System.Drawing.Point(250, 186);
             this.stateTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -949,9 +949,9 @@
             // 
             // addressTextEdit
             // 
-            this.addressTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.addressTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addressTextEdit.Location = new System.Drawing.Point(250, 64);
             this.addressTextEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressTextEdit.Name = "addressTextEdit";
@@ -962,9 +962,9 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Location = new System.Drawing.Point(134, 67);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -977,7 +977,7 @@
             // 
             this.claimantTabPage.Controls.Add(this.groupControl3);
             this.claimantTabPage.Name = "claimantTabPage";
-            this.claimantTabPage.Size = new System.Drawing.Size(777, 457);
+            this.claimantTabPage.Size = new System.Drawing.Size(777, 458);
             this.claimantTabPage.Text = "Claimant";
             this.claimantTabPage.Click += new System.EventHandler(this.claimantTabPage_Click);
             this.claimantTabPage.Enter += new System.EventHandler(this.claimantTabPage_Enter);
@@ -991,13 +991,13 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(777, 457);
+            this.groupControl3.Size = new System.Drawing.Size(777, 458);
             this.groupControl3.TabIndex = 28;
             // 
             // invoiceBtn
             // 
             this.invoiceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.invoiceBtn.Location = new System.Drawing.Point(87, 421);
+            this.invoiceBtn.Location = new System.Drawing.Point(87, 422);
             this.invoiceBtn.Name = "invoiceBtn";
             this.invoiceBtn.Size = new System.Drawing.Size(75, 24);
             this.invoiceBtn.TabIndex = 30;
@@ -1007,7 +1007,7 @@
             // claimantDeleteBtn
             // 
             this.claimantDeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.claimantDeleteBtn.Location = new System.Drawing.Point(405, 421);
+            this.claimantDeleteBtn.Location = new System.Drawing.Point(405, 422);
             this.claimantDeleteBtn.Name = "claimantDeleteBtn";
             this.claimantDeleteBtn.Size = new System.Drawing.Size(75, 24);
             this.claimantDeleteBtn.TabIndex = 29;
@@ -1017,7 +1017,7 @@
             // claimantAddBtn
             // 
             this.claimantAddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.claimantAddBtn.Location = new System.Drawing.Point(324, 421);
+            this.claimantAddBtn.Location = new System.Drawing.Point(324, 422);
             this.claimantAddBtn.Name = "claimantAddBtn";
             this.claimantAddBtn.Size = new System.Drawing.Size(75, 24);
             this.claimantAddBtn.TabIndex = 28;
@@ -1026,15 +1026,15 @@
             // 
             // claimantGridControl
             // 
-            this.claimantGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.claimantGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.claimantGridControl.Location = new System.Drawing.Point(2, 22);
             this.claimantGridControl.MainView = this.claimantGridView;
             this.claimantGridControl.Name = "claimantGridControl";
             this.claimantGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.claimantSearchLookUp});
-            this.claimantGridControl.Size = new System.Drawing.Size(773, 393);
+            this.claimantGridControl.Size = new System.Drawing.Size(773, 394);
             this.claimantGridControl.TabIndex = 26;
             this.claimantGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.claimantGridView});
@@ -1132,7 +1132,7 @@
             this.medicalReferralTagPage.Controls.Add(this.referralGroupControl);
             this.medicalReferralTagPage.Controls.Add(this.medicalGroupControl);
             this.medicalReferralTagPage.Name = "medicalReferralTagPage";
-            this.medicalReferralTagPage.Size = new System.Drawing.Size(777, 457);
+            this.medicalReferralTagPage.Size = new System.Drawing.Size(777, 458);
             this.medicalReferralTagPage.Text = "Medical / Referral";
             // 
             // referralGroupControl
@@ -1145,7 +1145,7 @@
             this.referralGroupControl.Dock = System.Windows.Forms.DockStyle.Right;
             this.referralGroupControl.Location = new System.Drawing.Point(405, 0);
             this.referralGroupControl.Name = "referralGroupControl";
-            this.referralGroupControl.Size = new System.Drawing.Size(372, 457);
+            this.referralGroupControl.Size = new System.Drawing.Size(372, 458);
             this.referralGroupControl.TabIndex = 2;
             this.referralGroupControl.Text = "Referral";
             // 
@@ -1153,7 +1153,7 @@
             // 
             this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Location = new System.Drawing.Point(230, 342);
+            this.labelControl15.Location = new System.Drawing.Point(230, 343);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(88, 19);
             this.labelControl15.TabIndex = 28;
@@ -1162,7 +1162,7 @@
             // otherTextEdit
             // 
             this.otherTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.otherTextEdit.Location = new System.Drawing.Point(5, 361);
+            this.otherTextEdit.Location = new System.Drawing.Point(5, 362);
             this.otherTextEdit.Name = "otherTextEdit";
             this.otherTextEdit.Size = new System.Drawing.Size(194, 91);
             this.otherTextEdit.TabIndex = 3;
@@ -1171,7 +1171,7 @@
             // 
             this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Location = new System.Drawing.Point(5, 342);
+            this.labelControl14.Location = new System.Drawing.Point(5, 343);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(40, 19);
             this.labelControl14.TabIndex = 2;
@@ -1179,9 +1179,9 @@
             // 
             // refDocLookUp
             // 
-            this.refDocLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.refDocLookUp.Location = new System.Drawing.Point(230, 361);
+            this.refDocLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.refDocLookUp.Location = new System.Drawing.Point(230, 362);
             this.refDocLookUp.Name = "refDocLookUp";
             this.refDocLookUp.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refDocLookUp.Properties.Appearance.Options.UseFont = true;
@@ -1250,9 +1250,9 @@
             // 
             // referralCheckListBox
             // 
-            this.referralCheckListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.referralCheckListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.referralCheckListBox.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.referralCheckListBox.Appearance.Options.UseFont = true;
             this.referralCheckListBox.CheckOnClick = true;
@@ -1269,15 +1269,15 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(false, "Doctor")});
             this.referralCheckListBox.Location = new System.Drawing.Point(2, 22);
             this.referralCheckListBox.Name = "referralCheckListBox";
-            this.referralCheckListBox.Size = new System.Drawing.Size(368, 314);
+            this.referralCheckListBox.Size = new System.Drawing.Size(368, 315);
             this.referralCheckListBox.TabIndex = 1;
             this.referralCheckListBox.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.ReferralCheckListBox_ItemCheck);
             // 
             // medicalGroupControl
             // 
-            this.medicalGroupControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.medicalGroupControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.medicalGroupControl.Controls.Add(this.medicalCheckListBox);
             this.medicalGroupControl.Location = new System.Drawing.Point(3, 3);
             this.medicalGroupControl.Name = "medicalGroupControl";
@@ -1310,7 +1310,7 @@
             // 
             this.accidentClaimTabPage.Controls.Add(this.groupControl2);
             this.accidentClaimTabPage.Name = "accidentClaimTabPage";
-            this.accidentClaimTabPage.Size = new System.Drawing.Size(777, 457);
+            this.accidentClaimTabPage.Size = new System.Drawing.Size(777, 458);
             this.accidentClaimTabPage.Text = "Accident / Claim #";
             // 
             // groupControl2
@@ -1319,7 +1319,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(777, 457);
+            this.groupControl2.Size = new System.Drawing.Size(777, 458);
             this.groupControl2.TabIndex = 0;
             // 
             // accidentGridControl
@@ -1330,7 +1330,7 @@
             this.accidentGridControl.Name = "accidentGridControl";
             this.accidentGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.commentsRepositoryEdit});
-            this.accidentGridControl.Size = new System.Drawing.Size(773, 433);
+            this.accidentGridControl.Size = new System.Drawing.Size(773, 434);
             this.accidentGridControl.TabIndex = 26;
             this.accidentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.accidentGridView});
@@ -1401,8 +1401,8 @@
             // 
             // applyBtn
             // 
-            this.applyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.applyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.applyBtn.Location = new System.Drawing.Point(4, 6);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(75, 24);
@@ -1424,8 +1424,8 @@
             // 
             // newQuitBtn
             // 
-            this.newQuitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.newQuitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.newQuitBtn.Location = new System.Drawing.Point(701, 5);
             this.newQuitBtn.Name = "newQuitBtn";
             this.newQuitBtn.Size = new System.Drawing.Size(75, 24);
@@ -1435,8 +1435,8 @@
             // 
             // newOkBtn
             // 
-            this.newOkBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.newOkBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.newOkBtn.Location = new System.Drawing.Point(608, 5);
             this.newOkBtn.Name = "newOkBtn";
             this.newOkBtn.Size = new System.Drawing.Size(75, 24);

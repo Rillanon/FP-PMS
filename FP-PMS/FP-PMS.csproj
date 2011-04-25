@@ -78,7 +78,6 @@
     <Reference Include="DevExpress.XtraPrinting.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraScheduler.v10.2.Reporting.Extensions, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -210,6 +209,12 @@
     <Compile Include="Claimant\claimantDetailsForm.Designer.cs">
       <DependentUpon>claimantDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Claimant\claimantListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claimant\claimantListForm.Designer.cs">
+      <DependentUpon>claimantListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Claimant\claimantInvoiceViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +226,12 @@
     </Compile>
     <Compile Include="Claimant\claimantViewForm.Designer.cs">
       <DependentUpon>claimantViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claimant\remarkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claimant\remarkDialog.Designer.cs">
+      <DependentUpon>remarkDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Db\Anon.designer.cs">
       <AutoGen>True</AutoGen>
@@ -243,6 +254,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\patientSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\patientSelectDialog.Designer.cs">
+      <DependentUpon>patientSelectDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Ex\compareCollection.cs" />
     <Compile Include="Ex\entityClone.cs" />
@@ -284,7 +301,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referral\letterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral\letterDialog.Designer.cs">
+      <DependentUpon>letterDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Referral\referralController.cs" />
+    <Compile Include="Referral\referralDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral\referralDetailsForm.Designer.cs">
+      <DependentUpon>referralDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral\referralListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral\referralListForm.Designer.cs">
+      <DependentUpon>referralListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Referral\referralReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -490,6 +525,9 @@
     <EmbeddedResource Include="Claimant\claimantDetailsForm.resx">
       <DependentUpon>claimantDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Claimant\claimantListForm.resx">
+      <DependentUpon>claimantListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Claimant\claimantInvoiceViewForm.resx">
       <DependentUpon>claimantInvoiceViewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -499,6 +537,12 @@
     <None Include="Db\Anon.dbml.layout">
       <DependentUpon>Anon.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Claimant\remarkDialog.resx">
+      <DependentUpon>remarkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\patientSelectDialog.resx">
+      <DependentUpon>patientSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Helper\loadingViewForm.resx">
       <DependentUpon>loadingViewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +551,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\patientInvoiceViewForm.resx">
       <DependentUpon>patientInvoiceViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral\letterDialog.resx">
+      <DependentUpon>letterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral\referralDetailsForm.resx">
+      <DependentUpon>referralDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral\referralListForm.resx">
+      <DependentUpon>referralListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Referral\referralSearchForm.resx">
       <DependentUpon>referralSearchForm.cs</DependentUpon>

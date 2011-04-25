@@ -82,6 +82,7 @@ C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\De
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Admin.postCodeViewForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Admin.userViewForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Auth.authForm.resources
+C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Claimant.claimantDetailsForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Claimant.claimantInvoiceViewForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Claimant.claimantViewForm.resources
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Helper.loadingViewForm.resources
@@ -120,4 +121,9 @@ C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\De
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.application
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.exe
 C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP-PMS.pdb
-C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Claimant.claimantDetailsForm.resources
+C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Claimant.claimantListForm.resources
+C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Claimant.remarkDialog.resources
+C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Referral.referralDetailsForm.resources
+C:\Users\Yinan Ma\documents\visual studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Referral.referralListForm.resources
+C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Referral.letterDialog.resources
+C:\Users\Yinan Ma\Documents\Visual Studio 2010\Projects\FP-PMS\FP-PMS\obj\x86\Debug\FP_PMS.Dialogs.patientSelectDialog.resources

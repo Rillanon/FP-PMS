@@ -51,6 +51,7 @@
             this.appointmentBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.waitingRoomLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adHocEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appointmentLookUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.journalReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiptByPhysioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ratesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.appointmentLookUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainFormMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,6 +255,13 @@
             this.adHocEventsToolStripMenuItem.Text = "Events";
             this.adHocEventsToolStripMenuItem.Click += new System.EventHandler(this.adHocEventsToolStripMenuItem_Click);
             // 
+            // appointmentLookUpToolStripMenuItem
+            // 
+            this.appointmentLookUpToolStripMenuItem.Name = "appointmentLookUpToolStripMenuItem";
+            this.appointmentLookUpToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.appointmentLookUpToolStripMenuItem.Text = "Appointment Look Up";
+            this.appointmentLookUpToolStripMenuItem.Click += new System.EventHandler(this.appointmentLookUpToolStripMenuItem_Click);
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -366,13 +373,6 @@
             this.mainFormStatusStrip.TabIndex = 2;
             this.mainFormStatusStrip.Text = "statusStrip1";
             // 
-            // appointmentLookUpToolStripMenuItem
-            // 
-            this.appointmentLookUpToolStripMenuItem.Name = "appointmentLookUpToolStripMenuItem";
-            this.appointmentLookUpToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.appointmentLookUpToolStripMenuItem.Text = "Appointment Look Up";
-            this.appointmentLookUpToolStripMenuItem.Click += new System.EventHandler(this.appointmentLookUpToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +387,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.mainLoad);
             this.mainFormMenuStrip.ResumeLayout(false);
             this.mainFormMenuStrip.PerformLayout();

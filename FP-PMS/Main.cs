@@ -122,7 +122,6 @@ namespace FP_PMS
             {
                 var foo = new appointmentViewForm();
                 foo.MdiParent = this;
-               
                 foo.Show();
             }
         }
@@ -165,8 +164,9 @@ namespace FP_PMS
 
         private void referralDoctorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var foo = new Referral.referralViewForm();
-            foo.ShowDialog();
+            var foo = new Referral.referralListForm();
+            foo.MdiParent = this;
+            foo.Show();
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -423,7 +423,7 @@ namespace FP_PMS
 
         private void viewClaimantDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var foo = new Claimant.claimantDetailsForm();
+            var foo = new Claimant.claimantListForm();
             foo.MdiParent = this;
             foo.Show();
         }

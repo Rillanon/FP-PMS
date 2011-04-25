@@ -142,24 +142,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FP-PMS.exe" size="768512">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FP-PMS.exe" size="829440">
       <assemblyIdentity name="FP-PMS" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>KOjUbcO2V4063Vh/SQJkTCbvA9U=</dsig:DigestValue>
+        <dsig:DigestValue>Q0kaxz5D7A2XfnWIrXhCT0jBKJk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="FP-PMS.exe.config" size="518">
+  <file name="FP-PMS.exe.config" size="574">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Yhc9I/pAfbYQRZALAba/ZzndFMo=</dsig:DigestValue>
+      <dsig:DigestValue>fltTXLCO2g7LdpWee/deManetEc=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

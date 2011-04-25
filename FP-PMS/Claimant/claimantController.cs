@@ -58,13 +58,15 @@ namespace FP_PMS.Claimant
                                        select p).SingleOrDefault();
                     if (_sourceClaimant != null)
                     {
-                        _sourceClaimant.UpdateClaimant(EditCopyClaimant);
+                        //_sourceClaimant.UpdateClaimant(EditCopyClaimant);
+                        _sourceClaimant.setProperty(EditCopyClaimant);
                         newConnection.SubmitChanges();
                     }
                     else
                     {
                         _sourceClaimant = new tblClaimant();
-                        _sourceClaimant.UpdateClaimant(EditCopyClaimant);
+                        //_sourceClaimant.UpdateClaimant(EditCopyClaimant);
+                        _sourceClaimant.setProperty(EditCopyClaimant);
                         newConnection.tblClaimants.InsertOnSubmit(_sourceClaimant);
                         newConnection.SubmitChanges();
                     }
